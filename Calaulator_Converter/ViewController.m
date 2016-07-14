@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "AFNetworking.h"
+#import "Reachability.h"
 
 @interface ViewController ()
 
@@ -18,6 +19,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    if ([self CheckNetWorkStatus]) {
+        [self loadData];
+    }
+}
+
+- (BOOL)CheckNetWorkStatus {
+    BOOL isNetConnected = YES;
+    Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
+    switch ([r currentReachabilityStatus]) {
+        case NotReachable:
+            // 没有网络连接
+            isNetConnected = NO;
+            break;
+        case ReachableViaWWAN:
+            // 使用3G网络
+            break;
+        case ReachableViaWiFi:
+            // 使用WiFi网络
+            break;
+    }
+    return isNetConnected;
+}
+- (void)loadData {
+    
 }
 
 - (void)didReceiveMemoryWarning {

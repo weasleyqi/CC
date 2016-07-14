@@ -24,6 +24,8 @@
 		A9D0B2CB1D37CE100067B048 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C31D37CE100067B048 /* AFURLRequestSerialization.m */; };
 		A9D0B2CC1D37CE100067B048 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C51D37CE100067B048 /* AFURLResponseSerialization.m */; };
 		A9D0B2CD1D37CE100067B048 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C71D37CE100067B048 /* AFURLSessionManager.m */; };
+		A9D0B2D11D37CFF80067B048 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2D01D37CFF80067B048 /* Reachability.m */; };
+		A9D0B2D31D37D04D0067B048 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D0B2D21D37D04D0067B048 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,9 @@
 		A9D0B2C51D37CE100067B048 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		A9D0B2C61D37CE100067B048 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		A9D0B2C71D37CE100067B048 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		A9D0B2CF1D37CFF80067B048 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A9D0B2D01D37CFF80067B048 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		A9D0B2D21D37D04D0067B048 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D0B2D31D37D04D0067B048 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +119,7 @@
 		A95A69541D31DCDF00E06075 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9D0B2D21D37D04D0067B048 /* SystemConfiguration.framework */,
 				A95A69601D31DCDF00E06075 /* Assets.xcassets */,
 				A95A69651D31DCDF00E06075 /* Info.plist */,
 				A95A69551D31DCDF00E06075 /* main.m */,
@@ -166,6 +173,7 @@
 		A9D0B2A91D37CB850067B048 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A9D0B2CE1D37CFF80067B048 /* Reachability */,
 				A9D0B2BA1D37CE100067B048 /* AFNetworking */,
 			);
 			path = Tools;
@@ -198,6 +206,15 @@
 				A9D0B2C71D37CE100067B048 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		A9D0B2CE1D37CFF80067B048 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2CF1D37CFF80067B048 /* Reachability.h */,
+				A9D0B2D01D37CFF80067B048 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +291,7 @@
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
 				A9D0B2C91D37CE100067B048 /* AFNetworkReachabilityManager.m in Sources */,
 				A9D0B2CD1D37CE100067B048 /* AFURLSessionManager.m in Sources */,
+				A9D0B2D11D37CFF80067B048 /* Reachability.m in Sources */,
 				A9D0B2CB1D37CE100067B048 /* AFURLRequestSerialization.m in Sources */,
 				A9D0B2B91D37CC6A0067B048 /* CurrencyConverterViewController.m in Sources */,
 				A9D0B2CC1D37CE100067B048 /* AFURLResponseSerialization.m in Sources */,
