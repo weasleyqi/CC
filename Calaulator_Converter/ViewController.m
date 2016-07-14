@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "AFNetworking.h"
 #import "Reachability.h"
 
 @interface ViewController ()
@@ -30,14 +29,14 @@
     Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
     switch ([r currentReachabilityStatus]) {
         case NotReachable:
-            // 没有网络连接
+            // No NetWork Connected
             isNetConnected = NO;
             break;
         case ReachableViaWWAN:
-            // 使用3G网络
+            // Use Wan data
             break;
         case ReachableViaWiFi:
-            // 使用WiFi网络
+            // Use WiFi
             break;
     }
     return isNetConnected;
@@ -46,6 +45,16 @@
 //Load Data from Server
 - (void)loadData {
     
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:@"http://www.calculator.net/api/list.php?source=ios"];
+    // 通过URL初始化task,在block内部可以直接对返回的数据进行处理
+    NSURLSessionTask *task = [session dataTaskWithURL:url
+                                   completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                       NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                                   }];
+    
+    // 启动任务
+    [task resume];
 }
 
 - (void)didReceiveMemoryWarning {
