@@ -13,6 +13,17 @@
 		A95A695F1D31DCDF00E06075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95A695D1D31DCDF00E06075 /* Main.storyboard */; };
 		A95A69611D31DCDF00E06075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95A69601D31DCDF00E06075 /* Assets.xcassets */; };
 		A95A69641D31DCDF00E06075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95A69621D31DCDF00E06075 /* LaunchScreen.storyboard */; };
+		A9D0B2AD1D37CC0F0067B048 /* UnitConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */; };
+		A9D0B2B01D37CC2A0067B048 /* StatisticsCalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2AF1D37CC2A0067B048 /* StatisticsCalViewController.m */; };
+		A9D0B2B31D37CC3E0067B048 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2B21D37CC3E0067B048 /* SettingsViewController.m */; };
+		A9D0B2B61D37CC580067B048 /* ScientificCalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2B51D37CC580067B048 /* ScientificCalViewController.m */; };
+		A9D0B2B91D37CC6A0067B048 /* CurrencyConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2B81D37CC6A0067B048 /* CurrencyConverterViewController.m */; };
+		A9D0B2C81D37CE100067B048 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2BC1D37CE100067B048 /* AFHTTPSessionManager.m */; };
+		A9D0B2C91D37CE100067B048 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2BF1D37CE100067B048 /* AFNetworkReachabilityManager.m */; };
+		A9D0B2CA1D37CE100067B048 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C11D37CE100067B048 /* AFSecurityPolicy.m */; };
+		A9D0B2CB1D37CE100067B048 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C31D37CE100067B048 /* AFURLRequestSerialization.m */; };
+		A9D0B2CC1D37CE100067B048 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C51D37CE100067B048 /* AFURLResponseSerialization.m */; };
+		A9D0B2CD1D37CE100067B048 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C71D37CE100067B048 /* AFURLSessionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,29 @@
 		A95A69601D31DCDF00E06075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A95A69631D31DCDF00E06075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A95A69651D31DCDF00E06075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D0B2AB1D37CC0F0067B048 /* UnitConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitConverterViewController.h; sourceTree = "<group>"; };
+		A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitConverterViewController.m; sourceTree = "<group>"; };
+		A9D0B2AE1D37CC2A0067B048 /* StatisticsCalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsCalViewController.h; sourceTree = "<group>"; };
+		A9D0B2AF1D37CC2A0067B048 /* StatisticsCalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsCalViewController.m; sourceTree = "<group>"; };
+		A9D0B2B11D37CC3E0067B048 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A9D0B2B21D37CC3E0067B048 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A9D0B2B41D37CC580067B048 /* ScientificCalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScientificCalViewController.h; sourceTree = "<group>"; };
+		A9D0B2B51D37CC580067B048 /* ScientificCalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScientificCalViewController.m; sourceTree = "<group>"; };
+		A9D0B2B71D37CC6A0067B048 /* CurrencyConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencyConverterViewController.h; sourceTree = "<group>"; };
+		A9D0B2B81D37CC6A0067B048 /* CurrencyConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencyConverterViewController.m; sourceTree = "<group>"; };
+		A9D0B2BB1D37CE100067B048 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		A9D0B2BC1D37CE100067B048 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		A9D0B2BD1D37CE100067B048 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		A9D0B2BE1D37CE100067B048 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		A9D0B2BF1D37CE100067B048 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		A9D0B2C01D37CE100067B048 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		A9D0B2C11D37CE100067B048 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		A9D0B2C21D37CE100067B048 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		A9D0B2C31D37CE100067B048 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		A9D0B2C41D37CE100067B048 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		A9D0B2C51D37CE100067B048 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		A9D0B2C61D37CE100067B048 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		A9D0B2C71D37CE100067B048 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +92,19 @@
 		A95A69531D31DCDF00E06075 /* Calaulator_Converter */ = {
 			isa = PBXGroup;
 			children = (
+				A9D0B2A41D37CB850067B048 /* Currency Converter */,
+				A9D0B2A51D37CB850067B048 /* Resources */,
+				A9D0B2A61D37CB850067B048 /* Scientific */,
+				A9D0B2A71D37CB850067B048 /* Settings */,
+				A9D0B2A81D37CB850067B048 /* Statistics */,
+				A9D0B2A91D37CB850067B048 /* Tools */,
+				A9D0B2AA1D37CB850067B048 /* Unit Converter */,
 				A95A69571D31DCDF00E06075 /* AppDelegate.h */,
 				A95A69581D31DCDF00E06075 /* AppDelegate.m */,
 				A95A695A1D31DCDF00E06075 /* ViewController.h */,
 				A95A695B1D31DCDF00E06075 /* ViewController.m */,
 				A95A695D1D31DCDF00E06075 /* Main.storyboard */,
-				A95A69601D31DCDF00E06075 /* Assets.xcassets */,
 				A95A69621D31DCDF00E06075 /* LaunchScreen.storyboard */,
-				A95A69651D31DCDF00E06075 /* Info.plist */,
 				A95A69541D31DCDF00E06075 /* Supporting Files */,
 			);
 			path = Calaulator_Converter;
@@ -74,9 +113,91 @@
 		A95A69541D31DCDF00E06075 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A95A69601D31DCDF00E06075 /* Assets.xcassets */,
+				A95A69651D31DCDF00E06075 /* Info.plist */,
 				A95A69551D31DCDF00E06075 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9D0B2A41D37CB850067B048 /* Currency Converter */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2B71D37CC6A0067B048 /* CurrencyConverterViewController.h */,
+				A9D0B2B81D37CC6A0067B048 /* CurrencyConverterViewController.m */,
+			);
+			path = "Currency Converter";
+			sourceTree = "<group>";
+		};
+		A9D0B2A51D37CB850067B048 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9D0B2A61D37CB850067B048 /* Scientific */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2B41D37CC580067B048 /* ScientificCalViewController.h */,
+				A9D0B2B51D37CC580067B048 /* ScientificCalViewController.m */,
+			);
+			path = Scientific;
+			sourceTree = "<group>";
+		};
+		A9D0B2A71D37CB850067B048 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2B11D37CC3E0067B048 /* SettingsViewController.h */,
+				A9D0B2B21D37CC3E0067B048 /* SettingsViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A9D0B2A81D37CB850067B048 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2AE1D37CC2A0067B048 /* StatisticsCalViewController.h */,
+				A9D0B2AF1D37CC2A0067B048 /* StatisticsCalViewController.m */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		A9D0B2A91D37CB850067B048 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2BA1D37CE100067B048 /* AFNetworking */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		A9D0B2AA1D37CB850067B048 /* Unit Converter */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2AB1D37CC0F0067B048 /* UnitConverterViewController.h */,
+				A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */,
+			);
+			path = "Unit Converter";
+			sourceTree = "<group>";
+		};
+		A9D0B2BA1D37CE100067B048 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				A9D0B2BB1D37CE100067B048 /* AFHTTPSessionManager.h */,
+				A9D0B2BC1D37CE100067B048 /* AFHTTPSessionManager.m */,
+				A9D0B2BD1D37CE100067B048 /* AFNetworking.h */,
+				A9D0B2BE1D37CE100067B048 /* AFNetworkReachabilityManager.h */,
+				A9D0B2BF1D37CE100067B048 /* AFNetworkReachabilityManager.m */,
+				A9D0B2C01D37CE100067B048 /* AFSecurityPolicy.h */,
+				A9D0B2C11D37CE100067B048 /* AFSecurityPolicy.m */,
+				A9D0B2C21D37CE100067B048 /* AFURLRequestSerialization.h */,
+				A9D0B2C31D37CE100067B048 /* AFURLRequestSerialization.m */,
+				A9D0B2C41D37CE100067B048 /* AFURLResponseSerialization.h */,
+				A9D0B2C51D37CE100067B048 /* AFURLResponseSerialization.m */,
+				A9D0B2C61D37CE100067B048 /* AFURLSessionManager.h */,
+				A9D0B2C71D37CE100067B048 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +272,18 @@
 			files = (
 				A95A695C1D31DCDF00E06075 /* ViewController.m in Sources */,
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
+				A9D0B2C91D37CE100067B048 /* AFNetworkReachabilityManager.m in Sources */,
+				A9D0B2CD1D37CE100067B048 /* AFURLSessionManager.m in Sources */,
+				A9D0B2CB1D37CE100067B048 /* AFURLRequestSerialization.m in Sources */,
+				A9D0B2B91D37CC6A0067B048 /* CurrencyConverterViewController.m in Sources */,
+				A9D0B2CC1D37CE100067B048 /* AFURLResponseSerialization.m in Sources */,
+				A9D0B2C81D37CE100067B048 /* AFHTTPSessionManager.m in Sources */,
+				A9D0B2B61D37CC580067B048 /* ScientificCalViewController.m in Sources */,
 				A95A69561D31DCDF00E06075 /* main.m in Sources */,
+				A9D0B2B31D37CC3E0067B048 /* SettingsViewController.m in Sources */,
+				A9D0B2AD1D37CC0F0067B048 /* UnitConverterViewController.m in Sources */,
+				A9D0B2CA1D37CE100067B048 /* AFSecurityPolicy.m in Sources */,
+				A9D0B2B01D37CC2A0067B048 /* StatisticsCalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
