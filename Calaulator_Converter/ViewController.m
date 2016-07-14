@@ -24,6 +24,7 @@
     }
 }
 
+//Check NetWork Status
 - (BOOL)CheckNetWorkStatus {
     BOOL isNetConnected = YES;
     Reachability *r = [Reachability reachabilityWithHostName:@"www.apple.com"];
@@ -41,6 +42,8 @@
     }
     return isNetConnected;
 }
+
+//Load Data from Server
 - (void)loadData {
     
 }

@@ -26,6 +26,7 @@
 		A9D0B2CD1D37CE100067B048 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2C71D37CE100067B048 /* AFURLSessionManager.m */; };
 		A9D0B2D11D37CFF80067B048 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2D01D37CFF80067B048 /* Reachability.m */; };
 		A9D0B2D31D37D04D0067B048 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D0B2D21D37D04D0067B048 /* SystemConfiguration.framework */; };
+		A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		A9D0B2CF1D37CFF80067B048 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A9D0B2D01D37CFF80067B048 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A9D0B2D21D37D04D0067B048 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A9D0B2D71D37D7FA0067B048 /* DataHandlerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandlerTool.h; sourceTree = "<group>"; };
+		A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandlerTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 			children = (
 				A9D0B2CE1D37CFF80067B048 /* Reachability */,
 				A9D0B2BA1D37CE100067B048 /* AFNetworking */,
+				A9D0B2D71D37D7FA0067B048 /* DataHandlerTool.h */,
+				A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 			files = (
 				A95A695C1D31DCDF00E06075 /* ViewController.m in Sources */,
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
+				A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */,
 				A9D0B2C91D37CE100067B048 /* AFNetworkReachabilityManager.m in Sources */,
 				A9D0B2CD1D37CE100067B048 /* AFURLSessionManager.m in Sources */,
 				A9D0B2D11D37CFF80067B048 /* Reachability.m in Sources */,
