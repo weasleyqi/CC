@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Reachability.h"
+#import "DataHandlerTool.h"
 
 @interface ViewController ()
 
@@ -20,6 +21,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     if ([self CheckNetWorkStatus]) {
         [self loadData];
+    }else {
+        //load from local
     }
 }
 
@@ -51,10 +54,13 @@
     NSURLSessionTask *task = [session dataTaskWithURL:url
                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                        NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                                       NSString *respString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                       [DataHandlerTool dataHandlerWithResponseString:respString];
+                                       [DataHandlerTool saveToDisk:respString];
                                    }];
-    
     // 启动任务
     [task resume];
+    
 }
 
 - (void)didReceiveMemoryWarning {
