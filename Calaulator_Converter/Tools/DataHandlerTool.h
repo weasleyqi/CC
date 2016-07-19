@@ -10,9 +10,9 @@
 
 @interface DataHandlerTool : NSObject
 
-+ (void)dataHandlerWithResponseString:(NSString *)respString;
++ (NSDictionary *)dataHandlerWithResponseString:(NSString *)respString;
 
 + (void)saveToDisk:(NSString *)respString;
 
-+ (NSString *)getDataFromDisk;
++ (NSDictionary *)getDataFromDisk;
 @end

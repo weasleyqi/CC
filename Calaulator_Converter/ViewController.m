@@ -11,6 +11,7 @@
 #import "DataHandlerTool.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) NSDictionary *dataDict;
 
 @end
 
@@ -23,6 +24,8 @@
         [self loadData];
     }else {
         //load from local
+        _dataDict = [DataHandlerTool getDataFromDisk];
+        
     }
 }
 
@@ -53,9 +56,9 @@
     // 通过URL初始化task,在block内部可以直接对返回的数据进行处理
     NSURLSessionTask *task = [session dataTaskWithURL:url
                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                       NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+//                                       NSLog(@"%@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
                                        NSString *respString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                       [DataHandlerTool dataHandlerWithResponseString:respString];
+                                       _dataDict = [DataHandlerTool dataHandlerWithResponseString:respString];
                                        [DataHandlerTool saveToDisk:respString];
                                    }];
     // 启动任务
