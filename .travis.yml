@@ -7,6 +7,6 @@ branches:
 
 osx_image: xcode7.2
 
-xcode_project: Template.xcodeproj
-xcode_scheme: Template
+xcode_project: Calaulator_Converter.xcodeproj
+xcode_scheme: Calaulator_Converter
 xcode_sdk: iphonesimulator9.3
