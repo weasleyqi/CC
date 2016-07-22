@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DA24D63A-61BC-4489-BF98-AD79C86647EB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Calaulator_Converter</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8506319EA510B7AC8704CD28608AD64931008CAD</key>
+		<string>https://github.com/weasleyqi/CC.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Calaulator_Converter.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8506319EA510B7AC8704CD28608AD64931008CAD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/weasleyqi/CC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8506319EA510B7AC8704CD28608AD64931008CAD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8506319EA510B7AC8704CD28608AD64931008CAD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Calaulator_Converter</string>
+		</dict>
+	</array>
+</dict>
+</plist>

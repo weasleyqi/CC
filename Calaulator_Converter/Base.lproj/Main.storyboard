@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vNz-Jb-mXe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vNz-Jb-mXe">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Menu-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -16,15 +15,23 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="k8B-dS-WX2"/>
+                    <navigationItem key="navigationItem" title="Menu" id="k8B-dS-WX2"/>
+                    <connections>
+                        <segue destination="7uh-RC-LAk" kind="push" id="lU8-ZN-0X8"/>
+                        <segue destination="jFD-mf-EjL" kind="push" id="ALG-hc-mfS"/>
+                        <segue destination="nsA-FL-gk6" kind="push" id="OyE-KS-rgl"/>
+                        <segue destination="ccj-Q2-GUe" kind="push" id="ibx-wo-uyK"/>
+                        <segue destination="Wg3-hZ-c1v" kind="push" id="yrv-Oi-Qv8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1041" y="339"/>
         </scene>
-        <!--Scientific Cal View Controller-->
+        <!--Scientific Calculator-->
         <scene sceneID="aLV-De-6wy">
             <objects>
                 <viewController id="ccj-Q2-GUe" customClass="ScientificCalViewController" sceneMemberID="viewController">
@@ -35,14 +42,16 @@
                     <view key="view" contentMode="scaleToFill" id="5tR-Ys-jUw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Scientific Calculator" id="8jd-s9-LQD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zwZ-uO-Pxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="269"/>
+            <point key="canvasLocation" x="2053" y="-1119"/>
         </scene>
-        <!--Statistics Cal View Controller-->
+        <!--Statistics Calculator-->
         <scene sceneID="8VB-6E-CdE">
             <objects>
                 <viewController id="nsA-FL-gk6" customClass="StatisticsCalViewController" sceneMemberID="viewController">
@@ -53,14 +62,16 @@
                     <view key="view" contentMode="scaleToFill" id="eWl-sW-7d3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Statistics Calculator" id="TWH-Bd-Mhz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDt-er-hEv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760" y="945"/>
+            <point key="canvasLocation" x="2069" y="-399"/>
         </scene>
-        <!--Unit Converter View Controller-->
+        <!--Unit Converter-->
         <scene sceneID="Xo7-iW-MuQ">
             <objects>
                 <viewController id="jFD-mf-EjL" customClass="UnitConverterViewController" sceneMemberID="viewController">
@@ -71,14 +82,16 @@
                     <view key="view" contentMode="scaleToFill" id="Wx5-gx-WqC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Unit Converter" id="ssD-aC-EFh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRi-Q4-Prf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760" y="1628"/>
+            <point key="canvasLocation" x="2090" y="300"/>
         </scene>
-        <!--Currency Converter View Controller-->
+        <!--Currency Converter-->
         <scene sceneID="BNC-n2-1wU">
             <objects>
                 <viewController id="7uh-RC-LAk" customClass="CurrencyConverterViewController" sceneMemberID="viewController">
@@ -89,14 +102,16 @@
                     <view key="view" contentMode="scaleToFill" id="mTo-B4-v2a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Currency Converter" id="9AD-pY-JH1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovl-2L-nyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1760" y="2302"/>
+            <point key="canvasLocation" x="2082" y="1042"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings & About Us-->
         <scene sceneID="St5-sd-ORE">
             <objects>
                 <viewController id="Wg3-hZ-c1v" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -107,12 +122,14 @@
                     <view key="view" contentMode="scaleToFill" id="qx6-45-ERa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings &amp; About Us" id="cD6-1k-z7H"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUX-ne-wU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="2957"/>
+            <point key="canvasLocation" x="2053" y="1873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dhb-tH-AtZ">
@@ -122,6 +139,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="U2b-YU-yzy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
