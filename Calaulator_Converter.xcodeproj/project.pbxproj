@@ -13,6 +13,8 @@
 		A95A695F1D31DCDF00E06075 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95A695D1D31DCDF00E06075 /* Main.storyboard */; };
 		A95A69611D31DCDF00E06075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A95A69601D31DCDF00E06075 /* Assets.xcassets */; };
 		A95A69641D31DCDF00E06075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95A69621D31DCDF00E06075 /* LaunchScreen.storyboard */; };
+		A9653AC41D43026400AA559B /* MenuOffLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9653AC31D43026400AA559B /* MenuOffLineCell.m */; };
+		A9653AC71D43027A00AA559B /* MenuOnLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9653AC61D43027A00AA559B /* MenuOnLineCell.m */; };
 		A9D0B2AD1D37CC0F0067B048 /* UnitConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */; };
 		A9D0B2B01D37CC2A0067B048 /* StatisticsCalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2AF1D37CC2A0067B048 /* StatisticsCalViewController.m */; };
 		A9D0B2B31D37CC3E0067B048 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2B21D37CC3E0067B048 /* SettingsViewController.m */; };
@@ -34,6 +36,10 @@
 		A95A69601D31DCDF00E06075 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A95A69631D31DCDF00E06075 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A95A69651D31DCDF00E06075 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9653AC21D43026400AA559B /* MenuOffLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOffLineCell.h; sourceTree = "<group>"; };
+		A9653AC31D43026400AA559B /* MenuOffLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOffLineCell.m; sourceTree = "<group>"; };
+		A9653AC51D43027A00AA559B /* MenuOnLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOnLineCell.h; sourceTree = "<group>"; };
+		A9653AC61D43027A00AA559B /* MenuOnLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOnLineCell.m; sourceTree = "<group>"; };
 		A9D0B2AB1D37CC0F0067B048 /* UnitConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitConverterViewController.h; sourceTree = "<group>"; };
 		A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitConverterViewController.m; sourceTree = "<group>"; };
 		A9D0B2AE1D37CC2A0067B048 /* StatisticsCalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsCalViewController.h; sourceTree = "<group>"; };
@@ -93,6 +99,10 @@
 				A95A69581D31DCDF00E06075 /* AppDelegate.m */,
 				A95A695A1D31DCDF00E06075 /* ViewController.h */,
 				A95A695B1D31DCDF00E06075 /* ViewController.m */,
+				A9653AC21D43026400AA559B /* MenuOffLineCell.h */,
+				A9653AC31D43026400AA559B /* MenuOffLineCell.m */,
+				A9653AC51D43027A00AA559B /* MenuOnLineCell.h */,
+				A9653AC61D43027A00AA559B /* MenuOnLineCell.m */,
 				A95A695D1D31DCDF00E06075 /* Main.storyboard */,
 				A95A69621D31DCDF00E06075 /* LaunchScreen.storyboard */,
 				A95A69541D31DCDF00E06075 /* Supporting Files */,
@@ -259,7 +269,9 @@
 				A9D0B2B91D37CC6A0067B048 /* CurrencyConverterViewController.m in Sources */,
 				A9D0B2B61D37CC580067B048 /* ScientificCalViewController.m in Sources */,
 				A95A69561D31DCDF00E06075 /* main.m in Sources */,
+				A9653AC41D43026400AA559B /* MenuOffLineCell.m in Sources */,
 				A9D0B2B31D37CC3E0067B048 /* SettingsViewController.m in Sources */,
+				A9653AC71D43027A00AA559B /* MenuOnLineCell.m in Sources */,
 				A9D0B2AD1D37CC0F0067B048 /* UnitConverterViewController.m in Sources */,
 				A9D0B2B01D37CC2A0067B048 /* StatisticsCalViewController.m in Sources */,
 			);

@@ -10,7 +10,7 @@
 #import "Reachability.h"
 #import "DataHandlerTool.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITabBarDelegate,UITableViewDataSource>
 @property (strong, nonatomic) NSDictionary *dataDict;
 
 @end
@@ -71,4 +71,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UITableView methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return 1;
+//    }
+    return 1;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
+    if (indexPath.section == 1  ) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
+    }
+    
+    
+    return cell;
+}
 @end
