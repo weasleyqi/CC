@@ -9,9 +9,12 @@
 #import "ViewController.h"
 #import "Reachability.h"
 #import "DataHandlerTool.h"
+#import "MenuOnLineCell.h"
+#import "MenuOffLineCell.h"
 
 @interface ViewController ()<UITabBarDelegate,UITableViewDataSource>
 @property (strong, nonatomic) NSDictionary *dataDict;
+@property (strong, nonatomic) NSArray *offLineData;
 
 @end
 
@@ -19,6 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _offLineData = [NSArray arrayWithObjects:@{@"image":@"Scientific Calcuator@2x.png",@"title":@"Scientific Calcuator"},
+                                             @{@"image":@"Statistics Calcuator@2x.png",@"title":@"Statistics Calcuator"},
+                                             @{@"image":@"Unit-Converter@2x.png",@"title":@"Unit Converter"},
+                                             @{@"image":@"Currency-Converter@2x.png",@"title":@"Currency Converter"},
+                                             @{@"image":@"Settings-&-About-Us@2x.png",@"title":@"Settings & About Us"},nil];
     // Do any additional setup after loading the view, typically from a nib.
     if ([self CheckNetWorkStatus]) {
         [self loadData];
@@ -75,17 +83,43 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 2;
 }
+//section height
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 35;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 45;
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    if (section == 0) {
-//        return 1;
-//    }
-    return 1;
+    if (section == 0) {
+        return [_offLineData count];
+    }else {
+        return 10;
+    }
+//    return 1;
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section ==0) {
+        return @"In this App";
+    }else{
+        return @"Online";
+    }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
-    if (indexPath.section == 1  ) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
+    if (indexPath.section == 0  ) {
+        MenuOffLineCell *offlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
+        offlineCell.iconImage.image = [UIImage imageNamed:_offLineData[indexPath.row][@"image"]];
+        offlineCell.titleLabel.text = _offLineData[indexPath.row][@"title"];
+        
+        return offlineCell;
     }
     
     

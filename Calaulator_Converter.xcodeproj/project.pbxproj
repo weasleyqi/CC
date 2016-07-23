@@ -23,6 +23,54 @@
 		A9D0B2D11D37CFF80067B048 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2D01D37CFF80067B048 /* Reachability.m */; };
 		A9D0B2D31D37D04D0067B048 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9D0B2D21D37D04D0067B048 /* SystemConfiguration.framework */; };
 		A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */; };
+		A9D5E5E41D43D13000B87617 /* Currency-Converter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5AF1D43D13000B87617 /* Currency-Converter@2x.png */; };
+		A9D5E5E51D43D13000B87617 /* pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B01D43D13000B87617 /* pin@2x.png */; };
+		A9D5E5E61D43D13000B87617 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B11D43D13000B87617 /* right@2x.png */; };
+		A9D5E5E71D43D13000B87617 /* Scientific Calcuator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B21D43D13000B87617 /* Scientific Calcuator@2x.png */; };
+		A9D5E5E81D43D13000B87617 /* search-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B31D43D13000B87617 /* search-button@2x.png */; };
+		A9D5E5E91D43D13000B87617 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B41D43D13000B87617 /* search@2x.png */; };
+		A9D5E5EA1D43D13000B87617 /* Settings-&-About-Us@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B51D43D13000B87617 /* Settings-&-About-Us@2x.png */; };
+		A9D5E5EB1D43D13000B87617 /* sign@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B61D43D13000B87617 /* sign@2x.png */; };
+		A9D5E5EC1D43D13000B87617 /* Statistics Calcuator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B71D43D13000B87617 /* Statistics Calcuator@2x.png */; };
+		A9D5E5ED1D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B81D43D13000B87617 /* top@2x.png */; };
+		A9D5E5EE1D43D13000B87617 /* Unit-Converter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5B91D43D13000B87617 /* Unit-Converter@2x.png */; };
+		A9D5E5EF1D43D13000B87617 /* unpin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BA1D43D13000B87617 /* unpin@2x.png */; };
+		A9D5E5F01D43D13000B87617 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BC1D43D13000B87617 /* back@2x.png */; };
+		A9D5E5F11D43D13000B87617 /* black-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BD1D43D13000B87617 /* black-button@2x.png */; };
+		A9D5E5F21D43D13000B87617 /* button01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BE1D43D13000B87617 /* button01@2x.png */; };
+		A9D5E5F31D43D13000B87617 /* button02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BF1D43D13000B87617 /* button02@2x.png */; };
+		A9D5E5F41D43D13000B87617 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C01D43D13000B87617 /* check@2x.png */; };
+		A9D5E5F51D43D13000B87617 /* input-box-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C11D43D13000B87617 /* input-box-@2x.png */; };
+		A9D5E5F61D43D13000B87617 /* red-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C21D43D13000B87617 /* red-button@2x.png */; };
+		A9D5E5F71D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C31D43D13000B87617 /* top@2x.png */; };
+		A9D5E5F81D43D13000B87617 /* uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C41D43D13000B87617 /* uncheck@2x.png */; };
+		A9D5E5F91D43D13000B87617 /* black-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C61D43D13000B87617 /* black-button@2x.png */; };
+		A9D5E5FA1D43D13000B87617 /* button01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C71D43D13000B87617 /* button01@2x.png */; };
+		A9D5E5FB1D43D13000B87617 /* button02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C81D43D13000B87617 /* button02@2x.png */; };
+		A9D5E5FC1D43D13000B87617 /* cancel-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C91D43D13000B87617 /* cancel-@2x.png */; };
+		A9D5E5FD1D43D13000B87617 /* input-box-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5CA1D43D13000B87617 /* input-box-@2x.png */; };
+		A9D5E5FE1D43D13000B87617 /* red-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5CB1D43D13000B87617 /* red-button@2x.png */; };
+		A9D5E5FF1D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5CC1D43D13000B87617 /* top@2x.png */; };
+		A9D5E6001D43D13000B87617 /* black-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5CE1D43D13000B87617 /* black-button@2x.png */; };
+		A9D5E6011D43D13000B87617 /* button-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5CF1D43D13000B87617 /* button-bg@2x.png */; };
+		A9D5E6021D43D13000B87617 /* choose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D01D43D13000B87617 /* choose@2x.png */; };
+		A9D5E6031D43D13000B87617 /* input-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D11D43D13000B87617 /* input-box@2x.png */; };
+		A9D5E6041D43D13000B87617 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D21D43D13000B87617 /* line@2x.png */; };
+		A9D5E6051D43D13000B87617 /* red-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D31D43D13000B87617 /* red-button@2x.png */; };
+		A9D5E6061D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D41D43D13000B87617 /* top@2x.png */; };
+		A9D5E6071D43D13000B87617 /* black-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D61D43D13000B87617 /* black-button@2x.png */; };
+		A9D5E6081D43D13000B87617 /* button-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D71D43D13000B87617 /* button-bg@2x.png */; };
+		A9D5E6091D43D13000B87617 /* change@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D81D43D13000B87617 /* change@2x.png */; };
+		A9D5E60A1D43D13000B87617 /* choose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5D91D43D13000B87617 /* choose@2x.png */; };
+		A9D5E60B1D43D13000B87617 /* input-box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5DA1D43D13000B87617 /* input-box@2x.png */; };
+		A9D5E60C1D43D13000B87617 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5DB1D43D13000B87617 /* line@2x.png */; };
+		A9D5E60D1D43D13000B87617 /* red-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5DC1D43D13000B87617 /* red-button@2x.png */; };
+		A9D5E60E1D43D13000B87617 /* Switch-(on)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5DD1D43D13000B87617 /* Switch-(on)@2x.png */; };
+		A9D5E60F1D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5DE1D43D13000B87617 /* top@2x.png */; };
+		A9D5E6101D43D13000B87617 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E01D43D13000B87617 /* check@2x.png */; };
+		A9D5E6111D43D13000B87617 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E11D43D13000B87617 /* right@2x.png */; };
+		A9D5E6121D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E21D43D13000B87617 /* top@2x.png */; };
+		A9D5E6131D43D13000B87617 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E31D43D13000B87617 /* unchecked@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +103,54 @@
 		A9D0B2D21D37D04D0067B048 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A9D0B2D71D37D7FA0067B048 /* DataHandlerTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandlerTool.h; sourceTree = "<group>"; };
 		A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandlerTool.m; sourceTree = "<group>"; };
+		A9D5E5AF1D43D13000B87617 /* Currency-Converter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Currency-Converter@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B01D43D13000B87617 /* pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B11D43D13000B87617 /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B21D43D13000B87617 /* Scientific Calcuator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Scientific Calcuator@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B31D43D13000B87617 /* search-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B41D43D13000B87617 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B51D43D13000B87617 /* Settings-&-About-Us@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings-&-About-Us@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B61D43D13000B87617 /* sign@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B71D43D13000B87617 /* Statistics Calcuator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Statistics Calcuator@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B81D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
+		A9D5E5B91D43D13000B87617 /* Unit-Converter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unit-Converter@2x.png"; sourceTree = "<group>"; };
+		A9D5E5BA1D43D13000B87617 /* unpin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unpin@2x.png"; sourceTree = "<group>"; };
+		A9D5E5BC1D43D13000B87617 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		A9D5E5BD1D43D13000B87617 /* black-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5BE1D43D13000B87617 /* button01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button01@2x.png"; sourceTree = "<group>"; };
+		A9D5E5BF1D43D13000B87617 /* button02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button02@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C01D43D13000B87617 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C11D43D13000B87617 /* input-box-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-box-@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C21D43D13000B87617 /* red-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C31D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C41D43D13000B87617 /* uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uncheck@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C61D43D13000B87617 /* black-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C71D43D13000B87617 /* button01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button01@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C81D43D13000B87617 /* button02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button02@2x.png"; sourceTree = "<group>"; };
+		A9D5E5C91D43D13000B87617 /* cancel-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-@2x.png"; sourceTree = "<group>"; };
+		A9D5E5CA1D43D13000B87617 /* input-box-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-box-@2x.png"; sourceTree = "<group>"; };
+		A9D5E5CB1D43D13000B87617 /* red-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5CC1D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
+		A9D5E5CE1D43D13000B87617 /* black-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5CF1D43D13000B87617 /* button-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D01D43D13000B87617 /* choose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choose@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D11D43D13000B87617 /* input-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-box@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D21D43D13000B87617 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D31D43D13000B87617 /* red-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D41D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D61D43D13000B87617 /* black-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D71D43D13000B87617 /* button-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D81D43D13000B87617 /* change@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "change@2x.png"; sourceTree = "<group>"; };
+		A9D5E5D91D43D13000B87617 /* choose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "choose@2x.png"; sourceTree = "<group>"; };
+		A9D5E5DA1D43D13000B87617 /* input-box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-box@2x.png"; sourceTree = "<group>"; };
+		A9D5E5DB1D43D13000B87617 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		A9D5E5DC1D43D13000B87617 /* red-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-button@2x.png"; sourceTree = "<group>"; };
+		A9D5E5DD1D43D13000B87617 /* Switch-(on)@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Switch-(on)@2x.png"; sourceTree = "<group>"; };
+		A9D5E5DE1D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
+		A9D5E5E01D43D13000B87617 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		A9D5E5E11D43D13000B87617 /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
+		A9D5E5E21D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
+		A9D5E5E31D43D13000B87617 /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +229,12 @@
 		A9D0B2A51D37CB850067B048 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A9D5E5AE1D43D13000B87617 /* 01_Home */,
+				A9D5E5BB1D43D13000B87617 /* 02_Scientific-Calcuator */,
+				A9D5E5C51D43D13000B87617 /* 03_Statistics-Calcuator */,
+				A9D5E5CD1D43D13000B87617 /* 04_Unit-Converter */,
+				A9D5E5D51D43D13000B87617 /* 05_Currency Converter */,
+				A9D5E5DF1D43D13000B87617 /* 06_Settings&About-us */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -192,6 +294,96 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		A9D5E5AE1D43D13000B87617 /* 01_Home */ = {
+			isa = PBXGroup;
+			children = (
+				A9D5E5AF1D43D13000B87617 /* Currency-Converter@2x.png */,
+				A9D5E5B01D43D13000B87617 /* pin@2x.png */,
+				A9D5E5B11D43D13000B87617 /* right@2x.png */,
+				A9D5E5B21D43D13000B87617 /* Scientific Calcuator@2x.png */,
+				A9D5E5B31D43D13000B87617 /* search-button@2x.png */,
+				A9D5E5B41D43D13000B87617 /* search@2x.png */,
+				A9D5E5B51D43D13000B87617 /* Settings-&-About-Us@2x.png */,
+				A9D5E5B61D43D13000B87617 /* sign@2x.png */,
+				A9D5E5B71D43D13000B87617 /* Statistics Calcuator@2x.png */,
+				A9D5E5B81D43D13000B87617 /* top@2x.png */,
+				A9D5E5B91D43D13000B87617 /* Unit-Converter@2x.png */,
+				A9D5E5BA1D43D13000B87617 /* unpin@2x.png */,
+			);
+			path = 01_Home;
+			sourceTree = "<group>";
+		};
+		A9D5E5BB1D43D13000B87617 /* 02_Scientific-Calcuator */ = {
+			isa = PBXGroup;
+			children = (
+				A9D5E5BC1D43D13000B87617 /* back@2x.png */,
+				A9D5E5BD1D43D13000B87617 /* black-button@2x.png */,
+				A9D5E5BE1D43D13000B87617 /* button01@2x.png */,
+				A9D5E5BF1D43D13000B87617 /* button02@2x.png */,
+				A9D5E5C01D43D13000B87617 /* check@2x.png */,
+				A9D5E5C11D43D13000B87617 /* input-box-@2x.png */,
+				A9D5E5C21D43D13000B87617 /* red-button@2x.png */,
+				A9D5E5C31D43D13000B87617 /* top@2x.png */,
+				A9D5E5C41D43D13000B87617 /* uncheck@2x.png */,
+			);
+			path = "02_Scientific-Calcuator";
+			sourceTree = "<group>";
+		};
+		A9D5E5C51D43D13000B87617 /* 03_Statistics-Calcuator */ = {
+			isa = PBXGroup;
+			children = (
+				A9D5E5C61D43D13000B87617 /* black-button@2x.png */,
+				A9D5E5C71D43D13000B87617 /* button01@2x.png */,
+				A9D5E5C81D43D13000B87617 /* button02@2x.png */,
+				A9D5E5C91D43D13000B87617 /* cancel-@2x.png */,
+				A9D5E5CA1D43D13000B87617 /* input-box-@2x.png */,
+				A9D5E5CB1D43D13000B87617 /* red-button@2x.png */,
+				A9D5E5CC1D43D13000B87617 /* top@2x.png */,
+			);
+			path = "03_Statistics-Calcuator";
+			sourceTree = "<group>";
+		};
+		A9D5E5CD1D43D13000B87617 /* 04_Unit-Converter */ = {
+			isa = PBXGroup;
+			children = (
+				A9D5E5CE1D43D13000B87617 /* black-button@2x.png */,
+				A9D5E5CF1D43D13000B87617 /* button-bg@2x.png */,
+				A9D5E5D01D43D13000B87617 /* choose@2x.png */,
+				A9D5E5D11D43D13000B87617 /* input-box@2x.png */,
+				A9D5E5D21D43D13000B87617 /* line@2x.png */,
+				A9D5E5D31D43D13000B87617 /* red-button@2x.png */,
+				A9D5E5D41D43D13000B87617 /* top@2x.png */,
+			);
+			path = "04_Unit-Converter";
+			sourceTree = "<group>";
+		};
+		A9D5E5D51D43D13000B87617 /* 05_Currency Converter */ = {
+			isa = PBXGroup;
+			children = (
+				A9D5E5D61D43D13000B87617 /* black-button@2x.png */,
+				A9D5E5D71D43D13000B87617 /* button-bg@2x.png */,
+				A9D5E5D81D43D13000B87617 /* change@2x.png */,
+				A9D5E5D91D43D13000B87617 /* choose@2x.png */,
+				A9D5E5DA1D43D13000B87617 /* input-box@2x.png */,
+				A9D5E5DB1D43D13000B87617 /* line@2x.png */,
+				A9D5E5DC1D43D13000B87617 /* red-button@2x.png */,
+				A9D5E5DD1D43D13000B87617 /* Switch-(on)@2x.png */,
+				A9D5E5DE1D43D13000B87617 /* top@2x.png */,
+			);
+			path = "05_Currency Converter";
+			sourceTree = "<group>";
+		};
+		A9D5E5DF1D43D13000B87617 /* 06_Settings&About-us */ = {
+			isa = PBXGroup;
+			children = (
+				A9D5E5E01D43D13000B87617 /* check@2x.png */,
+				A9D5E5E11D43D13000B87617 /* right@2x.png */,
+				A9D5E5E21D43D13000B87617 /* top@2x.png */,
+				A9D5E5E31D43D13000B87617 /* unchecked@2x.png */,
+			);
+			path = "06_Settings&About-us";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,9 +441,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9D5E5EA1D43D13000B87617 /* Settings-&-About-Us@2x.png in Resources */,
+				A9D5E5FA1D43D13000B87617 /* button01@2x.png in Resources */,
+				A9D5E60E1D43D13000B87617 /* Switch-(on)@2x.png in Resources */,
+				A9D5E5FC1D43D13000B87617 /* cancel-@2x.png in Resources */,
+				A9D5E6091D43D13000B87617 /* change@2x.png in Resources */,
+				A9D5E5F51D43D13000B87617 /* input-box-@2x.png in Resources */,
+				A9D5E6011D43D13000B87617 /* button-bg@2x.png in Resources */,
+				A9D5E5EF1D43D13000B87617 /* unpin@2x.png in Resources */,
+				A9D5E60B1D43D13000B87617 /* input-box@2x.png in Resources */,
+				A9D5E60C1D43D13000B87617 /* line@2x.png in Resources */,
+				A9D5E6121D43D13000B87617 /* top@2x.png in Resources */,
+				A9D5E5F11D43D13000B87617 /* black-button@2x.png in Resources */,
+				A9D5E5FD1D43D13000B87617 /* input-box-@2x.png in Resources */,
+				A9D5E5F81D43D13000B87617 /* uncheck@2x.png in Resources */,
+				A9D5E5F71D43D13000B87617 /* top@2x.png in Resources */,
+				A9D5E6131D43D13000B87617 /* unchecked@2x.png in Resources */,
+				A9D5E5ED1D43D13000B87617 /* top@2x.png in Resources */,
+				A9D5E5EB1D43D13000B87617 /* sign@2x.png in Resources */,
+				A9D5E6111D43D13000B87617 /* right@2x.png in Resources */,
+				A9D5E5E91D43D13000B87617 /* search@2x.png in Resources */,
+				A9D5E5E81D43D13000B87617 /* search-button@2x.png in Resources */,
 				A95A69641D31DCDF00E06075 /* LaunchScreen.storyboard in Resources */,
+				A9D5E5F31D43D13000B87617 /* button02@2x.png in Resources */,
+				A9D5E6041D43D13000B87617 /* line@2x.png in Resources */,
+				A9D5E5F61D43D13000B87617 /* red-button@2x.png in Resources */,
 				A95A69611D31DCDF00E06075 /* Assets.xcassets in Resources */,
+				A9D5E6101D43D13000B87617 /* check@2x.png in Resources */,
+				A9D5E5E41D43D13000B87617 /* Currency-Converter@2x.png in Resources */,
+				A9D5E6061D43D13000B87617 /* top@2x.png in Resources */,
+				A9D5E5F91D43D13000B87617 /* black-button@2x.png in Resources */,
+				A9D5E5F01D43D13000B87617 /* back@2x.png in Resources */,
 				A95A695F1D31DCDF00E06075 /* Main.storyboard in Resources */,
+				A9D5E6071D43D13000B87617 /* black-button@2x.png in Resources */,
+				A9D5E6031D43D13000B87617 /* input-box@2x.png in Resources */,
+				A9D5E60A1D43D13000B87617 /* choose@2x.png in Resources */,
+				A9D5E5E51D43D13000B87617 /* pin@2x.png in Resources */,
+				A9D5E6001D43D13000B87617 /* black-button@2x.png in Resources */,
+				A9D5E5FE1D43D13000B87617 /* red-button@2x.png in Resources */,
+				A9D5E5EC1D43D13000B87617 /* Statistics Calcuator@2x.png in Resources */,
+				A9D5E6051D43D13000B87617 /* red-button@2x.png in Resources */,
+				A9D5E5FB1D43D13000B87617 /* button02@2x.png in Resources */,
+				A9D5E5F41D43D13000B87617 /* check@2x.png in Resources */,
+				A9D5E60D1D43D13000B87617 /* red-button@2x.png in Resources */,
+				A9D5E5E61D43D13000B87617 /* right@2x.png in Resources */,
+				A9D5E6021D43D13000B87617 /* choose@2x.png in Resources */,
+				A9D5E5E71D43D13000B87617 /* Scientific Calcuator@2x.png in Resources */,
+				A9D5E60F1D43D13000B87617 /* top@2x.png in Resources */,
+				A9D5E5EE1D43D13000B87617 /* Unit-Converter@2x.png in Resources */,
+				A9D5E5FF1D43D13000B87617 /* top@2x.png in Resources */,
+				A9D5E5F21D43D13000B87617 /* button01@2x.png in Resources */,
+				A9D5E6081D43D13000B87617 /* button-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

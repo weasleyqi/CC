@@ -18,12 +18,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FOx-D6-vfz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FOx-D6-vfz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell2" rowHeight="45" id="UN4-Y6-G5X">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="45" id="b4Z-ax-b0c" customClass="MenuOffLineCell">
                                         <rect key="frame" x="0.0" y="113.5" width="600" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b4Z-ax-b0c" id="gca-Os-cWP">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cYy-Tx-J0g">
+                                                    <rect key="frame" x="25" y="10" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="JTJ-2f-DrL"/>
+                                                        <constraint firstAttribute="width" constant="24" id="z45-Ab-Uav"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uf9-5k-W29">
+                                                    <rect key="frame" x="69" y="15" width="490" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="T6u-4D-hu9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zlc-fT-5xz">
+                                                    <rect key="frame" x="563" y="14" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="Ddt-ob-yD6"/>
+                                                        <constraint firstAttribute="width" constant="16" id="UF9-2k-6mx"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cYy-Tx-J0g" secondAttribute="bottom" constant="2.5" id="3nu-ws-JwW"/>
+                                                <constraint firstItem="cYy-Tx-J0g" firstAttribute="leading" secondItem="gca-Os-cWP" secondAttribute="leadingMargin" constant="17" id="7xE-vh-ycY"/>
+                                                <constraint firstItem="cYy-Tx-J0g" firstAttribute="top" secondItem="gca-Os-cWP" secondAttribute="topMargin" constant="2" id="Ig1-Di-fwC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zlc-fT-5xz" secondAttribute="trailing" constant="13" id="LZA-8n-2sp"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Uf9-5k-W29" secondAttribute="bottom" constant="7.5" id="TXm-26-Pso"/>
+                                                <constraint firstItem="Uf9-5k-W29" firstAttribute="top" secondItem="gca-Os-cWP" secondAttribute="topMargin" constant="7" id="VS5-dt-9Qt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Zlc-fT-5xz" secondAttribute="bottom" constant="6.5" id="bgZ-ey-GdL"/>
+                                                <constraint firstItem="Uf9-5k-W29" firstAttribute="leading" secondItem="cYy-Tx-J0g" secondAttribute="trailing" constant="20" id="g8E-xn-gIP"/>
+                                                <constraint firstItem="Zlc-fT-5xz" firstAttribute="top" secondItem="gca-Os-cWP" secondAttribute="topMargin" constant="6" id="jj1-Ib-ev9"/>
+                                                <constraint firstItem="Zlc-fT-5xz" firstAttribute="leading" secondItem="Uf9-5k-W29" secondAttribute="trailing" constant="4" id="l8o-au-5Bz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="iconImage" destination="cYy-Tx-J0g" id="scA-uW-0VT"/>
+                                            <outlet property="titleLabel" destination="Uf9-5k-W29" id="haa-dJ-GYh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell2" rowHeight="45" id="UN4-Y6-G5X">
+                                        <rect key="frame" x="0.0" y="158.5" width="600" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UN4-Y6-G5X" id="a01-tx-LVh">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
@@ -38,23 +87,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="45" id="b4Z-ax-b0c">
-                                        <rect key="frame" x="0.0" y="158.5" width="600" height="45"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b4Z-ax-b0c" id="gca-Os-cWP">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YYH-Oc-z8Q">
-                                                    <rect key="frame" x="76" y="15" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="7fa-Vn-O6O"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="tqg-Ut-Mud"/>
@@ -80,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1041" y="339"/>
+            <point key="canvasLocation" x="1104" y="324"/>
         </scene>
         <!--Scientific Calculator-->
         <scene sceneID="aLV-De-6wy">
@@ -196,4 +230,7 @@
             <point key="canvasLocation" x="392" y="339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="right.png" width="16" height="16"/>
+    </resources>
 </document>
