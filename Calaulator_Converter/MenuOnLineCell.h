@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuOnLineCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *onLineLabel;
 
 @end

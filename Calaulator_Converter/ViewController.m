@@ -33,6 +33,8 @@
                                              @{@"image":@"Currency-Converter@2x.png",@"title":@"Currency Converter"},
                                              @{@"image":@"Settings-&-About-Us@2x.png",@"title":@"Settings & About Us"},nil];
     _dataDict = [DataHandlerTool getDataFromDisk];
+    [_unpinedArray addObjectsFromArray:_dataDict[@"Calculators"]];
+    [_unpinedArray addObjectsFromArray:_dataDict[@"Converters"]];
     
     if ([self CheckNetWorkStatus]) {
         [self loadData];
@@ -83,7 +85,7 @@
 
 #pragma mark - UITableView methods
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 //section height
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -104,8 +106,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
         return [_offLineData count];
-    }else {
+    }else if(section == 1){
         return 10;
+    }else {
+        return [_unpinedArray count];
     }
 }
 
@@ -118,6 +122,7 @@
         return @"";
     }
 }
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0  ) {
         MenuOffLineCell *offlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
@@ -127,10 +132,11 @@
         return offlineCell;
     }else if (indexPath.section == 1) {
         MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
-        
+        onlineCell.onLineLabel.text = _unpinedArray[indexPath.row][@"name"];
         return onlineCell;
     }else{
         MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
+        onlineCell.onLineLabel.text = _unpinedArray[indexPath.row][@"name"];
         return onlineCell;
     }
 }
@@ -156,6 +162,12 @@
             default:
                 break;
         }
+    }else if (indexPath.section == 1) {
+        
+    }else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_unpinedArray[indexPath.row][@"url"]]];
     }
+    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
 }
+
 @end

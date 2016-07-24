@@ -71,7 +71,7 @@
                                             <outlet property="titleLabel" destination="Uf9-5k-W29" id="haa-dJ-GYh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell2" rowHeight="45" id="UN4-Y6-G5X">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell2" rowHeight="45" id="UN4-Y6-G5X" customClass="MenuOnLineCell">
                                         <rect key="frame" x="0.0" y="158.5" width="600" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UN4-Y6-G5X" id="a01-tx-LVh">
@@ -105,8 +105,11 @@
                                                 <constraint firstItem="Lvx-no-MoE" firstAttribute="leading" secondItem="Hsw-Kl-H3b" secondAttribute="trailing" constant="17" id="l0R-hT-Mtb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="onLineLabel" destination="Hsw-Kl-H3b" id="Zn5-io-zMI"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell3" rowHeight="45" id="mp7-7d-PcK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell3" rowHeight="45" id="mp7-7d-PcK" customClass="MenuOnLineCell">
                                         <rect key="frame" x="0.0" y="203.5" width="600" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mp7-7d-PcK" id="foe-mY-gOH">
@@ -141,6 +144,9 @@
                                                 <constraint firstItem="uC6-4M-WFk" firstAttribute="top" secondItem="foe-mY-gOH" secondAttribute="topMargin" constant="6" id="y1e-ll-DPU"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="onLineLabel" destination="uC6-4M-WFk" id="zcQ-eP-nb1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
