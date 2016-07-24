@@ -78,13 +78,68 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1111" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsw-Kl-H3b">
-                                                    <rect key="frame" x="85" y="15" width="31" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvx-no-MoE">
+                                                    <rect key="frame" x="509" y="9" width="75" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="v1n-IB-ovE"/>
+                                                        <constraint firstAttribute="height" constant="25" id="yoa-zN-aSJ"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Unpin" image="unpin.png"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsw-Kl-H3b">
+                                                    <rect key="frame" x="15" y="14" width="477" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="pmz-5C-xVA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Hsw-Kl-H3b" secondAttribute="bottom" constant="6.5" id="3s5-L2-fdU"/>
+                                                <constraint firstItem="Hsw-Kl-H3b" firstAttribute="leading" secondItem="a01-tx-LVh" secondAttribute="leadingMargin" constant="7" id="D06-lx-g3V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Lvx-no-MoE" secondAttribute="trailing" constant="8" id="KmY-gT-WPm"/>
+                                                <constraint firstItem="Hsw-Kl-H3b" firstAttribute="top" secondItem="a01-tx-LVh" secondAttribute="topMargin" constant="6" id="Xhq-vW-u9F"/>
+                                                <constraint firstItem="Lvx-no-MoE" firstAttribute="top" secondItem="a01-tx-LVh" secondAttribute="topMargin" constant="1" id="ZzS-iC-hIv"/>
+                                                <constraint firstItem="Lvx-no-MoE" firstAttribute="leading" secondItem="Hsw-Kl-H3b" secondAttribute="trailing" constant="17" id="l0R-hT-Mtb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell3" rowHeight="45" id="mp7-7d-PcK">
+                                        <rect key="frame" x="0.0" y="203.5" width="600" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mp7-7d-PcK" id="foe-mY-gOH">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-4M-WFk">
+                                                    <rect key="frame" x="15" y="14" width="477" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="DGa-l3-JwC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74n-8a-BNo">
+                                                    <rect key="frame" x="509" y="9" width="75" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="uFf-qu-qET"/>
+                                                        <constraint firstAttribute="height" constant="25" id="uWo-Jm-58c"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Unpin" image="pin.png"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="74n-8a-BNo" firstAttribute="top" secondItem="foe-mY-gOH" secondAttribute="topMargin" constant="1" id="7ll-lR-Qzr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="74n-8a-BNo" secondAttribute="bottom" constant="2.5" id="8lo-n8-8SA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uC6-4M-WFk" secondAttribute="bottom" constant="6.5" id="CZ8-xV-xVN"/>
+                                                <constraint firstItem="74n-8a-BNo" firstAttribute="leading" secondItem="uC6-4M-WFk" secondAttribute="trailing" constant="17" id="IgP-Lu-GJq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="74n-8a-BNo" secondAttribute="trailing" constant="8" id="Lg2-os-uqY"/>
+                                                <constraint firstItem="uC6-4M-WFk" firstAttribute="leading" secondItem="foe-mY-gOH" secondAttribute="leadingMargin" constant="7" id="bPJ-dW-su8"/>
+                                                <constraint firstItem="uC6-4M-WFk" firstAttribute="top" secondItem="foe-mY-gOH" secondAttribute="topMargin" constant="6" id="y1e-ll-DPU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -105,11 +160,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="k8B-dS-WX2"/>
                     <connections>
-                        <segue destination="7uh-RC-LAk" kind="push" id="lU8-ZN-0X8"/>
-                        <segue destination="jFD-mf-EjL" kind="push" id="ALG-hc-mfS"/>
-                        <segue destination="nsA-FL-gk6" kind="push" id="OyE-KS-rgl"/>
-                        <segue destination="ccj-Q2-GUe" kind="push" id="ibx-wo-uyK"/>
-                        <segue destination="Wg3-hZ-c1v" kind="push" id="yrv-Oi-Qv8"/>
+                        <segue destination="7uh-RC-LAk" kind="push" identifier="currencyConverter" id="lU8-ZN-0X8"/>
+                        <segue destination="jFD-mf-EjL" kind="push" identifier="unitConverter" id="ALG-hc-mfS"/>
+                        <segue destination="nsA-FL-gk6" kind="push" identifier="statisticsCalculator" id="OyE-KS-rgl"/>
+                        <segue destination="ccj-Q2-GUe" kind="push" identifier="ScientificCalculator" id="ibx-wo-uyK"/>
+                        <segue destination="Wg3-hZ-c1v" kind="push" identifier="settings" id="yrv-Oi-Qv8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -231,6 +286,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pin.png" width="75" height="25"/>
         <image name="right.png" width="16" height="16"/>
+        <image name="unpin.png" width="75" height="25"/>
     </resources>
 </document>

@@ -15,6 +15,8 @@
 @interface ViewController ()<UITabBarDelegate,UITableViewDataSource>
 @property (strong, nonatomic) NSDictionary *dataDict;
 @property (strong, nonatomic) NSArray *offLineData;
+@property (strong, nonatomic) NSMutableArray *pinArray;
+@property (strong, nonatomic) NSMutableArray *unpinedArray;
 
 @end
 
@@ -22,18 +24,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _pinArray = [NSMutableArray new];
+    _unpinedArray = [NSMutableArray new];
+    
     _offLineData = [NSArray arrayWithObjects:@{@"image":@"Scientific Calcuator@2x.png",@"title":@"Scientific Calcuator"},
                                              @{@"image":@"Statistics Calcuator@2x.png",@"title":@"Statistics Calcuator"},
                                              @{@"image":@"Unit-Converter@2x.png",@"title":@"Unit Converter"},
                                              @{@"image":@"Currency-Converter@2x.png",@"title":@"Currency Converter"},
                                              @{@"image":@"Settings-&-About-Us@2x.png",@"title":@"Settings & About Us"},nil];
-    // Do any additional setup after loading the view, typically from a nib.
+    _dataDict = [DataHandlerTool getDataFromDisk];
+    
     if ([self CheckNetWorkStatus]) {
         [self loadData];
-    }else {
-        //load from local
-        _dataDict = [DataHandlerTool getDataFromDisk];
-        
     }
 }
 
@@ -85,6 +87,9 @@
 }
 //section height
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 2) {
+        return 10;
+    }
     return 35;
 }
 
@@ -102,27 +107,55 @@
     }else {
         return 10;
     }
-//    return 1;
 }
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section ==0) {
         return @"In this App";
-    }else{
+    }else if(section == 1){
         return @"Online";
+    }else{
+        return @"";
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
     if (indexPath.section == 0  ) {
         MenuOffLineCell *offlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell"];
         offlineCell.iconImage.image = [UIImage imageNamed:_offLineData[indexPath.row][@"image"]];
         offlineCell.titleLabel.text = _offLineData[indexPath.row][@"title"];
         
         return offlineCell;
+    }else if (indexPath.section == 1) {
+        MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
+        
+        return onlineCell;
+    }else{
+        MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
+        return onlineCell;
     }
-    
-    
-    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                [self performSegueWithIdentifier:@"ScientificCalculator" sender:nil];
+                break;
+            case 1:
+                [self performSegueWithIdentifier:@"statisticsCalculator" sender:nil];
+                break;
+            case 2:
+                [self performSegueWithIdentifier:@"unitConverter" sender:nil];
+                break;
+            case 3:
+                [self performSegueWithIdentifier:@"currencyConverter" sender:nil];
+                break;
+            case 4:
+                [self performSegueWithIdentifier:@"settings" sender:nil];
+                break;
+            default:
+                break;
+        }
+    }
 }
 @end
