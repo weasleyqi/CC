@@ -11,6 +11,7 @@
 #import "DataHandlerTool.h"
 #import "MenuOnLineCell.h"
 #import "MenuOffLineCell.h"
+#import "MenuSearchCell.h"
 
 @interface ViewController ()<UITabBarDelegate,UITableViewDataSource>
 @property (strong, nonatomic) NSDictionary *dataDict;
@@ -137,7 +138,7 @@
         return offlineCell;
     }else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell"];
+            MenuSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell"];
             return cell;
             
         }else{
@@ -186,6 +187,12 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_unpinedArray[indexPath.row][@"url"]]];
     }
     [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
+}
+
+//search button
+- (IBAction)searchCC:(id)sender {
+//    [_searchText resignFirstResponder];
+    
 }
 
 @end

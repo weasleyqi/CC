@@ -74,6 +74,7 @@
 		A9D5E61A1D465D9600B87617 /* pinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6181D465D9600B87617 /* pinText@2x.png */; };
 		A9D5E61B1D465D9600B87617 /* unpinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6191D465D9600B87617 /* unpinText@2x.png */; };
 		A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */; };
+		A9D5E6211D466F6300B87617 /* MenuSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E6201D466F6300B87617 /* MenuSearchCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +159,8 @@
 		A9D5E6191D465D9600B87617 /* unpinText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unpinText@2x.png"; sourceTree = "<group>"; };
 		A9D5E61C1D466C1700B87617 /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
 		A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
+		A9D5E61F1D466F6300B87617 /* MenuSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSearchCell.h; sourceTree = "<group>"; };
+		A9D5E6201D466F6300B87617 /* MenuSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSearchCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +209,8 @@
 				A9653AC31D43026400AA559B /* MenuOffLineCell.m */,
 				A9653AC51D43027A00AA559B /* MenuOnLineCell.h */,
 				A9653AC61D43027A00AA559B /* MenuOnLineCell.m */,
+				A9D5E61F1D466F6300B87617 /* MenuSearchCell.h */,
+				A9D5E6201D466F6300B87617 /* MenuSearchCell.m */,
 				A95A695D1D31DCDF00E06075 /* Main.storyboard */,
 				A95A69621D31DCDF00E06075 /* LaunchScreen.storyboard */,
 				A95A69541D31DCDF00E06075 /* Supporting Files */,
@@ -527,6 +532,7 @@
 				A9D0B2B31D37CC3E0067B048 /* SettingsViewController.m in Sources */,
 				A9653AC71D43027A00AA559B /* MenuOnLineCell.m in Sources */,
 				A9D0B2AD1D37CC0F0067B048 /* UnitConverterViewController.m in Sources */,
+				A9D5E6211D466F6300B87617 /* MenuSearchCell.m in Sources */,
 				A9D0B2B01D37CC2A0067B048 /* StatisticsCalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

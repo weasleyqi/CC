@@ -154,7 +154,7 @@
                                             <outlet property="onLineLabel" destination="uC6-4M-WFk" id="zcQ-eP-nb1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="70" id="FIj-gk-tWU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="70" id="FIj-gk-tWU" customClass="MenuSearchCell">
                                         <rect key="frame" x="0.0" y="248.5" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="spatial" tableViewCell="FIj-gk-tWU" id="DJu-tM-bok">
@@ -196,6 +196,9 @@
                                                             <integer key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="searchCC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T55-gC-x8D"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -209,6 +212,9 @@
                                                 <constraint firstItem="9Fh-PQ-ICB" firstAttribute="leading" secondItem="e9j-gL-EWb" secondAttribute="trailing" constant="30" id="tjd-Ps-L6e"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="menuSearchTextField" destination="e9j-gL-EWb" id="V7u-EQ-sSa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
