@@ -84,15 +84,21 @@
                                                         <constraint firstAttribute="width" constant="75" id="v1n-IB-ovE"/>
                                                         <constraint firstAttribute="height" constant="25" id="yoa-zN-aSJ"/>
                                                     </constraints>
-                                                    <state key="normal" title="Unpin" image="unpin.png"/>
+                                                    <state key="normal" image="unpinText.png"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsw-Kl-H3b">
-                                                    <rect key="frame" x="15" y="14" width="477" height="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsw-Kl-H3b">
+                                                    <rect key="frame" x="15" y="14" width="477" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="pmz-5C-xVA"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Loan Calculator">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.41176470588235292" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="16" name="Helvetica-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -122,7 +128,7 @@
                                                         <constraint firstAttribute="height" constant="16" id="DGa-l3-JwC"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.41176470588235292" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74n-8a-BNo">
@@ -131,7 +137,7 @@
                                                         <constraint firstAttribute="width" constant="75" id="uFf-qu-qET"/>
                                                         <constraint firstAttribute="height" constant="25" id="uWo-Jm-58c"/>
                                                     </constraints>
-                                                    <state key="normal" title="Unpin" image="pin.png"/>
+                                                    <state key="normal" image="pinText.png"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -147,6 +153,62 @@
                                         <connections>
                                             <outlet property="onLineLabel" destination="uC6-4M-WFk" id="zcQ-eP-nb1"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="70" id="FIj-gk-tWU">
+                                        <rect key="frame" x="0.0" y="248.5" width="600" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="spatial" tableViewCell="FIj-gk-tWU" id="DJu-tM-bok">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="e9j-gL-EWb">
+                                                    <rect key="frame" x="15" y="17" width="460" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="wum-U8-xqo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
+                                                            <color key="value" red="0.62352941176470589" green="0.6588235294117647" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fh-PQ-ICB">
+                                                    <rect key="frame" x="505" y="17" width="80" height="35"/>
+                                                    <color key="backgroundColor" red="0.15294117647058825" green="0.49411764705882355" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="Ffj-px-LKH"/>
+                                                        <constraint firstAttribute="height" constant="35" id="xN7-r9-oX0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Search">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9Fh-PQ-ICB" firstAttribute="top" secondItem="DJu-tM-bok" secondAttribute="topMargin" constant="9" id="1zH-pw-o5Y"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9Fh-PQ-ICB" secondAttribute="bottom" constant="9.5" id="7ZN-2w-ZZy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e9j-gL-EWb" secondAttribute="bottom" constant="9.5" id="7sO-Mh-6dG"/>
+                                                <constraint firstItem="e9j-gL-EWb" firstAttribute="leading" secondItem="DJu-tM-bok" secondAttribute="leadingMargin" constant="7" id="WtX-ou-y3J"/>
+                                                <constraint firstItem="9Fh-PQ-ICB" firstAttribute="leading" secondItem="e9j-gL-EWb" secondAttribute="trailing" constant="30" id="egg-Iy-xQI"/>
+                                                <constraint firstItem="e9j-gL-EWb" firstAttribute="top" secondItem="DJu-tM-bok" secondAttribute="topMargin" constant="9" id="gQ9-mr-Jcd"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9Fh-PQ-ICB" secondAttribute="trailing" constant="7" id="osu-Lj-WqL"/>
+                                                <constraint firstItem="9Fh-PQ-ICB" firstAttribute="leading" secondItem="e9j-gL-EWb" secondAttribute="trailing" constant="30" id="tjd-Ps-L6e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -166,6 +228,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="k8B-dS-WX2"/>
                     <connections>
+                        <outlet property="searchDisplayController" destination="Gtr-H7-w4U" id="E87-68-O4t"/>
                         <segue destination="7uh-RC-LAk" kind="push" identifier="currencyConverter" id="lU8-ZN-0X8"/>
                         <segue destination="jFD-mf-EjL" kind="push" identifier="unitConverter" id="ALG-hc-mfS"/>
                         <segue destination="nsA-FL-gk6" kind="push" identifier="statisticsCalculator" id="OyE-KS-rgl"/>
@@ -174,6 +237,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Gtr-H7-w4U">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="GP9-4B-sM7"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="Shz-ab-KCz"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="5g4-Lk-I5w"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="Fgd-rR-rYs"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1104" y="324"/>
         </scene>
@@ -292,8 +363,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pin.png" width="75" height="25"/>
+        <image name="pinText.png" width="75" height="25"/>
         <image name="right.png" width="16" height="16"/>
-        <image name="unpin.png" width="75" height="25"/>
+        <image name="unpinText.png" width="75" height="25"/>
     </resources>
 </document>

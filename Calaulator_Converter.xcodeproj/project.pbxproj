@@ -71,6 +71,9 @@
 		A9D5E6111D43D13000B87617 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E11D43D13000B87617 /* right@2x.png */; };
 		A9D5E6121D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E21D43D13000B87617 /* top@2x.png */; };
 		A9D5E6131D43D13000B87617 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E31D43D13000B87617 /* unchecked@2x.png */; };
+		A9D5E61A1D465D9600B87617 /* pinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6181D465D9600B87617 /* pinText@2x.png */; };
+		A9D5E61B1D465D9600B87617 /* unpinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6191D465D9600B87617 /* unpinText@2x.png */; };
+		A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +154,10 @@
 		A9D5E5E11D43D13000B87617 /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
 		A9D5E5E21D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
 		A9D5E5E31D43D13000B87617 /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
+		A9D5E6181D465D9600B87617 /* pinText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinText@2x.png"; sourceTree = "<group>"; };
+		A9D5E6191D465D9600B87617 /* unpinText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unpinText@2x.png"; sourceTree = "<group>"; };
+		A9D5E61C1D466C1700B87617 /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
+		A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +279,8 @@
 				A9D0B2CE1D37CFF80067B048 /* Reachability */,
 				A9D0B2D71D37D7FA0067B048 /* DataHandlerTool.h */,
 				A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */,
+				A9D5E61C1D466C1700B87617 /* CALayer+Addition.h */,
+				A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -297,6 +306,8 @@
 		A9D5E5AE1D43D13000B87617 /* 01_Home */ = {
 			isa = PBXGroup;
 			children = (
+				A9D5E6181D465D9600B87617 /* pinText@2x.png */,
+				A9D5E6191D465D9600B87617 /* unpinText@2x.png */,
 				A9D5E5AF1D43D13000B87617 /* Currency-Converter@2x.png */,
 				A9D5E5B01D43D13000B87617 /* pin@2x.png */,
 				A9D5E5B11D43D13000B87617 /* right@2x.png */,
@@ -464,6 +475,7 @@
 				A9D5E5E81D43D13000B87617 /* search-button@2x.png in Resources */,
 				A95A69641D31DCDF00E06075 /* LaunchScreen.storyboard in Resources */,
 				A9D5E5F31D43D13000B87617 /* button02@2x.png in Resources */,
+				A9D5E61A1D465D9600B87617 /* pinText@2x.png in Resources */,
 				A9D5E6041D43D13000B87617 /* line@2x.png in Resources */,
 				A9D5E5F61D43D13000B87617 /* red-button@2x.png in Resources */,
 				A95A69611D31DCDF00E06075 /* Assets.xcassets in Resources */,
@@ -488,6 +500,7 @@
 				A9D5E6021D43D13000B87617 /* choose@2x.png in Resources */,
 				A9D5E5E71D43D13000B87617 /* Scientific Calcuator@2x.png in Resources */,
 				A9D5E60F1D43D13000B87617 /* top@2x.png in Resources */,
+				A9D5E61B1D465D9600B87617 /* unpinText@2x.png in Resources */,
 				A9D5E5EE1D43D13000B87617 /* Unit-Converter@2x.png in Resources */,
 				A9D5E5FF1D43D13000B87617 /* top@2x.png in Resources */,
 				A9D5E5F21D43D13000B87617 /* button01@2x.png in Resources */,
@@ -503,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A95A695C1D31DCDF00E06075 /* ViewController.m in Sources */,
+				A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */,
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
 				A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */,
 				A9D0B2D11D37CFF80067B048 /* Reachability.m in Sources */,

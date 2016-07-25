@@ -100,6 +100,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            return 70;
+        }
+    }
     return 45;
 }
 
@@ -131,12 +136,25 @@
         
         return offlineCell;
     }else if (indexPath.section == 1) {
-        MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
-        onlineCell.onLineLabel.text = _unpinedArray[indexPath.row][@"name"];
-        return onlineCell;
+        if (indexPath.row == 0) {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell"];
+            return cell;
+            
+        }else{
+            MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
+            NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row+1][@"name"]]];
+            NSRange contentRange = {0,[content length]};
+            [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
+            onlineCell.onLineLabel.attributedText = content;
+            
+            return onlineCell;
+        }
     }else{
         MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
-        onlineCell.onLineLabel.text = _unpinedArray[indexPath.row][@"name"];
+        NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row][@"name"]]];
+        NSRange contentRange = {0,[content length]};
+        [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
+        onlineCell.onLineLabel.attributedText = content;
         return onlineCell;
     }
 }
