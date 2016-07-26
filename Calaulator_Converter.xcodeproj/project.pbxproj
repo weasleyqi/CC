@@ -75,6 +75,11 @@
 		A9D5E61B1D465D9600B87617 /* unpinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6191D465D9600B87617 /* unpinText@2x.png */; };
 		A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */; };
 		A9D5E6211D466F6300B87617 /* MenuSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E6201D466F6300B87617 /* MenuSearchCell.m */; };
+		A9F34D121D47CCB7009490F5 /* MBButtonWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D081D47CCB7009490F5 /* MBButtonWithFontAdapter.m */; };
+		A9F34D131D47CCB7009490F5 /* MBLabelWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0A1D47CCB7009490F5 /* MBLabelWithFontAdapter.m */; };
+		A9F34D141D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0C1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m */; };
+		A9F34D151D47CCB7009490F5 /* MBTextViewWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0E1D47CCB7009490F5 /* MBTextViewWithFontAdapter.m */; };
+		A9F34D161D47CCB7009490F5 /* MBFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D111D47CCB7009490F5 /* MBFontAdapter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +166,16 @@
 		A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
 		A9D5E61F1D466F6300B87617 /* MenuSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSearchCell.h; sourceTree = "<group>"; };
 		A9D5E6201D466F6300B87617 /* MenuSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSearchCell.m; sourceTree = "<group>"; };
+		A9F34D071D47CCB7009490F5 /* MBButtonWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButtonWithFontAdapter.h; sourceTree = "<group>"; };
+		A9F34D081D47CCB7009490F5 /* MBButtonWithFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButtonWithFontAdapter.m; sourceTree = "<group>"; };
+		A9F34D091D47CCB7009490F5 /* MBLabelWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLabelWithFontAdapter.h; sourceTree = "<group>"; };
+		A9F34D0A1D47CCB7009490F5 /* MBLabelWithFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBLabelWithFontAdapter.m; sourceTree = "<group>"; };
+		A9F34D0B1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTextFieldWithFontAdapter.h; sourceTree = "<group>"; };
+		A9F34D0C1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextFieldWithFontAdapter.m; sourceTree = "<group>"; };
+		A9F34D0D1D47CCB7009490F5 /* MBTextViewWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTextViewWithFontAdapter.h; sourceTree = "<group>"; };
+		A9F34D0E1D47CCB7009490F5 /* MBTextViewWithFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextViewWithFontAdapter.m; sourceTree = "<group>"; };
+		A9F34D101D47CCB7009490F5 /* MBFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFontAdapter.h; sourceTree = "<group>"; };
+		A9F34D111D47CCB7009490F5 /* MBFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFontAdapter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +296,7 @@
 		A9D0B2A91D37CB850067B048 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				A9F34D051D47CCB7009490F5 /* MBFontAdapter */,
 				A9D0B2CE1D37CFF80067B048 /* Reachability */,
 				A9D0B2D71D37D7FA0067B048 /* DataHandlerTool.h */,
 				A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */,
@@ -398,6 +414,39 @@
 				A9D5E5E31D43D13000B87617 /* unchecked@2x.png */,
 			);
 			path = "06_Settings&About-us";
+			sourceTree = "<group>";
+		};
+		A9F34D051D47CCB7009490F5 /* MBFontAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				A9F34D061D47CCB7009490F5 /* control */,
+				A9F34D0F1D47CCB7009490F5 /* util */,
+			);
+			path = MBFontAdapter;
+			sourceTree = "<group>";
+		};
+		A9F34D061D47CCB7009490F5 /* control */ = {
+			isa = PBXGroup;
+			children = (
+				A9F34D071D47CCB7009490F5 /* MBButtonWithFontAdapter.h */,
+				A9F34D081D47CCB7009490F5 /* MBButtonWithFontAdapter.m */,
+				A9F34D091D47CCB7009490F5 /* MBLabelWithFontAdapter.h */,
+				A9F34D0A1D47CCB7009490F5 /* MBLabelWithFontAdapter.m */,
+				A9F34D0B1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.h */,
+				A9F34D0C1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m */,
+				A9F34D0D1D47CCB7009490F5 /* MBTextViewWithFontAdapter.h */,
+				A9F34D0E1D47CCB7009490F5 /* MBTextViewWithFontAdapter.m */,
+			);
+			path = control;
+			sourceTree = "<group>";
+		};
+		A9F34D0F1D47CCB7009490F5 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				A9F34D101D47CCB7009490F5 /* MBFontAdapter.h */,
+				A9F34D111D47CCB7009490F5 /* MBFontAdapter.m */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,11 +570,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A95A695C1D31DCDF00E06075 /* ViewController.m in Sources */,
+				A9F34D161D47CCB7009490F5 /* MBFontAdapter.m in Sources */,
 				A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */,
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
 				A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */,
 				A9D0B2D11D37CFF80067B048 /* Reachability.m in Sources */,
+				A9F34D151D47CCB7009490F5 /* MBTextViewWithFontAdapter.m in Sources */,
 				A9D0B2B91D37CC6A0067B048 /* CurrencyConverterViewController.m in Sources */,
+				A9F34D141D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m in Sources */,
+				A9F34D131D47CCB7009490F5 /* MBLabelWithFontAdapter.m in Sources */,
 				A9D0B2B61D37CC580067B048 /* ScientificCalViewController.m in Sources */,
 				A95A69561D31DCDF00E06075 /* main.m in Sources */,
 				A9653AC41D43026400AA559B /* MenuOffLineCell.m in Sources */,
@@ -533,6 +586,7 @@
 				A9653AC71D43027A00AA559B /* MenuOnLineCell.m in Sources */,
 				A9D0B2AD1D37CC0F0067B048 /* UnitConverterViewController.m in Sources */,
 				A9D5E6211D466F6300B87617 /* MenuSearchCell.m in Sources */,
+				A9F34D121D47CCB7009490F5 /* MBButtonWithFontAdapter.m in Sources */,
 				A9D0B2B01D37CC2A0067B048 /* StatisticsCalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
