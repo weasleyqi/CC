@@ -16,6 +16,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 设置navigation
+    // 背景图
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"top@2x.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    // title color
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
     // Override point for customization after application launch.
     return YES;
 }
