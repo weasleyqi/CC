@@ -142,13 +142,19 @@
             return cell;
             
         }else{
-            MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
-            NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row+1][@"name"]]];
-            NSRange contentRange = {0,[content length]};
-            [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
-            onlineCell.onLineLabel.attributedText = content;
-            
-            return onlineCell;
+            if ([_unpinedArray count] != 0) {
+                
+                MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
+                NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row+1][@"name"]]];
+                NSRange contentRange = {0,[content length]};
+                [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
+                onlineCell.onLineLabel.attributedText = content;
+                
+                return onlineCell;
+            }else{
+                MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
+                return onlineCell;
+            }
         }
     }else{
         MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
