@@ -15,6 +15,9 @@
 		A95A69641D31DCDF00E06075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95A69621D31DCDF00E06075 /* LaunchScreen.storyboard */; };
 		A9653AC41D43026400AA559B /* MenuOffLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9653AC31D43026400AA559B /* MenuOffLineCell.m */; };
 		A9653AC71D43027A00AA559B /* MenuOnLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9653AC61D43027A00AA559B /* MenuOnLineCell.m */; };
+		A99906751D5A43E8004ABFDA /* scheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99906731D5A43E8004ABFDA /* scheck@2x.png */; };
+		A99906761D5A43E8004ABFDA /* suncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99906741D5A43E8004ABFDA /* suncheck@2x.png */; };
+		A99906781D5A443D004ABFDA /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99906771D5A443D004ABFDA /* unchecked@2x.png */; };
 		A9D0B2AD1D37CC0F0067B048 /* UnitConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */; };
 		A9D0B2B01D37CC2A0067B048 /* StatisticsCalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2AF1D37CC2A0067B048 /* StatisticsCalViewController.m */; };
 		A9D0B2B31D37CC3E0067B048 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D0B2B21D37CC3E0067B048 /* SettingsViewController.m */; };
@@ -39,11 +42,9 @@
 		A9D5E5F11D43D13000B87617 /* black-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BD1D43D13000B87617 /* black-button@2x.png */; };
 		A9D5E5F21D43D13000B87617 /* button01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BE1D43D13000B87617 /* button01@2x.png */; };
 		A9D5E5F31D43D13000B87617 /* button02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5BF1D43D13000B87617 /* button02@2x.png */; };
-		A9D5E5F41D43D13000B87617 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C01D43D13000B87617 /* check@2x.png */; };
 		A9D5E5F51D43D13000B87617 /* input-box-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C11D43D13000B87617 /* input-box-@2x.png */; };
 		A9D5E5F61D43D13000B87617 /* red-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C21D43D13000B87617 /* red-button@2x.png */; };
 		A9D5E5F71D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C31D43D13000B87617 /* top@2x.png */; };
-		A9D5E5F81D43D13000B87617 /* uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C41D43D13000B87617 /* uncheck@2x.png */; };
 		A9D5E5F91D43D13000B87617 /* black-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C61D43D13000B87617 /* black-button@2x.png */; };
 		A9D5E5FA1D43D13000B87617 /* button01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C71D43D13000B87617 /* button01@2x.png */; };
 		A9D5E5FB1D43D13000B87617 /* button02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5C81D43D13000B87617 /* button02@2x.png */; };
@@ -70,7 +71,6 @@
 		A9D5E6101D43D13000B87617 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E01D43D13000B87617 /* check@2x.png */; };
 		A9D5E6111D43D13000B87617 /* right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E11D43D13000B87617 /* right@2x.png */; };
 		A9D5E6121D43D13000B87617 /* top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E21D43D13000B87617 /* top@2x.png */; };
-		A9D5E6131D43D13000B87617 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E5E31D43D13000B87617 /* unchecked@2x.png */; };
 		A9D5E61A1D465D9600B87617 /* pinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6181D465D9600B87617 /* pinText@2x.png */; };
 		A9D5E61B1D465D9600B87617 /* unpinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6191D465D9600B87617 /* unpinText@2x.png */; };
 		A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */; };
@@ -97,6 +97,9 @@
 		A9653AC31D43026400AA559B /* MenuOffLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOffLineCell.m; sourceTree = "<group>"; };
 		A9653AC51D43027A00AA559B /* MenuOnLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOnLineCell.h; sourceTree = "<group>"; };
 		A9653AC61D43027A00AA559B /* MenuOnLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOnLineCell.m; sourceTree = "<group>"; };
+		A99906731D5A43E8004ABFDA /* scheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scheck@2x.png"; sourceTree = "<group>"; };
+		A99906741D5A43E8004ABFDA /* suncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "suncheck@2x.png"; sourceTree = "<group>"; };
+		A99906771D5A443D004ABFDA /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
 		A9D0B2AB1D37CC0F0067B048 /* UnitConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitConverterViewController.h; sourceTree = "<group>"; };
 		A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitConverterViewController.m; sourceTree = "<group>"; };
 		A9D0B2AE1D37CC2A0067B048 /* StatisticsCalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsCalViewController.h; sourceTree = "<group>"; };
@@ -128,11 +131,9 @@
 		A9D5E5BD1D43D13000B87617 /* black-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-button@2x.png"; sourceTree = "<group>"; };
 		A9D5E5BE1D43D13000B87617 /* button01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button01@2x.png"; sourceTree = "<group>"; };
 		A9D5E5BF1D43D13000B87617 /* button02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button02@2x.png"; sourceTree = "<group>"; };
-		A9D5E5C01D43D13000B87617 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		A9D5E5C11D43D13000B87617 /* input-box-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input-box-@2x.png"; sourceTree = "<group>"; };
 		A9D5E5C21D43D13000B87617 /* red-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-button@2x.png"; sourceTree = "<group>"; };
 		A9D5E5C31D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
-		A9D5E5C41D43D13000B87617 /* uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uncheck@2x.png"; sourceTree = "<group>"; };
 		A9D5E5C61D43D13000B87617 /* black-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-button@2x.png"; sourceTree = "<group>"; };
 		A9D5E5C71D43D13000B87617 /* button01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button01@2x.png"; sourceTree = "<group>"; };
 		A9D5E5C81D43D13000B87617 /* button02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button02@2x.png"; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		A9D5E5E01D43D13000B87617 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		A9D5E5E11D43D13000B87617 /* right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right@2x.png"; sourceTree = "<group>"; };
 		A9D5E5E21D43D13000B87617 /* top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top@2x.png"; sourceTree = "<group>"; };
-		A9D5E5E31D43D13000B87617 /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
 		A9D5E6181D465D9600B87617 /* pinText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinText@2x.png"; sourceTree = "<group>"; };
 		A9D5E6191D465D9600B87617 /* unpinText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unpinText@2x.png"; sourceTree = "<group>"; };
 		A9D5E61C1D466C1700B87617 /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
@@ -348,15 +348,15 @@
 		A9D5E5BB1D43D13000B87617 /* 02_Scientific-Calcuator */ = {
 			isa = PBXGroup;
 			children = (
+				A99906731D5A43E8004ABFDA /* scheck@2x.png */,
+				A99906741D5A43E8004ABFDA /* suncheck@2x.png */,
 				A9D5E5BC1D43D13000B87617 /* back@2x.png */,
 				A9D5E5BD1D43D13000B87617 /* black-button@2x.png */,
 				A9D5E5BE1D43D13000B87617 /* button01@2x.png */,
 				A9D5E5BF1D43D13000B87617 /* button02@2x.png */,
-				A9D5E5C01D43D13000B87617 /* check@2x.png */,
 				A9D5E5C11D43D13000B87617 /* input-box-@2x.png */,
 				A9D5E5C21D43D13000B87617 /* red-button@2x.png */,
 				A9D5E5C31D43D13000B87617 /* top@2x.png */,
-				A9D5E5C41D43D13000B87617 /* uncheck@2x.png */,
 			);
 			path = "02_Scientific-Calcuator";
 			sourceTree = "<group>";
@@ -408,10 +408,10 @@
 		A9D5E5DF1D43D13000B87617 /* 06_Settings&About-us */ = {
 			isa = PBXGroup;
 			children = (
+				A99906771D5A443D004ABFDA /* unchecked@2x.png */,
 				A9D5E5E01D43D13000B87617 /* check@2x.png */,
 				A9D5E5E11D43D13000B87617 /* right@2x.png */,
 				A9D5E5E21D43D13000B87617 /* top@2x.png */,
-				A9D5E5E31D43D13000B87617 /* unchecked@2x.png */,
 			);
 			path = "06_Settings&About-us";
 			sourceTree = "<group>";
@@ -519,10 +519,10 @@
 				A9D5E6121D43D13000B87617 /* top@2x.png in Resources */,
 				A9D5E5F11D43D13000B87617 /* black-button@2x.png in Resources */,
 				A9D5E5FD1D43D13000B87617 /* input-box-@2x.png in Resources */,
-				A9D5E5F81D43D13000B87617 /* uncheck@2x.png in Resources */,
 				A9D5E5F71D43D13000B87617 /* top@2x.png in Resources */,
-				A9D5E6131D43D13000B87617 /* unchecked@2x.png in Resources */,
+				A99906751D5A43E8004ABFDA /* scheck@2x.png in Resources */,
 				A9D5E5ED1D43D13000B87617 /* top@2x.png in Resources */,
+				A99906781D5A443D004ABFDA /* unchecked@2x.png in Resources */,
 				A9D5E5EB1D43D13000B87617 /* sign@2x.png in Resources */,
 				A9D5E6111D43D13000B87617 /* right@2x.png in Resources */,
 				A9D5E5E91D43D13000B87617 /* search@2x.png in Resources */,
@@ -541,6 +541,7 @@
 				A95A695F1D31DCDF00E06075 /* Main.storyboard in Resources */,
 				A9D5E6071D43D13000B87617 /* black-button@2x.png in Resources */,
 				A9D5E6031D43D13000B87617 /* input-box@2x.png in Resources */,
+				A99906761D5A43E8004ABFDA /* suncheck@2x.png in Resources */,
 				A9D5E60A1D43D13000B87617 /* choose@2x.png in Resources */,
 				A9D5E5E51D43D13000B87617 /* pin@2x.png in Resources */,
 				A9D5E6001D43D13000B87617 /* black-button@2x.png in Resources */,
@@ -548,7 +549,6 @@
 				A9D5E5EC1D43D13000B87617 /* Statistics Calcuator@2x.png in Resources */,
 				A9D5E6051D43D13000B87617 /* red-button@2x.png in Resources */,
 				A9D5E5FB1D43D13000B87617 /* button02@2x.png in Resources */,
-				A9D5E5F41D43D13000B87617 /* check@2x.png in Resources */,
 				A9D5E60D1D43D13000B87617 /* red-button@2x.png in Resources */,
 				A9D5E5E61D43D13000B87617 /* right@2x.png in Resources */,
 				A9D5E6021D43D13000B87617 /* choose@2x.png in Resources */,
