@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A928704F1D5B8711004969F8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A928704E1D5B8711004969F8 /* AudioToolbox.framework */; };
 		A95A69561D31DCDF00E06075 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A95A69551D31DCDF00E06075 /* main.m */; };
 		A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A95A69581D31DCDF00E06075 /* AppDelegate.m */; };
 		A95A695C1D31DCDF00E06075 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95A695B1D31DCDF00E06075 /* ViewController.m */; };
@@ -83,6 +84,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A928704E1D5B8711004969F8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A95A69511D31DCDF00E06075 /* Calaulator_Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calaulator_Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95A69551D31DCDF00E06075 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A95A69571D31DCDF00E06075 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A928704F1D5B8711004969F8 /* AudioToolbox.framework in Frameworks */,
 				A9D0B2D31D37D04D0067B048 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +196,7 @@
 		A95A69481D31DCDF00E06075 = {
 			isa = PBXGroup;
 			children = (
+				A928704E1D5B8711004969F8 /* AudioToolbox.framework */,
 				A95A69531D31DCDF00E06075 /* Calaulator_Converter */,
 				A95A69521D31DCDF00E06075 /* Products */,
 			);

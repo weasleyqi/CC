@@ -1457,6 +1457,9 @@
                                 <state key="normal" title="1" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="click1:" destination="jFD-mf-EjL" eventType="touchUpInside" id="oYz-HY-eIa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKq-ua-W2k" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="541" width="62" height="41"/>

@@ -7,6 +7,9 @@
 //
 
 #import "UnitConverterViewController.h"
+#import "MBButtonWithFontAdapter.h"
+#import <AudioToolbox/AudioToolbox.h> //声音提示
+#define SOUNDID  1109
 
 @interface UnitConverterViewController ()
 
@@ -33,5 +36,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)click1:(id)sender {
+    AudioServicesPlaySystemSound(SOUNDID);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+}
 
 @end
