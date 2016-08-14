@@ -141,5 +141,20 @@
     
 }
 
+- (IBAction)advancedCalculate:(id)sender {
+    /*
+     sin 20
+     cos 21
+     tan 22
+     sin-1 23
+     cos-1 24
+     tan-1 25
+     */
+    //RAD 弧度 DEG角度
+    //1角度=（PI/180）弧度 sin计算的值是弧度，需要转换成角度
+    double hudu = (M_PI/180)*([showText.text doubleValue]);
+    showText.text = [NSString stringWithFormat:@"%f",sin(hudu)];
+
+}
 
 @end

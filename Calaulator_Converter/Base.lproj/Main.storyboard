@@ -271,21 +271,27 @@
                             <userLayoutGuide location="301" affinity="minX"/>
                         </userGuides>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-wF-qoQ" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="20" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-wF-qoQ" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="152" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Sin" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="eKx-Lw-EXV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozt-CW-RcX" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="23" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ozt-CW-RcX" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="192" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Sin⁻¹" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="SZx-t5-pDw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f89-pP-TQv" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="232" width="46" height="30"/>
@@ -359,24 +365,30 @@
                                     <action selector="basicCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="D8t-UR-896"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n02-Uz-e7N" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="21" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n02-Uz-e7N" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="71" y="152" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Cos" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="JLP-BR-JXV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w68-pZ-126" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="22" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w68-pZ-126" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="152" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Tan" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="rdc-4T-2Yz"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anY-ID-pMh">
-                                <rect key="frame" x="183" y="152" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Deg">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anY-ID-pMh">
+                                <rect key="frame" x="178" y="156" width="56" height="22"/>
+                                <inset key="contentEdgeInsets" minX="-3" minY="-6" maxX="0.0" maxY="-8"/>
+                                <state key="normal" title="Deg" image="unchecked.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -387,19 +399,25 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6i-SG-Wvu" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="24" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6i-SG-Wvu" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="71" y="192" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Cos⁻¹" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="iET-9U-uNV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hht-em-2NG" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="25" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hht-em-2NG" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="192" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Tan⁻¹" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="rUc-Mj-ewh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0K-uG-AaH" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="183" y="192" width="46" height="30"/>
