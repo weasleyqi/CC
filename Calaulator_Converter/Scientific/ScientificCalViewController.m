@@ -9,6 +9,12 @@
 #import "ScientificCalViewController.h"
 #import "Math.h"
 
+typedef enum {
+    Mode_RAD = 1,
+    Mode_DEG = 2
+    
+} CalculatorMode;
+
 @interface ScientificCalViewController ()
 @property (strong, nonatomic) NSString *tempStr;
 @property (strong, nonatomic) IBOutlet UILabel *showText;
@@ -16,6 +22,12 @@
 @property (nonatomic) NSNumber *cal;
 @property (strong, nonatomic) NSMutableString *num1;
 @property (strong, nonatomic) NSMutableString *num2;
+@property (weak, nonatomic) IBOutlet UIView *DEG_View;
+@property (weak, nonatomic) IBOutlet UIImageView *DEG_image;
+@property (weak, nonatomic) IBOutlet UIView *RAD_View;
+@property (weak, nonatomic) IBOutlet UIImageView *RAD_image;
+@property (assign) CalculatorMode calculateMode;
+
 @end
 
 @implementation ScientificCalViewController
@@ -25,7 +37,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     tempStr = @"";
-    // Do any additional setup after loading the view.
+    _DEG_View.userInteractionEnabled = YES;
+    _RAD_View.userInteractionEnabled = YES;
+    _DEG_View.tag = 9001;
+    _RAD_View.tag = 9002;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeRadAndDeg:)];
+    UITapGestureRecognizer *tapGesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeRadAndDeg:)];
+    [_DEG_View addGestureRecognizer:tapGesture];
+    [_RAD_View addGestureRecognizer:tapGesture2];
+    
+    _calculateMode = Mode_DEG;
+}
+
+- (void)changeRadAndDeg:(UITapGestureRecognizer *)sender {
+    if (sender.view.tag == 9001) {
+        _DEG_image.image = [UIImage imageNamed:@"scheck@2x.png"];
+        _RAD_image.image = [UIImage imageNamed:@"suncheck@2x.png"];
+        _calculateMode = Mode_DEG;
+    }else {
+        _DEG_image.image = [UIImage imageNamed:@"suncheck@2x.png"];
+        _RAD_image.image = [UIImage imageNamed:@"scheck@2x.png"];
+        _calculateMode = Mode_RAD;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,6 +110,16 @@
     if(0 == _count) {//如果是第一次输入
         _cal = [NSNumber numberWithLong:[sender tag]];
         self.num1 = [NSMutableString stringWithFormat:@"%@",showText.text];
+//        switch ([_cal intValue]) {
+//            case 111://x的3次方
+//                showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 3)];
+//                break;
+//            case 112://x的2次方
+//                showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 2)];
+//                
+//            default:
+//                break;
+//        }
     } else{ //不是第一次输入，则计算
         self.num2 = [NSMutableString stringWithFormat:@"%@", showText.text];
         int calculate = [_cal intValue];
@@ -92,6 +135,9 @@
                 break;
             case 15://将除后的结果显示
                 showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] / [self.num2 doubleValue])];
+                break;
+            case 110://x的y次幂
+                showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], [self.num2 doubleValue])];
                 break;
             default:
                 break;
@@ -149,12 +195,59 @@
      sin-1 23
      cos-1 24
      tan-1 25
+     pi 26
+     e 27
      */
     //RAD 弧度 DEG角度
     //1角度=（PI/180）弧度 sin计算的值是弧度，需要转换成角度
-    double hudu = (M_PI/180)*([showText.text doubleValue]);
-    showText.text = [NSString stringWithFormat:@"%f",sin(hudu)];
-
+    double calculateValue = [showText.text doubleValue];
+    tempStr = @"0";
+    if (_calculateMode == Mode_DEG) {
+        calculateValue = (M_PI/180)*([showText.text doubleValue]);
+    }
+    switch ([sender tag]) {
+        case 20:
+            showText.text = [NSString stringWithFormat:@"%f",sin(calculateValue)];
+            break;
+        case 21:
+            showText.text = [NSString stringWithFormat:@"%f",cos(calculateValue)];
+            break;
+        case 22:
+            showText.text = [NSString stringWithFormat:@"%f",tan(calculateValue)];
+            break;
+        case 23:
+            showText.text = [NSString stringWithFormat:@"%f",asin(calculateValue)];
+            break;
+        case 24:
+            showText.text = [NSString stringWithFormat:@"%f",acos(calculateValue)];
+            break;
+        case 25:
+            showText.text = [NSString stringWithFormat:@"%f",atan(calculateValue)];
+            break;
+        case 26://pi
+            showText.text = [NSString stringWithFormat:@"%f",M_PI];
+            break;
+        case 27://e
+            showText.text = [NSString stringWithFormat:@"%f",M_E];
+            break;
+        case 111://x的3次方
+            showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 3)];
+            break;
+        case 112://x的2次方
+            showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 2)];
+            break;
+        case 210://e x
+            showText.text =[NSString stringWithFormat:@"%lf",pow(M_E, [showText.text doubleValue])];
+            break;
+        case 211://10 x
+            showText.text =[NSString stringWithFormat:@"%lf",pow(10, [showText.text doubleValue])];
+            break;
+        case 212:
+            
+            break;
+        default:
+            break;
+    }
 }
 
 @end
