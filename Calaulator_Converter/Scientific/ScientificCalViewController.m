@@ -28,6 +28,11 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIImageView *RAD_image;
 @property (assign) CalculatorMode calculateMode;
 
+
+@property (nonatomic) double mp1;//M+
+@property (nonatomic) double mp2;//m+
+@property (nonatomic) double mm1;//M-
+@property (nonatomic) double mm2;//M-
 @end
 
 @implementation ScientificCalViewController
@@ -47,6 +52,11 @@ typedef enum {
     [_RAD_View addGestureRecognizer:tapGesture2];
     
     _calculateMode = Mode_DEG;
+    
+    _mp1 = 0.00;
+    _mp2 = 0.00;
+    _mm1 = 0.00;
+    _mm2 = 0.00;
 }
 
 - (void)changeRadAndDeg:(UITapGestureRecognizer *)sender {
@@ -138,6 +148,9 @@ typedef enum {
                 break;
             case 110://x的y次幂
                 showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], [self.num2 doubleValue])];
+                break;
+            case 213:
+                showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 1.0 / [self.num2 doubleValue])];
                 break;
             default:
                 break;
@@ -243,11 +256,111 @@ typedef enum {
             showText.text =[NSString stringWithFormat:@"%lf",pow(10, [showText.text doubleValue])];
             break;
         case 212:
-            
+            showText.text =[NSString stringWithFormat:@"%lf",sqrt([showText.text doubleValue])];
+            break;
+        case 214://开3次方
+            showText.text =[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 1.0/3)];
+            break;
+        case 215://in
+            showText.text = [NSString stringWithFormat:@"%lf",log10([showText.text doubleValue]) / log10(M_E)];
+            break;
+        case 216://log10
+            showText.text = [NSString stringWithFormat:@"%lf",log10([showText.text doubleValue])];
+            break;
+        case 217://1/x
+            showText.text = [NSString stringWithFormat:@"%lf",1/ [showText.text doubleValue]];
+            break;
+        case 218://n!
+            showText.text = [NSString stringWithFormat:@"%ld",[self fac]];
+            break;
+        case 219:
+            showText.text = [NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])];
+            break;
+        case 220:
+            showText.text = [NSString stringWithFormat:@"%lf",(double)(arc4random()%10000) /10000];
+            break;
+        case 221://M+
+            if (_mp1 == 0.00) {
+                _mp1 = _mp1 + [showText.text doubleValue];
+            }else {
+                _mp2 = _mp2 + [showText.text doubleValue];
+            }
+            break;
+        case 222://M-
+            if (_mm1 == 0.00) {
+                _mm1 = _mm1 - [showText.text doubleValue];
+            }else {
+                _mm2 = _mm2 - [showText.text doubleValue];
+            }
+            break;
+        case 223://MR
+            if (_mp1 != 0.00 & _mp2 != 0.00) {
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mp2)];
+                _mp1 = 0.00;
+                _mp2 = 0.00;
+                _mm1 = 0.00;
+                _mm2 = 0.00;
+            }else if(_mp1 != 0.00 & _mm1 != 0.00) {
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mm1)];
+                _mp1 = 0.00;
+                _mp2 = 0.00;
+                _mm1 = 0.00;
+                _mm2 = 0.00;
+            }else if(_mp1 != 0.00 & _mm2 != 0.00) {
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mm2)];
+                _mp1 = 0.00;
+                _mp2 = 0.00;
+                _mm1 = 0.00;
+                _mm2 = 0.00;
+            }else if(_mp2 != 0.00 & _mm1 != 0.00) {
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp2 + _mm1)];
+                _mp1 = 0.00;
+                _mp2 = 0.00;
+                _mm1 = 0.00;
+                _mm2 = 0.00;
+            }else if(_mp2 != 0.00 & _mm2 != 0.00) {
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp2 + _mm2)];
+                _mp1 = 0.00;
+                _mp2 = 0.00;
+                _mm1 = 0.00;
+                _mm2 = 0.00;
+            }else if(_mm1 != 0.00 & _mm2 != 0.00) {
+                showText.text = [NSString stringWithFormat:@"%lf",(_mm1 + _mm2)];
+                _mp1 = 0.00;
+                _mp2 = 0.00;
+                _mm1 = 0.00;
+                _mm2 = 0.00;
+            }
+            break;
+        case 224://MC
+            _mp1 = 0.00;
+            _mp2 = 0.00;
+            _mm1 = 0.00;
+            _mm2 = 0.00;
+            showText.text = @"0";
             break;
         default:
             break;
     }
+}
+
+- (long)fac {
+    long v = 1;
+    int a = [showText.text intValue];
+    if (a != [showText.text doubleValue]) {
+        
+    }else {
+        if (a < 0) {
+            v =0;
+        }else if (a ==0 || a==1) {
+            v = 1;
+        }else {
+            for (int b = 1 ; b <= a; b ++) {
+                v = v*b;
+            }
+        }
+    }
+    return v;
 }
 
 @end

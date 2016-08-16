@@ -304,12 +304,15 @@
                                     <action selector="basicCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="Uff-3k-naz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-Lu-5Cp" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="213" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-Lu-5Cp" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="272" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="ʸ√x" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="basicCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="aw6-10-EtE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nS-IC-7fv" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="314" width="46" height="30"/>
@@ -438,12 +441,15 @@
                                     <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="whZ-Yg-pHI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYK-dQ-qi4" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="214" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYK-dQ-qi4" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="71" y="272" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="∛x" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="qcA-i6-PNi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1N-u9-2y8" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="71" y="314" width="46" height="30"/>
@@ -492,26 +498,35 @@
                                     <action selector="pressNumbers:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="hqE-Ne-Jdg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-iW-PY8" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="220" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xs-iW-PY8" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="71" y="513" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="RND" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="AHP-RF-yVg"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpw-ao-FZy" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="212" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpw-ao-FZy" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="272" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="√x" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="Ek0-0c-5uL"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrW-3b-TOC" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="217" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrW-3b-TOC" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="314" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="1/x" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="gQd-hs-7OP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGe-nG-hsH" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="354" width="46" height="30"/>
@@ -543,12 +558,15 @@
                                     <action selector="pressNumbers:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="AVF-C2-ZMk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQV-Z6-TZb" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="219" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQV-Z6-TZb" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="473" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="EXP" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="oAF-x0-JNk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="18" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8M-lQ-zoP" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="513" width="46" height="30"/>
@@ -570,12 +588,15 @@
                                     <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="qg6-IL-ICX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejQ-Me-d42" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="215" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejQ-Me-d42" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="183" y="272" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="In" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="S6t-0m-avM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="17" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzi-4Q-2B5" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="183" y="314" width="46" height="30"/>
@@ -637,19 +658,25 @@
                                     <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="Dzm-k0-yPx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myu-wo-tmA" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="216" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myu-wo-tmA" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="272" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Log" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="vl8-fM-1JV"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDQ-xe-u1x" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="218" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDQ-xe-u1x" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="314" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="n!" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="gll-fI-3TG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0S2-Ha-EVc" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="354" width="46" height="30"/>
@@ -658,33 +685,45 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bq0-e7-wsH" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="221" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bq0-e7-wsH" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="394" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="M+" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="6qa-Bb-AxJ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7U-I6-TAq" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="222" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7U-I6-TAq" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="432" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="M-" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="OgT-nC-e9W"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7b-l2-bmv" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="223" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7b-l2-bmv" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="473" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="MR" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="sVF-sI-iYj"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3P-OU-V3r" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="224" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i3P-OU-V3r" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="513" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="MC" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="OEX-6p-z3e"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqo-3R-Xa7">
                                 <rect key="frame" x="15" y="79" width="570" height="58"/>
