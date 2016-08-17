@@ -76,6 +76,8 @@
 		A9D5E61B1D465D9600B87617 /* unpinText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9D5E6191D465D9600B87617 /* unpinText@2x.png */; };
 		A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */; };
 		A9D5E6211D466F6300B87617 /* MenuSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E6201D466F6300B87617 /* MenuSearchCell.m */; };
+		A9DDBC5A1D64C2FF009D30E3 /* AddedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DDBC591D64C2FF009D30E3 /* AddedView.m */; };
+		A9DDBC5C1D64C30E009D30E3 /* AddedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DDBC5B1D64C30E009D30E3 /* AddedView.xib */; };
 		A9F34D121D47CCB7009490F5 /* MBButtonWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D081D47CCB7009490F5 /* MBButtonWithFontAdapter.m */; };
 		A9F34D131D47CCB7009490F5 /* MBLabelWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0A1D47CCB7009490F5 /* MBLabelWithFontAdapter.m */; };
 		A9F34D141D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0C1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m */; };
@@ -168,6 +170,9 @@
 		A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
 		A9D5E61F1D466F6300B87617 /* MenuSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSearchCell.h; sourceTree = "<group>"; };
 		A9D5E6201D466F6300B87617 /* MenuSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSearchCell.m; sourceTree = "<group>"; };
+		A9DDBC581D64C2FF009D30E3 /* AddedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddedView.h; path = ../Scientific/AddedView.h; sourceTree = "<group>"; };
+		A9DDBC591D64C2FF009D30E3 /* AddedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddedView.m; path = ../Scientific/AddedView.m; sourceTree = "<group>"; };
+		A9DDBC5B1D64C30E009D30E3 /* AddedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddedView.xib; path = ../Scientific/AddedView.xib; sourceTree = "<group>"; };
 		A9F34D071D47CCB7009490F5 /* MBButtonWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButtonWithFontAdapter.h; sourceTree = "<group>"; };
 		A9F34D081D47CCB7009490F5 /* MBButtonWithFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButtonWithFontAdapter.m; sourceTree = "<group>"; };
 		A9F34D091D47CCB7009490F5 /* MBLabelWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLabelWithFontAdapter.h; sourceTree = "<group>"; };
@@ -293,6 +298,9 @@
 			children = (
 				A9D0B2AE1D37CC2A0067B048 /* StatisticsCalViewController.h */,
 				A9D0B2AF1D37CC2A0067B048 /* StatisticsCalViewController.m */,
+				A9DDBC581D64C2FF009D30E3 /* AddedView.h */,
+				A9DDBC591D64C2FF009D30E3 /* AddedView.m */,
+				A9DDBC5B1D64C30E009D30E3 /* AddedView.xib */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -535,6 +543,7 @@
 				A9D5E5F31D43D13000B87617 /* button02@2x.png in Resources */,
 				A9D5E61A1D465D9600B87617 /* pinText@2x.png in Resources */,
 				A9D5E6041D43D13000B87617 /* line@2x.png in Resources */,
+				A9DDBC5C1D64C30E009D30E3 /* AddedView.xib in Resources */,
 				A9D5E5F61D43D13000B87617 /* red-button@2x.png in Resources */,
 				A95A69611D31DCDF00E06075 /* Assets.xcassets in Resources */,
 				A9D5E6101D43D13000B87617 /* check@2x.png in Resources */,
@@ -584,6 +593,7 @@
 				A9F34D141D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m in Sources */,
 				A9F34D131D47CCB7009490F5 /* MBLabelWithFontAdapter.m in Sources */,
 				A9D0B2B61D37CC580067B048 /* ScientificCalViewController.m in Sources */,
+				A9DDBC5A1D64C2FF009D30E3 /* AddedView.m in Sources */,
 				A95A69561D31DCDF00E06075 /* main.m in Sources */,
 				A9653AC41D43026400AA559B /* MenuOffLineCell.m in Sources */,
 				A9D0B2B31D37CC3E0067B048 /* SettingsViewController.m in Sources */,
