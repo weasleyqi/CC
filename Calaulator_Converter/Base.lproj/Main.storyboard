@@ -1164,11 +1164,14 @@
                                     <action selector="inputNum:" destination="nsA-FL-gk6" eventType="touchUpInside" id="J5g-NJ-j6I"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE5-yp-m9F" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="201" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zE5-yp-m9F" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="11" y="560" width="46" height="30"/>
                                 <state key="normal" title="CAD" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculate:" destination="nsA-FL-gk6" eventType="touchUpInside" id="XIi-eW-Cj9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cW1-uN-XpU" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="71" y="406" width="46" height="30"/>
@@ -1188,18 +1191,10 @@
                                     <action selector="inputNum:" destination="nsA-FL-gk6" eventType="touchUpInside" id="bLP-WX-34E"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="100" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk2-Lh-PFj" customClass="MBButtonWithFontAdapter">
-                                <rect key="frame" x="183" y="406" width="46" height="30"/>
-                                <state key="normal" title="X¯" backgroundImage="button02.png">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="calculate:" destination="nsA-FL-gk6" eventType="touchUpInside" id="sgo-48-7t6"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="101" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlp-Zt-Txq" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="406" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="x²" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1226,7 +1221,8 @@
                             </button>
                             <button opaque="NO" tag="102" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sud-Gm-Ekj" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="183" y="446" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="∑x" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1235,7 +1231,8 @@
                             </button>
                             <button opaque="NO" tag="103" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-kZ-cng" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="446" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="∑x²" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1262,7 +1259,8 @@
                             </button>
                             <button opaque="NO" tag="104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56t-TG-TSA" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="183" y="484" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="σ" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1271,7 +1269,8 @@
                             </button>
                             <button opaque="NO" tag="105" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCC-Hf-5hm" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="484" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="σ²" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1287,15 +1286,19 @@
                                     <action selector="inputNum:" destination="nsA-FL-gk6" eventType="touchUpInside" id="XVJ-PG-lfT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="139-Hb-YCx" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="202" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="139-Hb-YCx" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="127" y="522" width="46" height="30"/>
                                 <state key="normal" title="EXP" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculate:" destination="nsA-FL-gk6" eventType="touchUpInside" id="oOm-mw-2Kp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="106" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXq-5b-tyQ" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="183" y="522" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="S" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1313,7 +1316,8 @@
                             </button>
                             <button opaque="NO" tag="108" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6x-kU-RQu" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="183" y="560" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="±" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1322,7 +1326,8 @@
                             </button>
                             <button opaque="NO" tag="109" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTR-LM-fkk" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="560" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="GM" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1337,11 +1342,22 @@
                             </button>
                             <button opaque="NO" tag="107" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gs-yj-Txu" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="522" width="46" height="30"/>
-                                <state key="normal" title="Button" backgroundImage="button02.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="S²" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="calculate:" destination="nsA-FL-gk6" eventType="touchUpInside" id="ykQ-VM-mQV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk2-Lh-PFj" customClass="MBButtonWithFontAdapter">
+                                <rect key="frame" x="183" y="406" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="x" backgroundImage="button02.png">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculate:" destination="nsA-FL-gk6" eventType="touchUpInside" id="sgo-48-7t6"/>
                                 </connections>
                             </button>
                         </subviews>

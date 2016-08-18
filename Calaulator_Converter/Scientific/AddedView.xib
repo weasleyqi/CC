@@ -21,7 +21,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-Cy-y8M">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8T-Cy-y8M">
                     <rect key="frame" x="26" y="8" width="124" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="yuJ-0O-Kgb"/>
@@ -46,6 +46,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6BW-r4-bfo" secondAttribute="bottom" id="3vX-H9-03a"/>
                 <constraint firstAttribute="trailing" secondItem="6BW-r4-bfo" secondAttribute="trailing" id="Jp4-Jb-vba"/>
+                <constraint firstItem="g8T-Cy-y8M" firstAttribute="leading" secondItem="RNC-XD-KNS" secondAttribute="trailing" constant="8" id="LQ0-aZ-OCu"/>
                 <constraint firstItem="6BW-r4-bfo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LUZ-Ze-viz"/>
                 <constraint firstItem="g8T-Cy-y8M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="cCa-no-MeY"/>
                 <constraint firstItem="RNC-XD-KNS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="iV7-26-Gi4"/>

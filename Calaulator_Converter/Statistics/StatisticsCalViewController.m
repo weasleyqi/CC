@@ -124,34 +124,123 @@
                 showText.text = [NSString stringWithFormat:@"%f",sum / [_addedNumArr count]];
             }
             break;
-        case 101:
+        case 101://x2 average
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue] * [obj doubleValue];
+                }];
+                showText.text = [NSString stringWithFormat:@"%f",sum / [_addedNumArr count]];
+            }
+            break;
+        case 102://x求和
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue];
+                }];
+                showText.text = [NSString stringWithFormat:@"%f",sum];
+            }
+            break;
+        case 103://x2 求和
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue] * [obj doubleValue];
+                }];
+                showText.text = [NSString stringWithFormat:@"%f",sum];
+            }
+            break;
+        case 104://标准差
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue];
+                }];
+                double average = sum / [_addedNumArr count];
+                sum = 0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
+                }];
+                
+                double std = sqrt(sum/[_addedNumArr count]);
+                showText.text = [NSString stringWithFormat:@"%f",std];
+            }
+            break;
+        case 105://方差
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue];
+                }];
+                double average = sum / [_addedNumArr count];
+                sum = 0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
+                }];
+                
+                showText.text = [NSString stringWithFormat:@"%f",sum/[_addedNumArr count]];
+            }
+            break;
+        case 106://样本标准差
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue];
+                }];
+                double average = sum / [_addedNumArr count];
+                sum = 0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
+                }];
+                double std = sqrt(sum/([_addedNumArr count]-1));
+                showText.text = [NSString stringWithFormat:@"%f",std];
+            }
             
             break;
-        case 102:
-            
+        case 107://方差
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue];
+                }];
+                double average = sum / [_addedNumArr count];
+                sum = 0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
+                }];
+                
+                showText.text = [NSString stringWithFormat:@"%f",sum/([_addedNumArr count]-1)];
+            }
             break;
-        case 103:
-            
-            break;
-        case 104:
-            
-            break;
-        case 105:
-            
-            break;
-        case 106:
-            
-            break;
-        case 107:
-            
-            break;
-        case 108:
-            
-            break;
-        case 109:
-            
+        case 108://正负
+            showText.text = [NSString stringWithFormat:@"%f",[showText.text doubleValue]* -1 ];
+            tempStr = showText.text;
             break;
             
+        case 109://GM几何平均
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 1.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum * [obj doubleValue];
+                }];
+                showText.text =[NSString stringWithFormat:@"%lf",pow(sum , 1.0/[_addedNumArr count])];
+            }
+            break;
+            
+        case 201://cad
+            [[_scrollView subviews] enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [(AddedView*)obj removeFromSuperview];
+            }];
+            [_addedNumArr removeAllObjects];
+            [_addedarr removeAllObjects];
+            showText.text = @"0";
+            tempStr = @"0";
+            break;
+            
+        case 202://exp
+            showText.text = [NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])];
+            break;
             
         default:
             break;
