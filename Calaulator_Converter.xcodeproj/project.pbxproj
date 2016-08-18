@@ -83,6 +83,8 @@
 		A9F34D141D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0C1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m */; };
 		A9F34D151D47CCB7009490F5 /* MBTextViewWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0E1D47CCB7009490F5 /* MBTextViewWithFontAdapter.m */; };
 		A9F34D161D47CCB7009490F5 /* MBFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D111D47CCB7009490F5 /* MBFontAdapter.m */; };
+		A9F7D9851D65F0B1008F9E00 /* UnitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D9841D65F0B1008F9E00 /* UnitCell.m */; };
+		A9F7D9871D65F0BF008F9E00 /* UnitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9F7D9861D65F0BF008F9E00 /* UnitCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +185,9 @@
 		A9F34D0E1D47CCB7009490F5 /* MBTextViewWithFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTextViewWithFontAdapter.m; sourceTree = "<group>"; };
 		A9F34D101D47CCB7009490F5 /* MBFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBFontAdapter.h; sourceTree = "<group>"; };
 		A9F34D111D47CCB7009490F5 /* MBFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBFontAdapter.m; sourceTree = "<group>"; };
+		A9F7D9831D65F0B1008F9E00 /* UnitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCell.h; sourceTree = "<group>"; };
+		A9F7D9841D65F0B1008F9E00 /* UnitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitCell.m; sourceTree = "<group>"; };
+		A9F7D9861D65F0BF008F9E00 /* UnitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnitCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +328,9 @@
 			children = (
 				A9D0B2AB1D37CC0F0067B048 /* UnitConverterViewController.h */,
 				A9D0B2AC1D37CC0F0067B048 /* UnitConverterViewController.m */,
+				A9F7D9831D65F0B1008F9E00 /* UnitCell.h */,
+				A9F7D9841D65F0B1008F9E00 /* UnitCell.m */,
+				A9F7D9861D65F0BF008F9E00 /* UnitCell.xib */,
 			);
 			path = "Unit Converter";
 			sourceTree = "<group>";
@@ -568,6 +576,7 @@
 				A9D5E5E71D43D13000B87617 /* Scientific Calcuator@2x.png in Resources */,
 				A9D5E60F1D43D13000B87617 /* top@2x.png in Resources */,
 				A9D5E61B1D465D9600B87617 /* unpinText@2x.png in Resources */,
+				A9F7D9871D65F0BF008F9E00 /* UnitCell.xib in Resources */,
 				A9D5E5EE1D43D13000B87617 /* Unit-Converter@2x.png in Resources */,
 				A9D5E5FF1D43D13000B87617 /* top@2x.png in Resources */,
 				A9D5E5F21D43D13000B87617 /* button01@2x.png in Resources */,
@@ -584,6 +593,7 @@
 			files = (
 				A95A695C1D31DCDF00E06075 /* ViewController.m in Sources */,
 				A9F34D161D47CCB7009490F5 /* MBFontAdapter.m in Sources */,
+				A9F7D9851D65F0B1008F9E00 /* UnitCell.m in Sources */,
 				A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */,
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
 				A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */,

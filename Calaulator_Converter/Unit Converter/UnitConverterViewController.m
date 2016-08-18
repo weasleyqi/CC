@@ -9,16 +9,27 @@
 #import "UnitConverterViewController.h"
 #import "MBButtonWithFontAdapter.h"
 #import <AudioToolbox/AudioToolbox.h> //声音提示
+#import "UnitCell.h"
 #define SOUNDID  1109
 
 @interface UnitConverterViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *unitScrollView;
+@property (weak, nonatomic) IBOutlet UnitCell *sbUnitCell;
 
+@property (strong, nonatomic) NSArray *unitTitleArr;
 @end
 
 @implementation UnitConverterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _unitTitleArr = @[@"Length",@"Temp.",@"Area",@"Volume",@"Weight"];
+    UnitCell *cell = [[NSBundle mainBundle] loadNibNamed:@"UnitCell" owner:self options:nil][0];
+    [_unitTitleArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        cell.title.text = _unitTitleArr[idx];
+        cell.tag = idx;
+    }];
+    [_unitScrollView addSubview:cell];
     // Do any additional setup after loading the view.
 }
 

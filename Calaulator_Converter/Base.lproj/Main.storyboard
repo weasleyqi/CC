@@ -1837,8 +1837,20 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80C-Gt-uPq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80C-Gt-uPq">
                                 <rect key="frame" x="-4" y="64" width="383" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-ix-Jm4" customClass="UnitCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gbj-ix-Jm4" firstAttribute="leading" secondItem="80C-Gt-uPq" secondAttribute="leading" id="8CM-Gr-amB"/>
+                                    <constraint firstItem="gbj-ix-Jm4" firstAttribute="top" secondItem="80C-Gt-uPq" secondAttribute="top" id="9Lz-jC-N2j"/>
+                                    <constraint firstItem="gbj-ix-Jm4" firstAttribute="width" secondItem="80C-Gt-uPq" secondAttribute="width" multiplier="50:375" id="LJU-jB-cl2"/>
+                                    <constraint firstAttribute="bottom" secondItem="gbj-ix-Jm4" secondAttribute="bottom" id="iPc-bX-FYd"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94509803921568625" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
@@ -1943,10 +1955,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Unit Converter" id="ssD-aC-EFh"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="sbUnitCell" destination="gbj-ix-Jm4" id="Pn9-bk-d5w"/>
+                        <outlet property="unitScrollView" destination="80C-Gt-uPq" id="b6H-qc-KD8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRi-Q4-Prf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2088.5" y="298.5"/>
+            <point key="canvasLocation" x="2062.5" y="323.5"/>
         </scene>
         <!--Currency Converter-->
         <scene sceneID="BNC-n2-1wU">
