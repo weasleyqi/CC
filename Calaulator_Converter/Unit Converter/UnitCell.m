@@ -9,13 +9,10 @@
 #import "UnitCell.h"
 
 @implementation UnitCell
+@synthesize delegate;
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (IBAction)unitSelect:(id)sender {
+    [delegate unitSelect:self.tag];
 }
-*/
 
 @end

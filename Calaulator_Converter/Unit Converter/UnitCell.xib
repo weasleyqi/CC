@@ -18,9 +18,15 @@
                     <color key="textColor" red="0.58039215686274515" green="0.63137254901960782" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-q5-6oh">
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line.png" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-q5-6oh">
                     <rect key="frame" x="0.0" y="47" width="75" height="3"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ez-eh-wdy">
+                    <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                    <connections>
+                        <action selector="unitSelect:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Ab-Bc-k15"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -35,7 +41,9 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bottomLine" destination="JH8-q5-6oh" id="GVo-AM-iI4"/>
                 <outlet property="title" destination="1GQ-aM-7EZ" id="pKY-lJ-cO0"/>
+                <outlet property="title1" destination="1GQ-aM-7EZ" id="p9T-cm-lg1"/>
             </connections>
             <point key="canvasLocation" x="281.5" y="343"/>
         </view>

@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBLabelWithFontAdapter.h"
+
+@protocol UnitSelecteDelegate <NSObject>
+
+- (void)unitSelect:(NSInteger)tag;
+
+@end
 
 @interface UnitCell : UIView
 @property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UIImageView *bottomLine;
+@property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *title1;
 
+@property (weak, nonatomic) NSObject <UnitSelecteDelegate>*delegate;
 @end

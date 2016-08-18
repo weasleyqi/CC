@@ -18,9 +18,6 @@
     // Drawing code
 }
 */
-//- (void)deletenum:(NSInteger)tag {
-//    [_delegate deletenum:self.tag];
-//}
 
 - (IBAction)deletea:(id)sender {
     [delegate deletenum:self.tag];

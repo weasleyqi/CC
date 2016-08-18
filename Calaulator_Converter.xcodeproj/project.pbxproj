@@ -188,6 +188,7 @@
 		A9F7D9831D65F0B1008F9E00 /* UnitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitCell.h; sourceTree = "<group>"; };
 		A9F7D9841D65F0B1008F9E00 /* UnitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnitCell.m; sourceTree = "<group>"; };
 		A9F7D9861D65F0BF008F9E00 /* UnitCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnitCell.xib; sourceTree = "<group>"; };
+		A9F7D9881D661ACB008F9E00 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +255,7 @@
 				A95A69601D31DCDF00E06075 /* Assets.xcassets */,
 				A95A69651D31DCDF00E06075 /* Info.plist */,
 				A95A69551D31DCDF00E06075 /* main.m */,
+				A9F7D9881D661ACB008F9E00 /* Constant.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
