@@ -12,15 +12,22 @@
 @interface StatisticsCalViewController ()<DeleteNumDelegate>
 @property (weak, nonatomic) IBOutlet AddedView *addedView;
 @property (strong, nonatomic) NSMutableArray *addedarr;
+@property (strong, nonatomic) NSMutableArray *addedNumArr;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
+@property (strong, nonatomic) NSString *tempStr;
+@property (weak, nonatomic) IBOutlet UILabel *showText;
 @end
 
 @implementation StatisticsCalViewController
+@synthesize tempStr;
+@synthesize showText;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    tempStr = @"";
     _addedarr = [NSMutableArray new];
+    _addedNumArr = [NSMutableArray new];
     // Do any additional setup after loading the view.
 }
 
@@ -43,6 +50,8 @@
     _addedView = [[NSBundle mainBundle]loadNibNamed:@"AddedView" owner:self options:nil][0];
     _addedView.frame = CGRectMake(x, y, _addedView.frame.size.width, 40);
     _addedView.tag = [_addedarr count];
+    [_addedNumArr addObject:[NSNumber numberWithDouble:[showText.text doubleValue]]];
+    _addedView.labelNum.text = showText.text;
     _addedView.delegate = self;
     [_scrollView addSubview:_addedView];
     [_addedarr addObject:[NSString stringWithFormat:@"%ld",_addedView.tag]];
@@ -52,13 +61,15 @@
         _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width, count/2*40);
     }
     _countLabel.text = [NSString stringWithFormat:@"Count=%lu",(unsigned long)[_addedarr count]];
+    showText.text = @"0";
+    tempStr = @"0";
 }
 
 - (void)deletenum:(NSInteger)tag {
     [_addedarr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj intValue] == tag) {
             [_addedarr removeObjectAtIndex:idx];
-            
+            [_addedNumArr removeObjectAtIndex:idx];
         }
     }];
     [self refreshscrollview];
@@ -87,6 +98,7 @@
         _addedView = [[NSBundle mainBundle]loadNibNamed:@"AddedView" owner:self options:nil][0];
         _addedView.frame = CGRectMake(x, y, _addedView.frame.size.width, 40);
         _addedView.tag = [tmp count];
+        _addedView.labelNum.text = [NSString stringWithFormat:@"%@",_addedNumArr[count] ];
         _addedView.delegate = self;
         [_scrollView addSubview:_addedView];
         [tmp addObject:[NSString stringWithFormat:@"%ld",_addedView.tag]];
@@ -98,17 +110,83 @@
     }];
     _addedarr = tmp;
     
-    
     _countLabel.text = [NSString stringWithFormat:@"Count=%lu",(unsigned long)[_addedarr count]];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)calculate:(UIButton *)sender {
+    switch (sender.tag) {
+        case 100://x average
+            if ([_addedNumArr count] > 0) {
+                __block double sum = 0.0;
+                [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    sum = sum + [obj doubleValue];
+                }];
+                showText.text = [NSString stringWithFormat:@"%f",sum / [_addedNumArr count]];
+            }
+            break;
+        case 101:
+            
+            break;
+        case 102:
+            
+            break;
+        case 103:
+            
+            break;
+        case 104:
+            
+            break;
+        case 105:
+            
+            break;
+        case 106:
+            
+            break;
+        case 107:
+            
+            break;
+        case 108:
+            
+            break;
+        case 109:
+            
+            break;
+            
+            
+        default:
+            break;
+    }
 }
-*/
+
+- (IBAction)inputNum:(UIButton *)sender {
+    if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
+        tempStr = @"";
+    } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
+        //如果是以0开头，但是不是以0.开头，则直接返回
+        return;
+    }
+    
+    //处理小数点的问题
+    //如果小数点是第一输入的数字
+    if ([sender tag] == 10 && tempStr.length == 0) {
+        tempStr = @"0";
+    }
+    //每输入一次，拼接一次字符串
+    
+    if([sender tag] == 10 ) { //取小数点
+        //小数点只允许输入一次
+        //遍历字符串tempStr，如果有小数点，则直接return
+        for (int i = 0; i < tempStr.length ; i++) {
+            char c = [tempStr characterAtIndex:i];
+            if (c == '.') {
+                return;
+            }
+        }
+        tempStr = [tempStr stringByAppendingString:@"."];
+    }else {
+        tempStr = [tempStr stringByAppendingString:[NSString stringWithFormat:@"%ld",[sender tag]]];
+    }
+    showText.text = tempStr;
+}
 
 @end
