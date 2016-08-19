@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *vibrateImage;
 @property (weak, nonatomic) IBOutlet UILabel *effectNoneLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *effectNoneImage;
+@property (weak, nonatomic) IBOutlet UIView *feedbackView;
 
 @property (weak, nonatomic) IBOutlet UILabel *startMenuLabel;
 @property (strong, nonatomic) NSArray *startMenuArray;
@@ -40,14 +41,20 @@
     UITapGestureRecognizer *gesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
     UITapGestureRecognizer *gesture3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
     UITapGestureRecognizer *gesture4 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
+    UITapGestureRecognizer *gesture5 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
+    UITapGestureRecognizer *gesture6 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
     _soundView.tag = 1001;
     _vibrateView.tag = 1002;
     _effectNoneView.tag = 1003;
     _startMenuView.tag = 1004;
+    _feedbackView.tag = 1005;
+    _coverView.tag = 1006;
     [_soundView addGestureRecognizer:gesture];
     [_vibrateView addGestureRecognizer:gesture2];
     [_effectNoneView addGestureRecognizer:gesture3];
     [_startMenuView addGestureRecognizer:gesture4];
+    [_feedbackView addGestureRecognizer:gesture5];
+    [_coverView addGestureRecognizer:gesture6];
     
     _startMenuArray = @[@"Menu",@"Scientific Calculator",@"Statistics Calculator",@"Unit Converter",@"Currency Converter"];
     [self sectionSelected:_soundView isSelected:YES];
@@ -103,6 +110,13 @@
             _coverView.hidden = NO;
             break;
             
+        case 1005:
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/calculator-converter/id915839937?l=en&mt=8"]];
+            break;
+        case 1006:
+            _pickAreaView.hidden = YES;
+            _coverView.hidden = YES;
+            break;
         default:
             break;
     }

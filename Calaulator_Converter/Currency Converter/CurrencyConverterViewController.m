@@ -83,6 +83,10 @@
     _toExView.tag = 2;
     [_toExView addGestureRecognizer:gesture2];
     
+    UITapGestureRecognizer *gesture3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
+    _coverView.tag = 3;
+    [_coverView addGestureRecognizer:gesture3];
+    
     if (_majorSwitch.isOn) {
         _fromExLabel.text = _majorSelectArray[0];
         _toExLabel.text = _majorSelectArray[1];
@@ -172,6 +176,11 @@
 
 //taptap
 - (void)taptap:(UITapGestureRecognizer *)gesture {
+    if (gesture.view.tag == 3) {
+        _coverView.hidden = YES;
+        _pickAreaView.hidden = YES;
+        return;
+    }
     _pickAreaView.hidden = NO;
     _pickView.tag = gesture.view.tag;
     [_pickView reloadAllComponents];

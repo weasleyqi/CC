@@ -2990,10 +2990,11 @@
                     <navigationItem key="navigationItem" title="Settings &amp; About Us" id="cD6-1k-z7H"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="coverView" destination="YPM-4O-eTX" id="nh2-Il-hb3"/>
+                        <outlet property="coverView" destination="YPM-4O-eTX" id="D8R-dR-yl7"/>
                         <outlet property="effectNoneImage" destination="Awy-0o-03I" id="VDe-SE-T8A"/>
                         <outlet property="effectNoneLabel" destination="Hhi-2A-iLW" id="meY-UQ-6eE"/>
                         <outlet property="effectNoneView" destination="U2V-84-fAz" id="LVG-45-6qE"/>
+                        <outlet property="feedbackView" destination="775-fq-ydc" id="pgw-KC-i0t"/>
                         <outlet property="pickAreaView" destination="4lT-vc-AjI" id="Ztd-oR-58C"/>
                         <outlet property="soundImage" destination="40N-Yf-eje" id="EjD-Kn-Jhj"/>
                         <outlet property="soundLabel" destination="Jdp-sA-jQY" id="xYD-ia-1Eb"/>
