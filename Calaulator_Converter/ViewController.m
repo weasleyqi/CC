@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSMutableArray *pinArray;
 @property (strong, nonatomic) NSMutableArray *unpinedArray;
 
+@property (nonatomic) BOOL shouldGo;
 @end
 
 @implementation ViewController
@@ -27,6 +28,7 @@
     [super viewDidLoad];
     _pinArray = [NSMutableArray new];
     _unpinedArray = [NSMutableArray new];
+    _shouldGo = YES;
     
     _offLineData = [NSArray arrayWithObjects:@{@"image":@"Scientific Calcuator@2x.png",@"title":@"Scientific Calcuator"},
                                              @{@"image":@"Statistics Calcuator@2x.png",@"title":@"Statistics Calcuator"},
@@ -41,6 +43,34 @@
         [self loadData];
     }
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (!_shouldGo) {
+        return;
+    }
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *stMenu = [userDefaults stringForKey:@"startMenu"];
+    switch ([stMenu intValue]) {
+        case 0:
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"ScientificCalculator" sender:nil];
+            break;
+        case 2:
+            [self performSegueWithIdentifier:@"statisticsCalculator" sender:nil];
+            break;
+        case 3:
+            [self performSegueWithIdentifier:@"unitConverter" sender:nil];
+            break;
+        case 4:
+            [self performSegueWithIdentifier:@"currencyConverter" sender:nil];
+            break;
+        default:
+            break;
+    }
+    _shouldGo = NO;
+}
+
 
 //Check NetWork Status
 - (BOOL)CheckNetWorkStatus {

@@ -16,6 +16,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *stMenu = [userDefaults stringForKey:@"settings"];
+    if ([stMenu isKindOfClass:[NSNull class]] || [stMenu isEqualToString:@""]) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:[NSNumber numberWithInteger:1] forKey:@"settings"];
+    }
     // 设置navigation
     // 背景图
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"top@2x.png"] forBarMetrics:UIBarMetricsDefault];

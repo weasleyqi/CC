@@ -43,7 +43,6 @@
             [sectionDict setObject:tmp[1] forKey:tmp[0]];
             [SectionInfo addObjectsFromArray:tmp];
         }];
-        NSLog(@"%@",[sectionDict allKeys]);
         //separate calculators string
         NSString *dictVlaueString = sectionDict[@"Calculators"];
         NSArray *tmp1 = [dictVlaueString componentsSeparatedByString:@"||"];
