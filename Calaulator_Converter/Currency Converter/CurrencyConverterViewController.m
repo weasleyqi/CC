@@ -36,6 +36,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *toExLabel;
 @property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *fromShowLabel;
 @property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *toShowLabel;
+@property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *fromValueLabel;
+@property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *toValueLabel;
+
+@property (nonatomic) NSInteger fromSelectedIndex;
+@property (nonatomic) NSInteger toSelectedIndex;
 
 @end
 
@@ -86,6 +91,9 @@
     }
     _fromShowLabel.text = _fromExLabel.text;
     _toShowLabel.text = _toExLabel.text;
+    _fromSelectedIndex = 0;
+    _toSelectedIndex = 1;
+    tempStr = @"0";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,7 +134,13 @@
     showText.text = tempStr;
 }
 - (IBAction)resultGet:(id)sender {
-    
+    if (_majorSwitch.isOn) {
+        double result = [showText.text doubleValue] * [_majorDataArray[_toSelectedIndex][@"value"] doubleValue] / [_majorDataArray[_fromSelectedIndex][@"value"] doubleValue] ;
+        _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
+    }else {
+        double result = [showText.text doubleValue] * [_currencyArray[_toSelectedIndex][@"value"] doubleValue] / [_currencyArray[_fromSelectedIndex][@"value"] doubleValue] ;
+        _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
+    }
 }
 
 - (IBAction)simpleCalculate:(UIButton *)sender {
@@ -186,14 +200,18 @@
     if (_pickView.tag == 1) {//from
         if (_majorSwitch.isOn) {
             _fromExLabel.text = _majorSelectArray[[_pickView selectedRowInComponent:0]];
+            _fromSelectedIndex= [_pickView selectedRowInComponent:0];
         }else {
             _fromExLabel.text = _selectShowArray[[_pickView selectedRowInComponent:0]];
+            _fromSelectedIndex= [_pickView selectedRowInComponent:0];
         }
     }else if (_pickView.tag == 2) {//to
         if (_majorSwitch.isOn) {
             _toExLabel.text = _majorSelectArray[[_pickView selectedRowInComponent:0]];
+            _toSelectedIndex= [_pickView selectedRowInComponent:0];
         }else {
             _toExLabel.text = _selectShowArray[[_pickView selectedRowInComponent:0]];
+            _toSelectedIndex= [_pickView selectedRowInComponent:0];
         }
     }
     _fromShowLabel.text = _fromExLabel.text;

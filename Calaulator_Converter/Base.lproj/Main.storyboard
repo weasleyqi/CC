@@ -2078,7 +2078,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="236,9849,9055" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upk-lk-7iC" customClass="MBLabelWithFontAdapter">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upk-lk-7iC" customClass="MBLabelWithFontAdapter">
                                 <rect key="frame" x="15" y="79" width="345" height="55"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -2231,13 +2231,13 @@
                                         <color key="textColor" red="0.54901960780000003" green="0.59607843140000005" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9S-fI-6jk" customClass="MBLabelWithFontAdapter">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9S-fI-6jk" customClass="MBLabelWithFontAdapter">
                                         <rect key="frame" x="0.0" y="112" width="186" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.001234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-xj-NiC" customClass="MBLabelWithFontAdapter">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJQ-xj-NiC" customClass="MBLabelWithFontAdapter">
                                         <rect key="frame" x="188" y="112" width="187" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -2629,6 +2629,7 @@
                         <outlet property="fromExLabel" destination="Wsv-ja-aBp" id="HSd-bM-2tD"/>
                         <outlet property="fromExView" destination="yXc-ih-J4N" id="rWc-7w-ZV5"/>
                         <outlet property="fromShowLabel" destination="mxa-cI-kP8" id="VRp-a8-0Wf"/>
+                        <outlet property="fromValueLabel" destination="S9S-fI-6jk" id="geE-mz-brP"/>
                         <outlet property="majorSwitch" destination="QzX-O3-Um7" id="VhQ-7L-ksM"/>
                         <outlet property="pickAreaView" destination="R0j-Xn-Zlz" id="0eL-x0-dab"/>
                         <outlet property="pickView" destination="fUP-Z0-bJa" id="JBB-UC-Tnn"/>
@@ -2636,6 +2637,7 @@
                         <outlet property="toExLabel" destination="OJy-Rg-0EG" id="Tou-4F-J0L"/>
                         <outlet property="toExView" destination="f7u-9U-UvY" id="noq-Ld-hMV"/>
                         <outlet property="toShowLabel" destination="KgA-y9-G0g" id="kcc-ie-Ik9"/>
+                        <outlet property="toValueLabel" destination="RJQ-xj-NiC" id="a8O-RB-K59"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovl-2L-nyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
