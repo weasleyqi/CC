@@ -91,13 +91,16 @@
             cell.title.textColor = UIColorFromRGB(0x047dce, 1);//047DCE
         }
         cell.tag = idx;
-        x = x + _sbUnitCell.frame.size.width * idx;
+        x = (cell.frame.size.width *WIDTH / 375)* idx;
+        NSLog(@"xxxxxx %f",x);
         CGRect rect = cell.frame;
+        rect.size.width = cell.frame.size.width *WIDTH / 375;
         rect.origin.x = x;
         cell.frame = rect;
+        NSLog(@"yyyyyy %f  %F",cell.frame.origin.x,cell.frame.size.width);
         [_unitScrollView addSubview:cell];
         
-        _unitScrollView.contentSize = CGSizeMake(500, _unitScrollView.frame.size.height);
+        _unitScrollView.contentSize = CGSizeMake(cell.frame.size.width * [_unitTitleArr count], _unitScrollView.frame.size.height);
     }];
     _unitScrollView.scrollEnabled = YES;
 
@@ -201,13 +204,8 @@
 
 
 - (IBAction)resultBtnClicked:(id)sender {
-//    NSLog(@"index %ld index2 %ld value1 %@ value2 %@ ",(long)_currentSelectedRowIndex,
-//          (long)_currentSelectedRowIndex2,
-//          [_currentShowArray[_currentSelectedRowIndex] allValues][0],
-//          [_currentShowArray[_currentSelectedRowIndex2] allValues][0]);
-    
     double result = [showText.text doubleValue] * [[_currentShowArray[_currentSelectedRowIndex2] allValues][0] doubleValue] / [[_currentShowArray[_currentSelectedRowIndex] allValues][0] doubleValue] ;
-    _fromValueLabel.text = [_currentShowArray[_currentSelectedRowIndex] allValues][0];
+    _fromValueLabel.text = showText.text;
     _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
     [_toValueLabel sizeToFit];
     _toValueLabel.textAlignment = NSTextAlignmentCenter;

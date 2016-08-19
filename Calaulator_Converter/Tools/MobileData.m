@@ -8,6 +8,7 @@
 
 #import "MobileData.h"
 
+
 @implementation MobileData
 @synthesize settingsType;
 
@@ -29,7 +30,8 @@
             AudioServicesPlaySystemSound(SOUNDID);
             break;
         case SettingType_vibrate:
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+//            UIDevice.currentDevice().tapticEngine().actuateFeedback(UITapticEngineFeedbackPeek)
             break;
         case SettingType_none:
             break;

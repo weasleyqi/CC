@@ -136,9 +136,11 @@
 - (IBAction)resultGet:(id)sender {
     if (_majorSwitch.isOn) {
         double result = [showText.text doubleValue] * [_majorDataArray[_toSelectedIndex][@"value"] doubleValue] / [_majorDataArray[_fromSelectedIndex][@"value"] doubleValue] ;
+        _fromValueLabel.text = showText.text;
         _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
     }else {
         double result = [showText.text doubleValue] * [_currencyArray[_toSelectedIndex][@"value"] doubleValue] / [_currencyArray[_fromSelectedIndex][@"value"] doubleValue] ;
+        _fromValueLabel.text = showText.text;
         _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
     }
 }

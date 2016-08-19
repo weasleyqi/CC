@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "Constant.h"
+#import "MobileData.h"
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UIView *coverView;
@@ -56,13 +57,13 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *settings = [userDefaults stringForKey:@"settings"];
     switch ([settings integerValue]) {
-        case 1:
+        case 0:
             [self sectionSelected:_soundView isSelected:YES];
             break;
-        case 2:
+        case 1:
             [self sectionSelected:_vibrateView isSelected:YES];
             break;
-        case 3:
+        case 2:
             [self sectionSelected:_effectNoneView isSelected:YES];
             break;
             
@@ -105,6 +106,7 @@
         default:
             break;
     }
+    [MobileData sharedInstance].settingsType = selectedSection;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:[NSNumber numberWithInteger:selectedSection] forKey:@"settings"];
 }

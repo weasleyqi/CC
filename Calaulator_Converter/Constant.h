@@ -10,9 +10,10 @@
 #define Constant_h
 
 #import <AudioToolbox/AudioToolbox.h> //声音提示
-//#import "MobileData.h"
 
-#define SOUNDID  1103
+#define SOUNDID  1104
+
+#define WIDTH [UIScreen mainScreen].bounds.size.width
 
 #define UIColorFromRGB(rgbValue,alphaValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \

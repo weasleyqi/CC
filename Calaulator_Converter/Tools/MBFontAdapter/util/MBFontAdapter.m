@@ -12,8 +12,8 @@
 
 +(UIFont *)adjustFont:(UIFont *)font{
     UIFont *newFont=nil;
-    if (IS_IPHONE_6){
-        newFont = [UIFont fontWithName:font.fontName size:font.pointSize];
+    if (IS_IPHONE_5){
+        newFont = [UIFont fontWithName:font.fontName size:font.pointSize - IPHONE5_INCREASE];
     }else if (IS_IPHONE_6_PLUS){
         newFont = [UIFont fontWithName:font.fontName size:font.pointSize+IPHONE6PLUS_INCREMENT];
     }else{

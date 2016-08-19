@@ -25,21 +25,21 @@
     if ([stMenu isKindOfClass:[NSNull class]] || [stMenu isEqualToString:@""]) {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setObject:[NSNumber numberWithInteger:SettingType_Sound] forKey:@"settings"];
-    }else {
-        switch ([[userDefaults stringForKey:@"settings"] integerValue]) {
-            case 0:
-                [MobileData sharedInstance].settingsType = SettingType_Sound;
-                break;
-            case 1:
-                [MobileData sharedInstance].settingsType = SettingType_vibrate;
-                break;
-            case 2:
-                [MobileData sharedInstance].settingsType = SettingType_none;
-                break;
-            default:
-                break;
-        }
     }
+    switch ([[userDefaults stringForKey:@"settings"] integerValue]) {
+        case 0:
+            [MobileData sharedInstance].settingsType = SettingType_Sound;
+            break;
+        case 1:
+            [MobileData sharedInstance].settingsType = SettingType_vibrate;
+            break;
+        case 2:
+            [MobileData sharedInstance].settingsType = SettingType_none;
+            break;
+        default:
+            break;
+    }
+    
     // 设置navigation
     // 背景图
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"top@2x.png"] forBarMetrics:UIBarMetricsDefault];

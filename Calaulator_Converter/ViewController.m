@@ -52,6 +52,7 @@
     }
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *stMenu = [userDefaults stringForKey:@"startMenu"];
+    NSLog(@"%@ stmenu %@",NSStringFromClass(self.class),stMenu);
     switch ([stMenu intValue]) {
         case 0:
             break;
@@ -71,6 +72,12 @@
             break;
     }
     _shouldGo = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if ([self CheckNetWorkStatus]) {
+        [self loadData];
+    }
 }
 
 
