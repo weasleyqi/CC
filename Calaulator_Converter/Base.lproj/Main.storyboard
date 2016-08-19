@@ -1866,6 +1866,7 @@
                                 </state>
                                 <connections>
                                     <action selector="calculate:" destination="jFD-mf-EjL" eventType="touchUpInside" id="JCy-fi-RZ1"/>
+                                    <action selector="resultBtnClicked:" destination="jFD-mf-EjL" eventType="touchUpInside" id="a9a-3Y-CcW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfG-IT-yN0" customClass="MBButtonWithFontAdapter">
@@ -2120,15 +2121,24 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsv-ja-aBp">
+                                        <rect key="frame" x="0.0" y="12" width="104" height="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.14901960784313725" green="0.49803921568627452" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Vi5-Rn-d60" firstAttribute="top" secondItem="yXc-ih-J4N" secondAttribute="top" constant="6" id="26b-pz-X8n"/>
                                     <constraint firstAttribute="bottom" secondItem="Vi5-Rn-d60" secondAttribute="bottom" constant="6" id="RF0-Q4-vbn"/>
+                                    <constraint firstItem="Wsv-ja-aBp" firstAttribute="leading" secondItem="yXc-ih-J4N" secondAttribute="leading" id="a70-Hr-H8P"/>
+                                    <constraint firstItem="Vi5-Rn-d60" firstAttribute="leading" secondItem="Wsv-ja-aBp" secondAttribute="trailing" id="c0m-rh-C1t"/>
                                     <constraint firstItem="o4D-Ho-FaV" firstAttribute="leading" secondItem="Vi5-Rn-d60" secondAttribute="trailing" id="cLK-z1-6Eg"/>
                                     <constraint firstItem="o4D-Ho-FaV" firstAttribute="top" secondItem="yXc-ih-J4N" secondAttribute="top" id="dzX-rW-qas"/>
                                     <constraint firstAttribute="trailing" secondItem="o4D-Ho-FaV" secondAttribute="trailing" id="g27-nG-c5j"/>
                                     <constraint firstAttribute="bottom" secondItem="o4D-Ho-FaV" secondAttribute="bottom" id="hih-Gq-Fhq"/>
+                                    <constraint firstItem="Wsv-ja-aBp" firstAttribute="centerY" secondItem="yXc-ih-J4N" secondAttribute="centerY" id="xtk-P2-C0g"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -2161,6 +2171,12 @@
                                             <constraint firstAttribute="width" secondItem="6TM-Sx-Zlx" secondAttribute="height" multiplier="1:1" id="hWk-a0-sZ0"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJy-Rg-0EG">
+                                        <rect key="frame" x="0.0" y="12" width="105" height="25"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" red="0.14901960784313725" green="0.49803921568627452" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2199,6 +2215,9 @@
                                                 <color key="value" red="0.73333333329999995" green="0.73725490199999999" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resultGet:" destination="7uh-RC-LAk" eventType="touchUpInside" id="leg-ot-UeG"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Square Meter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxa-cI-kP8" customClass="MBLabelWithFontAdapter">
                                         <rect key="frame" x="0.0" y="75" width="186" height="21"/>
@@ -2277,6 +2296,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QzX-O3-Um7">
                                         <rect key="frame" x="311" y="10" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchAction:" destination="7uh-RC-LAk" eventType="valueChanged" id="zIy-if-CWE"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2287,95 +2309,140 @@
                                     <constraint firstItem="aCa-tJ-9nF" firstAttribute="centerY" secondItem="uVZ-Y3-ePm" secondAttribute="centerY" id="xjE-za-BlD"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seX-ap-JLT" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seX-ap-JLT" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="444" width="62" height="41"/>
                                 <state key="normal" title="1" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="9M0-p2-326"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUd-PP-Num" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUd-PP-Num" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="495" width="62" height="41"/>
                                 <state key="normal" title="6" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="xeT-DU-94d"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8V-HI-eeu" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8V-HI-eeu" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="15" y="546" width="62" height="41"/>
                                 <state key="normal" title="." backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="GHs-8y-daf"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-HW-pYP" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPD-HW-pYP" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="87" y="444" width="62" height="41"/>
                                 <state key="normal" title="2" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="vQF-4J-woc"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYz-Pa-6Qt" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYz-Pa-6Qt" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="87" y="495" width="62" height="41"/>
                                 <state key="normal" title="7" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="AvM-5a-1JH"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpQ-vP-uZb" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpQ-vP-uZb" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="87" y="546" width="62" height="41"/>
-                                <state key="normal" title="Button" backgroundImage="black-button.png">
+                                <state key="normal" title="±" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="simpleCalculate:" destination="7uh-RC-LAk" eventType="touchUpInside" id="QYH-gj-3Kz"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIN-Zw-G31" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIN-Zw-G31" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="159" y="444" width="62" height="41"/>
                                 <state key="normal" title="3" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="Mh2-sj-K7s"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYr-TV-tiM" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYr-TV-tiM" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="159" y="495" width="62" height="41"/>
                                 <state key="normal" title="8" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="UEp-VV-NbP"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zE-jF-D7H" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zE-jF-D7H" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="159" y="546" width="62" height="41"/>
                                 <state key="normal" title="EXP" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="simpleCalculate:" destination="7uh-RC-LAk" eventType="touchUpInside" id="c83-nS-DGp"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-Jo-Mtn" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-Jo-Mtn" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="231" y="444" width="62" height="41"/>
                                 <state key="normal" title="4" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="MeB-5j-EjT"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-Wc-ZaC" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfe-Wc-ZaC" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="231" y="495" width="62" height="41"/>
                                 <state key="normal" title="9" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="YMH-ch-lda"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwl-XI-OLv" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwl-XI-OLv" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="231" y="546" width="62" height="41"/>
                                 <state key="normal" title="C" backgroundImage="red-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="simpleCalculate:" destination="7uh-RC-LAk" eventType="touchUpInside" id="Yfp-Vk-HNG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zE-6z-IZH" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="298" y="495" width="62" height="41"/>
                                 <state key="normal" title="0" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="b5f-d7-NMR"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azz-Ut-lk6" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azz-Ut-lk6" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="298" y="546" width="62" height="41"/>
                                 <state key="normal" title="GO" backgroundImage="red-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="simpleCalculate:" destination="7uh-RC-LAk" eventType="touchUpInside" id="rF1-BZ-hIi"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYC-KI-GNe" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYC-KI-GNe" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="298" y="444" width="62" height="41"/>
                                 <state key="normal" title="5" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="inputNumbers:" destination="7uh-RC-LAk" eventType="touchUpInside" id="6p4-cU-w4B"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Exchage Rate Updated at:Jul.14,2016 2:0:5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ute-6E-0qd" customClass="MBLabelWithFontAdapter">
                                 <rect key="frame" x="0.0" y="617" width="375" height="12"/>
@@ -2396,6 +2463,48 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMO-jk-Lpg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="357"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R0j-Xn-Zlz">
+                                <rect key="frame" x="0.0" y="421" width="375" height="246"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUP-Z0-bJa">
+                                        <rect key="frame" x="0.0" y="30" width="375" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="7uh-RC-LAk" id="iDD-Za-TTL"/>
+                                            <outlet property="delegate" destination="7uh-RC-LAk" id="A2m-x3-QHl"/>
+                                        </connections>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bC-rh-sOU">
+                                        <rect key="frame" x="321" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="确定"/>
+                                        <connections>
+                                            <action selector="pickSelected:" destination="7uh-RC-LAk" eventType="touchUpInside" id="eTy-te-HUD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-NX-SNT">
+                                        <rect key="frame" x="8" y="0.0" width="46" height="30"/>
+                                        <state key="normal" title="取消"/>
+                                        <connections>
+                                            <action selector="pickUnSelect:" destination="7uh-RC-LAk" eventType="touchUpInside" id="YgF-ui-sPO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fUP-Z0-bJa" secondAttribute="trailing" id="B1V-3b-1nM"/>
+                                    <constraint firstAttribute="bottom" secondItem="fUP-Z0-bJa" secondAttribute="bottom" id="Bid-yz-Mka"/>
+                                    <constraint firstItem="fUP-Z0-bJa" firstAttribute="leading" secondItem="R0j-Xn-Zlz" secondAttribute="leading" id="RXx-2N-Jxi"/>
+                                    <constraint firstItem="9bC-rh-sOU" firstAttribute="top" secondItem="R0j-Xn-Zlz" secondAttribute="top" id="UXu-Ib-lrf"/>
+                                    <constraint firstItem="KRs-NX-SNT" firstAttribute="leading" secondItem="R0j-Xn-Zlz" secondAttribute="leading" constant="8" id="fmk-Qk-hc8"/>
+                                    <constraint firstItem="fUP-Z0-bJa" firstAttribute="top" secondItem="9bC-rh-sOU" secondAttribute="bottom" id="laF-xB-EFh"/>
+                                    <constraint firstAttribute="trailing" secondItem="9bC-rh-sOU" secondAttribute="trailing" constant="8" id="rBB-nm-TQc"/>
+                                    <constraint firstItem="KRs-NX-SNT" firstAttribute="top" secondItem="R0j-Xn-Zlz" secondAttribute="top" id="uCd-Lb-ofy"/>
+                                    <constraint firstItem="fUP-Z0-bJa" firstAttribute="top" secondItem="KRs-NX-SNT" secondAttribute="bottom" id="zvF-c5-OEy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -2410,6 +2519,9 @@
                             <constraint firstItem="yXc-ih-J4N" firstAttribute="height" secondItem="mTo-B4-v2a" secondAttribute="height" multiplier="45:667" id="4oE-ea-8qf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2zE-6z-IZH" secondAttribute="trailing" constant="-5" id="6AM-sH-W6E"/>
                             <constraint firstAttribute="bottomMargin" secondItem="9zE-jF-D7H" secondAttribute="bottom" constant="80" id="6FT-mP-fKj"/>
+                            <constraint firstItem="gMO-jk-Lpg" firstAttribute="top" secondItem="8lC-nr-HN3" secondAttribute="bottom" id="6gT-kV-wyX"/>
+                            <constraint firstItem="gMO-jk-Lpg" firstAttribute="leading" secondItem="mTo-B4-v2a" secondAttribute="leadingMargin" constant="-20" id="6u1-Bd-Gib"/>
+                            <constraint firstItem="R0j-Xn-Zlz" firstAttribute="height" secondItem="mTo-B4-v2a" secondAttribute="height" multiplier="246:667" id="75j-xg-26T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oTU-lp-Hd8" secondAttribute="trailing" constant="-20" id="7Ji-Db-dW4"/>
                             <constraint firstItem="dcr-Yw-Yu6" firstAttribute="centerX" secondItem="mTo-B4-v2a" secondAttribute="centerX" id="7lv-b5-KEF"/>
                             <constraint firstItem="dcr-Yw-Yu6" firstAttribute="leading" secondItem="mTo-B4-v2a" secondAttribute="leadingMargin" constant="-20" id="8Kl-5y-Rkv"/>
@@ -2458,8 +2570,10 @@
                             <constraint firstItem="dYr-TV-tiM" firstAttribute="width" secondItem="AUd-PP-Num" secondAttribute="width" id="aGr-pD-tb9"/>
                             <constraint firstItem="CYz-Pa-6Qt" firstAttribute="top" secondItem="mPD-HW-pYP" secondAttribute="bottom" constant="10" id="aKH-S8-Vy9"/>
                             <constraint firstItem="uVZ-Y3-ePm" firstAttribute="top" secondItem="dcr-Yw-Yu6" secondAttribute="bottom" constant="10" id="awZ-eW-Elq"/>
+                            <constraint firstItem="R0j-Xn-Zlz" firstAttribute="top" secondItem="gMO-jk-Lpg" secondAttribute="bottom" id="bOO-jO-ujp"/>
                             <constraint firstItem="azz-Ut-lk6" firstAttribute="leading" secondItem="uwl-XI-OLv" secondAttribute="trailing" constant="10" id="baV-DV-6BT"/>
                             <constraint firstItem="2zE-6z-IZH" firstAttribute="leading" secondItem="kfe-Wc-ZaC" secondAttribute="trailing" constant="10" id="cFM-xl-Q3p"/>
+                            <constraint firstItem="oxo-A0-qeZ" firstAttribute="top" secondItem="R0j-Xn-Zlz" secondAttribute="bottom" id="co1-Y0-LSi"/>
                             <constraint firstItem="vIN-Zw-G31" firstAttribute="top" secondItem="uVZ-Y3-ePm" secondAttribute="bottom" constant="15" id="dUb-h4-eyl"/>
                             <constraint firstItem="azz-Ut-lk6" firstAttribute="top" secondItem="2zE-6z-IZH" secondAttribute="bottom" constant="10" id="dld-gp-BOm"/>
                             <constraint firstItem="bpQ-vP-uZb" firstAttribute="height" secondItem="mPD-HW-pYP" secondAttribute="height" id="eVD-aF-SKq"/>
@@ -2472,6 +2586,7 @@
                             <constraint firstItem="dYr-TV-tiM" firstAttribute="leading" secondItem="CYz-Pa-6Qt" secondAttribute="trailing" constant="10" id="kTA-M2-GWk"/>
                             <constraint firstItem="7Fm-qN-VUS" firstAttribute="centerX" secondItem="mTo-B4-v2a" secondAttribute="centerX" id="kaW-l8-P4d"/>
                             <constraint firstItem="zc1-Jo-Mtn" firstAttribute="width" secondItem="seX-ap-JLT" secondAttribute="width" id="khY-QO-SNf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gMO-jk-Lpg" secondAttribute="trailing" constant="-20" id="lRs-hz-stW"/>
                             <constraint firstItem="ute-6E-0qd" firstAttribute="leading" secondItem="mTo-B4-v2a" secondAttribute="leadingMargin" constant="-20" id="m4j-K8-RPb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="f7u-9U-UvY" secondAttribute="trailing" constant="-5" id="maD-22-z3d"/>
                             <constraint firstItem="ute-6E-0qd" firstAttribute="top" secondItem="azz-Ut-lk6" secondAttribute="bottom" constant="30" id="mzv-CQ-Vbe"/>
@@ -2486,9 +2601,11 @@
                             <constraint firstItem="CYz-Pa-6Qt" firstAttribute="width" secondItem="AUd-PP-Num" secondAttribute="width" id="qEt-4c-del"/>
                             <constraint firstAttribute="bottomMargin" secondItem="uwl-XI-OLv" secondAttribute="bottom" constant="80" id="sZX-HH-zt4"/>
                             <constraint firstItem="I8V-HI-eeu" firstAttribute="top" secondItem="AUd-PP-Num" secondAttribute="bottom" constant="10" id="spR-42-uR4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R0j-Xn-Zlz" secondAttribute="trailing" constant="-20" id="toY-gX-pBp"/>
                             <constraint firstItem="kfe-Wc-ZaC" firstAttribute="top" secondItem="zc1-Jo-Mtn" secondAttribute="bottom" constant="10" id="tyl-gQ-sEf"/>
                             <constraint firstItem="7Fm-qN-VUS" firstAttribute="leading" secondItem="yXc-ih-J4N" secondAttribute="trailing" id="uYR-mo-588"/>
                             <constraint firstItem="f7u-9U-UvY" firstAttribute="height" secondItem="mTo-B4-v2a" secondAttribute="height" multiplier="45:667" id="ue7-l9-6DL"/>
+                            <constraint firstItem="R0j-Xn-Zlz" firstAttribute="leading" secondItem="mTo-B4-v2a" secondAttribute="leadingMargin" constant="-20" id="vvP-3W-Aim"/>
                             <constraint firstItem="2zE-6z-IZH" firstAttribute="height" secondItem="PYC-KI-GNe" secondAttribute="height" id="w7r-Qt-bR4"/>
                             <constraint firstItem="azz-Ut-lk6" firstAttribute="width" secondItem="I8V-HI-eeu" secondAttribute="width" id="ydA-PV-sBa"/>
                             <constraint firstItem="seX-ap-JLT" firstAttribute="top" secondItem="uVZ-Y3-ePm" secondAttribute="bottom" constant="15" id="zHp-Mg-szF"/>
@@ -2507,6 +2624,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Currency Converter" id="9AD-pY-JH1"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="coverView" destination="gMO-jk-Lpg" id="OIn-mq-fsv"/>
+                        <outlet property="fromExLabel" destination="Wsv-ja-aBp" id="HSd-bM-2tD"/>
+                        <outlet property="fromExView" destination="yXc-ih-J4N" id="rWc-7w-ZV5"/>
+                        <outlet property="fromShowLabel" destination="mxa-cI-kP8" id="VRp-a8-0Wf"/>
+                        <outlet property="majorSwitch" destination="QzX-O3-Um7" id="VhQ-7L-ksM"/>
+                        <outlet property="pickAreaView" destination="R0j-Xn-Zlz" id="0eL-x0-dab"/>
+                        <outlet property="pickView" destination="fUP-Z0-bJa" id="JBB-UC-Tnn"/>
+                        <outlet property="showText" destination="Upk-lk-7iC" id="LCh-nG-oYX"/>
+                        <outlet property="toExLabel" destination="OJy-Rg-0EG" id="Tou-4F-J0L"/>
+                        <outlet property="toExView" destination="f7u-9U-UvY" id="noq-Ld-hMV"/>
+                        <outlet property="toShowLabel" destination="KgA-y9-G0g" id="kcc-ie-Ik9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovl-2L-nyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
