@@ -12,6 +12,7 @@
 #import "MenuOnLineCell.h"
 #import "MenuOffLineCell.h"
 #import "MenuSearchCell.h"
+#import "Constant.h"
 
 @interface ViewController ()<UITabBarDelegate,UITableViewDataSource>
 @property (strong, nonatomic) NSDictionary *dataDict;
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) NSMutableArray *unpinedArray;
 
 @property (nonatomic) BOOL shouldGo;
+
 @end
 
 @implementation ViewController

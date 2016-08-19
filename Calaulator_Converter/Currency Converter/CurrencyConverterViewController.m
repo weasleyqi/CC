@@ -9,6 +9,7 @@
 #import "CurrencyConverterViewController.h"
 #import "MBLabelWithFontAdapter.h"
 #import "DataHandlerTool.h"
+#import "MobileData.h"
 
 @interface CurrencyConverterViewController (){
     
@@ -102,8 +103,7 @@
 }
 
 - (IBAction)inputNumbers:(id)sender {
-    //    AudioServicesPlaySystemSound(SOUNDID);
-    //    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    [MobileData checkSettings];
     if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
         tempStr = @"";
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
@@ -154,10 +154,13 @@
             break;
             
         case 13://c
-            
+            showText.text = @"0";
+            tempStr = @"0";
+            _fromValueLabel.text = @"0";
+            _toValueLabel.text = @"0";
             break;
         case 14://go
-            
+            [self resultGet:nil];
             break;
             
         default:

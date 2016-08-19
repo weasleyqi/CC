@@ -8,6 +8,7 @@
 
 #import "StatisticsCalViewController.h"
 #import "AddedView.h"
+#import "MobileData.h"
 
 @interface StatisticsCalViewController ()<DeleteNumDelegate>
 @property (weak, nonatomic) IBOutlet AddedView *addedView;
@@ -36,6 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)add:(id)sender {
+    [MobileData checkSettings];
     float x = 15;
     float y = -80   ;
     NSInteger count = [_addedarr count];
@@ -114,6 +116,7 @@
 }
 
 - (IBAction)calculate:(UIButton *)sender {
+    [MobileData checkSettings];
     switch (sender.tag) {
         case 100://x average
             if ([_addedNumArr count] > 0) {
@@ -248,6 +251,7 @@
 }
 
 - (IBAction)inputNum:(UIButton *)sender {
+    [MobileData checkSettings];
     if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
         tempStr = @"";
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {

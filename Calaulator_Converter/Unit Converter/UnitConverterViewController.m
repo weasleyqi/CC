@@ -11,7 +11,7 @@
 #import <AudioToolbox/AudioToolbox.h> //声音提示
 #import "Constant.h"
 #import "UnitCell.h"
-#define SOUNDID  1109
+#import "MobileData.h"
 
 @interface UnitConverterViewController ()<UnitSelecteDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UIScrollView *unitScrollView;
@@ -168,8 +168,7 @@
 }
 
 - (IBAction)click1:(id)sender {
-//    AudioServicesPlaySystemSound(SOUNDID);
-//    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    [MobileData checkSettings];
     if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
         tempStr = @"";
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
@@ -259,6 +258,7 @@
 
 //calcualte
 - (IBAction)calculate:(UIButton *)sender {
+    [MobileData checkSettings];
     switch (sender.tag) {
         case 21://+-
             showText.text = [NSString stringWithFormat:@"%f",[showText.text doubleValue]*(-1)];
@@ -272,7 +272,7 @@
             _toValueLabel.text = @"0";
             break;
         case 24://Go
-            
+            [self resultBtnClicked:nil];
             break;
             
         default:

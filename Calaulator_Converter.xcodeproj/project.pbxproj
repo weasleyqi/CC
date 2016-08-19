@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A904D7641D6739F100AAB812 /* MobileData.m in Sources */ = {isa = PBXBuildFile; fileRef = A904D7631D6739F100AAB812 /* MobileData.m */; };
 		A928704F1D5B8711004969F8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A928704E1D5B8711004969F8 /* AudioToolbox.framework */; };
 		A95A69561D31DCDF00E06075 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A95A69551D31DCDF00E06075 /* main.m */; };
 		A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A95A69581D31DCDF00E06075 /* AppDelegate.m */; };
@@ -88,6 +89,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A904D7621D6739F100AAB812 /* MobileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileData.h; sourceTree = "<group>"; };
+		A904D7631D6739F100AAB812 /* MobileData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileData.m; sourceTree = "<group>"; };
 		A928704E1D5B8711004969F8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A95A69511D31DCDF00E06075 /* Calaulator_Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calaulator_Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95A69551D31DCDF00E06075 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -321,6 +324,8 @@
 				A9D0B2D81D37D7FA0067B048 /* DataHandlerTool.m */,
 				A9D5E61C1D466C1700B87617 /* CALayer+Addition.h */,
 				A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */,
+				A904D7621D6739F100AAB812 /* MobileData.h */,
+				A904D7631D6739F100AAB812 /* MobileData.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -596,6 +601,7 @@
 				A95A695C1D31DCDF00E06075 /* ViewController.m in Sources */,
 				A9F34D161D47CCB7009490F5 /* MBFontAdapter.m in Sources */,
 				A9F7D9851D65F0B1008F9E00 /* UnitCell.m in Sources */,
+				A904D7641D6739F100AAB812 /* MobileData.m in Sources */,
 				A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */,
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
 				A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */,

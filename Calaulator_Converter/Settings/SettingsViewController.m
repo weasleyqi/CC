@@ -28,6 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *startMenuLabel;
 @property (strong, nonatomic) NSArray *startMenuArray;
+
 @end
 
 @implementation SettingsViewController
@@ -81,19 +82,19 @@
 }
 
 - (void)taptap:(UITapGestureRecognizer *)gesture {
-    NSInteger selectedSection = 0;
+    NSInteger selectedSection = 1;
     switch (gesture.view.tag) {
         case 1001:
             [self sectionSelected:_soundView isSelected:YES];
-            selectedSection = 1;
+            selectedSection = SettingType_Sound;
             break;
         case 1002:
             [self sectionSelected:_vibrateView isSelected:YES];
-            selectedSection = 2;
+            selectedSection = SettingType_vibrate;
             break;
         case 1003:
             [self sectionSelected:_effectNoneView isSelected:YES];
-            selectedSection = 3;
+            selectedSection = SettingType_none;
             break;
         case 1004:
             _pickAreaView.hidden = NO;
