@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSArray *offLineData;
 @property (strong, nonatomic) NSMutableArray *pinArray;
 @property (strong, nonatomic) NSMutableArray *unpinedArray;
+@property (strong, nonatomic) NSMutableArray *allDataArray;
 
 @property (nonatomic) BOOL shouldGo;
 
@@ -40,6 +41,17 @@
     _dataDict = [DataHandlerTool getDataFromDisk];
     [_unpinedArray addObjectsFromArray:_dataDict[@"Calculators"]];
     [_unpinedArray addObjectsFromArray:_dataDict[@"Converters"]];
+    
+    _allDataArray = _unpinedArray;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *tempArray = [NSMutableArray new];
+    tempArray = [[userDefaults arrayForKey:@"unpined"] mutableCopy];
+    NSMutableArray *temp2 = [[userDefaults arrayForKey:@"pined"] mutableCopy];
+    if ([tempArray count]) {
+        _unpinedArray = tempArray;
+        _pinArray = temp2;
+    }
     
     if ([self CheckNetWorkStatus]) {
         [self loadData];
@@ -196,12 +208,18 @@
             }
         }
     }else{
-        MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
-        NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row][@"name"]]];
-        NSRange contentRange = {0,[content length]};
-        [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
-        onlineCell.onLineLabel.attributedText = content;
-        return onlineCell;
+        if ([_pinArray count] > 0) {
+            MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
+            NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row][@"name"]]];
+            NSRange contentRange = {0,[content length]};
+            [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
+            onlineCell.onLineLabel.attributedText = content;
+            return onlineCell;
+        }else{
+            MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
+            return onlineCell;
+        }
+        
     }
 }
 
@@ -227,7 +245,7 @@
                 break;
         }
     }else if (indexPath.section == 1) {
-        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_pinArray[indexPath.row][@"url"]]];
     }else {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_unpinedArray[indexPath.row][@"url"]]];
     }
