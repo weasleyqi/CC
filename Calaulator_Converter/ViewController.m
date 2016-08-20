@@ -94,12 +94,6 @@
     _shouldGo = NO;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    if ([self CheckNetWorkStatus]) {
-        [self loadData];
-    }
-}
-
 
 //Check NetWork Status
 - (BOOL)CheckNetWorkStatus {
@@ -141,6 +135,7 @@
 
 - (void)reloadTableView{
     _dataDict = [DataHandlerTool getDataFromDisk];
+    _unpinedArray = [NSMutableArray new];
     [_unpinedArray addObjectsFromArray:_dataDict[@"Calculators"]];
     [_unpinedArray addObjectsFromArray:_dataDict[@"Converters"]];
     
@@ -244,7 +239,7 @@
         }
     }else{
         if ([_unpinedArray count] > 0) {
-            NSLog(@"%@",_unpinedArray);
+//            NSLog(@"%@",_unpinedArray);
             MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
             NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row][@"name"]]];
             NSRange contentRange = {0,[content length]};
@@ -252,6 +247,7 @@
             onlineCell.onLineLabel.attributedText = content;
             onlineCell.delegate = self;
             onlineCell.statusBtn.tag = 2000 + indexPath.row;
+            onlineCell.backgroundColor = [UIColor whiteColor];
             if ([_unpinedArray[indexPath.row][@"kind"] isEqualToString:@"1"]) {
                 onlineCell.backgroundColor = UIColorFromRGB(0xEDEB98, 1);
             }
