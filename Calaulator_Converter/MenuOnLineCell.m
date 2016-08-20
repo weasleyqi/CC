@@ -9,5 +9,10 @@
 #import "MenuOnLineCell.h"
 
 @implementation MenuOnLineCell
+@synthesize delegate;
+
+- (IBAction)btnClicked:(UIButton *)sender {
+    [delegate changeStatus:sender];
+}
 
 @end

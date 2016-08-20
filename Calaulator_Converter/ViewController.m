@@ -14,12 +14,13 @@
 #import "MenuSearchCell.h"
 #import "Constant.h"
 
-@interface ViewController ()<UITabBarDelegate,UITableViewDataSource>
+@interface ViewController ()<UITabBarDelegate,UITableViewDataSource,pinUnpinChangeDelegate>
 @property (strong, nonatomic) NSDictionary *dataDict;
 @property (strong, nonatomic) NSArray *offLineData;
 @property (strong, nonatomic) NSMutableArray *pinArray;
 @property (strong, nonatomic) NSMutableArray *unpinedArray;
 @property (strong, nonatomic) NSMutableArray *allDataArray;
+@property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
 @property (nonatomic) BOOL shouldGo;
 
@@ -31,6 +32,7 @@
     [super viewDidLoad];
     _pinArray = [NSMutableArray new];
     _unpinedArray = [NSMutableArray new];
+    _allDataArray = [NSMutableArray new];
     _shouldGo = YES;
     
     _offLineData = [NSArray arrayWithObjects:@{@"image":@"Scientific Calcuator@2x.png",@"title":@"Scientific Calcuator"},
@@ -42,15 +44,17 @@
     [_unpinedArray addObjectsFromArray:_dataDict[@"Calculators"]];
     [_unpinedArray addObjectsFromArray:_dataDict[@"Converters"]];
     
-    _allDataArray = _unpinedArray;
+    _allDataArray = [_unpinedArray mutableCopy];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *tempArray = [NSMutableArray new];
     tempArray = [[userDefaults arrayForKey:@"unpined"] mutableCopy];
     NSMutableArray *temp2 = [[userDefaults arrayForKey:@"pined"] mutableCopy];
     if ([tempArray count]) {
-        _unpinedArray = tempArray;
-        _pinArray = temp2;
+        _unpinedArray = [tempArray mutableCopy];
+        _pinArray = [temp2 mutableCopy];
+    }else{
+        NSLog(@"no data stored");
     }
     
     if ([self CheckNetWorkStatus]) {
@@ -64,7 +68,6 @@
     }
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *stMenu = [userDefaults stringForKey:@"startMenu"];
-    NSLog(@"%@ stmenu %@",NSStringFromClass(self.class),stMenu);
     switch ([stMenu intValue]) {
         case 0:
             break;
@@ -164,7 +167,7 @@
     if (section == 0) {
         return [_offLineData count];
     }else if(section == 1){
-        return 10;
+        return [_pinArray count] + 1;
     }else {
         return [_unpinedArray count];
     }
@@ -193,14 +196,15 @@
             return cell;
             
         }else{
-            if ([_unpinedArray count] != 0) {
+            if ([_pinArray count] != 0) {
                 
                 MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
-                NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row+1][@"name"]]];
+                NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_pinArray[indexPath.row-1][@"name"]]];
                 NSRange contentRange = {0,[content length]};
                 [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
                 onlineCell.onLineLabel.attributedText = content;
-                
+                onlineCell.delegate = self;
+                onlineCell.statusBtn.tag = 1000 + indexPath.row-1;
                 return onlineCell;
             }else{
                 MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
@@ -208,18 +212,19 @@
             }
         }
     }else{
-        if ([_pinArray count] > 0) {
+        if ([_unpinedArray count] > 0) {
             MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
             NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row][@"name"]]];
             NSRange contentRange = {0,[content length]};
             [content addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:contentRange];
             onlineCell.onLineLabel.attributedText = content;
+            onlineCell.delegate = self;
+            onlineCell.statusBtn.tag = 2000 + indexPath.row;
             return onlineCell;
         }else{
             MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
             return onlineCell;
         }
-        
     }
 }
 
@@ -245,7 +250,7 @@
                 break;
         }
     }else if (indexPath.section == 1) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_pinArray[indexPath.row][@"url"]]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_pinArray[indexPath.row-1][@"url"]]];
     }else {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_unpinedArray[indexPath.row][@"url"]]];
     }
@@ -258,4 +263,34 @@
     
 }
 
+- (void)changeStatus:(UIButton *)sender {
+    if (sender.tag >= 2000) {//unpin -> pin
+        [_pinArray addObject:_unpinedArray[sender.tag-2000]];
+        [_unpinedArray removeObjectAtIndex:(sender.tag -2000)];
+        [_menuTableView reloadData];
+    }else if (sender.tag >= 1000) {//pin -> unpin
+        [_pinArray removeObjectAtIndex:(sender.tag-1000)];
+        [self unpinarryModify];
+        [_menuTableView reloadData];
+    }
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:_pinArray forKey:@"pined"];
+    [userDefaults setObject:_unpinedArray forKey:@"unpined"];
+}
+
+- (void)unpinarryModify{
+    [_pinArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_allDataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj2, NSUInteger idx2, BOOL * _Nonnull stop2) {
+            if ([obj2[@"name"] isEqualToString:obj[@"name"]]) {
+                NSLog(@"remove name %@",obj[@"name"]);
+                [_allDataArray removeObjectAtIndex:idx2];
+            }
+        }];
+    }];
+    [_unpinedArray removeAllObjects];
+    _unpinedArray = [_allDataArray mutableCopy];
+    
+}
+
 @end
+

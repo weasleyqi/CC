@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol pinUnpinChangeDelegate <NSObject>
+
+- (void)changeStatus:(UIButton *)sender;
+
+@end
 @interface MenuOnLineCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *onLineLabel;
+@property (weak, nonatomic) IBOutlet UIButton *statusBtn;
 
+@property (weak, nonatomic) NSObject <pinUnpinChangeDelegate>*delegate;
 @end

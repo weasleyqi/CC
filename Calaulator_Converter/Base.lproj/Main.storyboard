@@ -87,6 +87,9 @@
                                                         <constraint firstAttribute="height" constant="25" id="yoa-zN-aSJ"/>
                                                     </constraints>
                                                     <state key="normal" image="unpinText.png"/>
+                                                    <connections>
+                                                        <action selector="btnClicked:" destination="UN4-Y6-G5X" eventType="touchUpInside" id="4up-ok-F8f"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsw-Kl-H3b">
                                                     <rect key="frame" x="15" y="14" width="477" height="19"/>
@@ -115,6 +118,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="onLineLabel" destination="Hsw-Kl-H3b" id="Zn5-io-zMI"/>
+                                            <outlet property="statusBtn" destination="Lvx-no-MoE" id="dNa-oO-UqY"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell3" rowHeight="45" id="mp7-7d-PcK" customClass="MenuOnLineCell">
@@ -140,6 +144,9 @@
                                                         <constraint firstAttribute="height" constant="25" id="uWo-Jm-58c"/>
                                                     </constraints>
                                                     <state key="normal" image="pinText.png"/>
+                                                    <connections>
+                                                        <action selector="btnClicked:" destination="mp7-7d-PcK" eventType="touchUpInside" id="yKd-yQ-nF6"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -154,6 +161,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="onLineLabel" destination="uC6-4M-WFk" id="zcQ-eP-nb1"/>
+                                            <outlet property="statusBtn" destination="74n-8a-BNo" id="OoY-Jh-ieu"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="70" id="FIj-gk-tWU" customClass="MenuSearchCell">
@@ -236,6 +244,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="k8B-dS-WX2"/>
                     <connections>
+                        <outlet property="menuTableView" destination="FOx-D6-vfz" id="AJ2-O0-XzN"/>
                         <outlet property="searchDisplayController" destination="Gtr-H7-w4U" id="E87-68-O4t"/>
                         <segue destination="7uh-RC-LAk" kind="push" identifier="currencyConverter" id="lU8-ZN-0X8"/>
                         <segue destination="jFD-mf-EjL" kind="push" identifier="unitConverter" id="ALG-hc-mfS"/>
