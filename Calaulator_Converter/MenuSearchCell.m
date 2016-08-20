@@ -9,5 +9,9 @@
 #import "MenuSearchCell.h"
 
 @implementation MenuSearchCell
+@synthesize delegate;
+- (IBAction)search:(id)sender {
+    [delegate searchAction:sender];
+}
 
 @end

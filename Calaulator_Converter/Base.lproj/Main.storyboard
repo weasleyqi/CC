@@ -207,6 +207,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
+                                                        <action selector="search:" destination="FIj-gk-tWU" eventType="touchUpInside" id="MOP-7c-F6F"/>
                                                         <action selector="searchCC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T55-gC-x8D"/>
                                                     </connections>
                                                 </button>
@@ -223,7 +224,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="menuSearchTextField" destination="e9j-gL-EWb" id="V7u-EQ-sSa"/>
+                                            <outlet property="menuSearchTextField" destination="e9j-gL-EWb" id="gjF-VB-RdR"/>
+                                            <outlet property="searchBtn" destination="9Fh-PQ-ICB" id="wJ7-Ug-zjn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

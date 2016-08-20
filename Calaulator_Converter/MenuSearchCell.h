@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SearchCellDelegate <NSObject>
+
+- (void)searchAction:(UIButton *)sender;
+
+@end
 @interface MenuSearchCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *menuSearchTextField;
 
+@property (weak, nonatomic) IBOutlet UIButton *searchBtn;
+
+@property (nonatomic, weak) NSObject <SearchCellDelegate>*delegate;
 @end

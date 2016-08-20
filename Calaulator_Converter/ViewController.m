@@ -14,12 +14,14 @@
 #import "MenuSearchCell.h"
 #import "Constant.h"
 
-@interface ViewController ()<UITabBarDelegate,UITableViewDataSource,pinUnpinChangeDelegate>
+@interface ViewController ()<UITabBarDelegate,UITableViewDataSource,pinUnpinChangeDelegate,UITextFieldDelegate,SearchCellDelegate>
 @property (strong, nonatomic) NSDictionary *dataDict;
 @property (strong, nonatomic) NSArray *offLineData;
 @property (strong, nonatomic) NSMutableArray *pinArray;
 @property (strong, nonatomic) NSMutableArray *unpinedArray;
 @property (strong, nonatomic) NSMutableArray *allDataArray;
+@property (strong, nonatomic) NSMutableArray *beforeSearchArray;
+@property (strong, nonatomic) NSMutableArray *searchResultArray;
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
 @property (nonatomic) BOOL shouldGo;
@@ -33,6 +35,8 @@
     _pinArray = [NSMutableArray new];
     _unpinedArray = [NSMutableArray new];
     _allDataArray = [NSMutableArray new];
+    _beforeSearchArray = [NSMutableArray new];
+    _searchResultArray = [NSMutableArray new];
     _shouldGo = YES;
     
     _offLineData = [NSArray arrayWithObjects:@{@"image":@"Scientific Calcuator@2x.png",@"title":@"Scientific Calcuator"},
@@ -44,6 +48,7 @@
     [_unpinedArray addObjectsFromArray:_dataDict[@"Calculators"]];
     [_unpinedArray addObjectsFromArray:_dataDict[@"Converters"]];
     
+    _beforeSearchArray = [_unpinedArray mutableCopy];
     _allDataArray = [_unpinedArray mutableCopy];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -127,10 +132,33 @@
                                        NSString *respString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                        _dataDict = [DataHandlerTool dataHandlerWithResponseString:respString];
                                        [DataHandlerTool saveToDisk:respString];
+                                       [self reloadTableView];
                                    }];
     // 启动任务
     [task resume];
     
+}
+
+- (void)reloadTableView{
+    _dataDict = [DataHandlerTool getDataFromDisk];
+    [_unpinedArray addObjectsFromArray:_dataDict[@"Calculators"]];
+    [_unpinedArray addObjectsFromArray:_dataDict[@"Converters"]];
+    
+    _beforeSearchArray = [_unpinedArray mutableCopy];
+    _allDataArray = [_unpinedArray mutableCopy];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *tempArray = [NSMutableArray new];
+    tempArray = [[userDefaults arrayForKey:@"unpined"] mutableCopy];
+    NSMutableArray *temp2 = [[userDefaults arrayForKey:@"pined"] mutableCopy];
+    if ([tempArray count]) {
+        _unpinedArray = [tempArray mutableCopy];
+        _pinArray = [temp2 mutableCopy];
+    }else{
+        NSLog(@"no data stored");
+    }
+    
+    [_menuTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -193,6 +221,8 @@
     }else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
             MenuSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell"];
+            cell.delegate = self;
+            cell.menuSearchTextField.delegate = self;
             return cell;
             
         }else{
@@ -205,6 +235,7 @@
                 onlineCell.onLineLabel.attributedText = content;
                 onlineCell.delegate = self;
                 onlineCell.statusBtn.tag = 1000 + indexPath.row-1;
+                //EDEB98
                 return onlineCell;
             }else{
                 MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
@@ -213,6 +244,7 @@
         }
     }else{
         if ([_unpinedArray count] > 0) {
+            NSLog(@"%@",_unpinedArray);
             MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
             NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row][@"name"]]];
             NSRange contentRange = {0,[content length]};
@@ -220,6 +252,9 @@
             onlineCell.onLineLabel.attributedText = content;
             onlineCell.delegate = self;
             onlineCell.statusBtn.tag = 2000 + indexPath.row;
+            if ([_unpinedArray[indexPath.row][@"kind"] isEqualToString:@"1"]) {
+                onlineCell.backgroundColor = UIColorFromRGB(0xEDEB98, 1);
+            }
             return onlineCell;
         }else{
             MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
@@ -273,6 +308,7 @@
         [self unpinarryModify];
         [_menuTableView reloadData];
     }
+    _beforeSearchArray = [_unpinedArray mutableCopy];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:_pinArray forKey:@"pined"];
     [userDefaults setObject:_unpinedArray forKey:@"unpined"];
@@ -292,5 +328,42 @@
     
 }
 
-@end
+- (BOOL)textFieldShouldReturn:(UITextField *)aTextfield {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    
+    MenuSearchCell *cell = [_menuTableView cellForRowAtIndexPath:indexPath];
+    [cell.menuSearchTextField resignFirstResponder];
+    if ([cell.menuSearchTextField.text length] <=0) {
+        _unpinedArray = [_beforeSearchArray mutableCopy];
+        [_menuTableView reloadData];
+        return YES;
+    }
+    [self searchInArray:cell.menuSearchTextField.text];
+    
+    return YES;
+}
 
+- (void)searchAction:(UIButton *)sender {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+    
+    MenuSearchCell *cell = [_menuTableView cellForRowAtIndexPath:indexPath];
+    [cell.menuSearchTextField resignFirstResponder];
+    if ([cell.menuSearchTextField.text length] <=0) {
+        _unpinedArray = [_beforeSearchArray mutableCopy];
+        [_menuTableView reloadData];
+        return;
+    }
+    [self searchInArray:cell.menuSearchTextField.text];
+}
+
+- (void)searchInArray:(NSString *)str {
+    [_unpinedArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj[@"name"] rangeOfString:str].location != NSNotFound) {
+            [_searchResultArray addObject:obj];
+        }
+    }];
+    _unpinedArray = [_searchResultArray mutableCopy];
+    [_menuTableView reloadData];
+    NSLog(@"resultArray %@",_searchResultArray);
+}
+@end

@@ -57,7 +57,7 @@
     [_coverView addGestureRecognizer:gesture6];
     
     _startMenuArray = @[@"Menu",@"Scientific Calculator",@"Statistics Calculator",@"Unit Converter",@"Currency Converter"];
-    [self sectionSelected:_soundView isSelected:YES];
+//    [self sectionSelected:_soundView isSelected:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
