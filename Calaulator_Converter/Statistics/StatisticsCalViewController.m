@@ -244,6 +244,9 @@
         case 202://exp
             showText.text = [NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])];
             break;
+        case 18: // C
+            showText.text = @"0";
+            tempStr = @"0";
             
         default:
             break;

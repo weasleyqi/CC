@@ -1350,6 +1350,9 @@
                                 <state key="normal" title="C" backgroundImage="button01.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculate:" destination="nsA-FL-gk6" eventType="touchUpInside" id="ab4-BZ-Wzp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="107" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gs-yj-Txu" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="522" width="46" height="30"/>
@@ -1917,7 +1920,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="prP-8d-cQ7"/>
                                         </constraints>
-                                        <state key="normal" title="确定"/>
+                                        <state key="normal" title="OK"/>
                                         <connections>
                                             <action selector="pickSelect:" destination="jFD-mf-EjL" eventType="touchUpInside" id="l8i-Yo-XJF"/>
                                         </connections>
@@ -1927,7 +1930,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="5TQ-2G-Tdc"/>
                                         </constraints>
-                                        <state key="normal" title="取消"/>
+                                        <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="pickUnSelect:" destination="jFD-mf-EjL" eventType="touchUpInside" id="h0e-Wy-Qhb"/>
                                         </connections>
@@ -2493,14 +2496,14 @@
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bC-rh-sOU">
                                         <rect key="frame" x="321" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="确定"/>
+                                        <state key="normal" title="OK"/>
                                         <connections>
                                             <action selector="pickSelected:" destination="7uh-RC-LAk" eventType="touchUpInside" id="eTy-te-HUD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRs-NX-SNT">
                                         <rect key="frame" x="8" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="取消"/>
+                                        <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="pickUnSelect:" destination="7uh-RC-LAk" eventType="touchUpInside" id="YgF-ui-sPO"/>
                                         </connections>
