@@ -136,6 +136,7 @@
         tempStr = [tempStr stringByAppendingString:[NSString stringWithFormat:@"%ld",[sender tag]]];
     }
     showText.text = tempStr;
+    [self resultGet:nil];
 }
 - (IBAction)resultGet:(id)sender {
     if (_majorSwitch.isOn) {
@@ -232,6 +233,7 @@
     _toShowLabel.text = _toExLabel.text;
     _pickAreaView.hidden = YES;
     _coverView.hidden = YES;
+    [self resultGet:nil];
     
 }
 - (IBAction)pickUnSelect:(id)sender {

@@ -200,6 +200,7 @@
         tempStr = [tempStr stringByAppendingString:[NSString stringWithFormat:@"%ld",[sender tag]]];
     }
     showText.text = tempStr;
+    [self resultBtnClicked:nil];
 }
 
 
@@ -207,7 +208,7 @@
     double result = [showText.text doubleValue] * [[_currentShowArray[_currentSelectedRowIndex2] allValues][0] doubleValue] / [[_currentShowArray[_currentSelectedRowIndex] allValues][0] doubleValue] ;
     _fromValueLabel.text = showText.text;
     _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
-    [_toValueLabel sizeToFit];
+//    [_toValueLabel sizeToFit];
     _toValueLabel.textAlignment = NSTextAlignmentCenter;
 }
 
@@ -248,6 +249,7 @@
     }
     _pickAreaView.hidden = YES;
     _coverView.hidden = YES;
+    [self resultBtnClicked:nil];
 }
 - (IBAction)pickUnSelect:(id)sender {
     _pickAreaView.hidden = YES;
