@@ -125,6 +125,9 @@
                     sum = sum + [obj doubleValue];
                 }];
                 showText.text = [NSString stringWithFormat:@"%f",sum / [_addedNumArr count]];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Mean (Avergae) ",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
         case 101://x2 average
@@ -134,6 +137,9 @@
                     sum = sum + [obj doubleValue] * [obj doubleValue];
                 }];
                 showText.text = [NSString stringWithFormat:@"%f",sum / [_addedNumArr count]];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Mean of the Square of the Values ",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
         case 102://x求和
@@ -143,6 +149,9 @@
                     sum = sum + [obj doubleValue];
                 }];
                 showText.text = [NSString stringWithFormat:@"%f",sum];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Sum ",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
         case 103://x2 求和
@@ -152,6 +161,9 @@
                     sum = sum + [obj doubleValue] * [obj doubleValue];
                 }];
                 showText.text = [NSString stringWithFormat:@"%f",sum];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Sum of the Square of the Values ",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
         case 104://标准差
@@ -168,6 +180,9 @@
                 
                 double std = sqrt(sum/[_addedNumArr count]);
                 showText.text = [NSString stringWithFormat:@"%f",std];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Deviation",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
         case 105://方差
@@ -183,10 +198,13 @@
                 }];
                 
                 showText.text = [NSString stringWithFormat:@"%f",sum/[_addedNumArr count]];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Deviation",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
         case 106://样本标准差
-            if ([_addedNumArr count] > 0) {
+            if ([_addedNumArr count] > 1) {
                 __block double sum = 0.0;
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue];
@@ -198,11 +216,14 @@
                 }];
                 double std = sqrt(sum/([_addedNumArr count]-1));
                 showText.text = [NSString stringWithFormat:@"%f",std];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Simple Standard Deviation ",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             
             break;
         case 107://方差
-            if ([_addedNumArr count] > 0) {
+            if ([_addedNumArr count] > 1) {
                 __block double sum = 0.0;
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue];
@@ -214,6 +235,9 @@
                 }];
                 
                 showText.text = [NSString stringWithFormat:@"%f",sum/([_addedNumArr count]-1)];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Simple Standard Variance ",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
         case 108://正负
@@ -228,6 +252,9 @@
                     sum = sum * [obj doubleValue];
                 }];
                 showText.text =[NSString stringWithFormat:@"%lf",pow(sum , 1.0/[_addedNumArr count])];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Geometric Mean ",[_addedarr count]];
+            }else {
+                [self showAttributedLabel];
             }
             break;
             
@@ -251,6 +278,14 @@
         default:
             break;
     }
+}
+
+- (void)showAttributedLabel {
+    NSMutableAttributedString *attriString = [[NSMutableAttributedString alloc] initWithString:@"Count=0, Please provide 1 or more values."];
+    [attriString addAttribute:(NSString *)NSForegroundColorAttributeName
+                        value:(id)[UIColor redColor].CGColor
+                        range:NSMakeRange(9, 32)];
+    _countLabel.attributedText = attriString;
 }
 
 - (IBAction)inputNum:(UIButton *)sender {
