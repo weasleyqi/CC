@@ -82,19 +82,6 @@ typedef enum {
 
 //输入数字0-9还有小数点
 - (IBAction)pressNumbers:(id)sender {
-//    switch ([MobileData sharedInstance].settingsType) {
-//        case SettingType_Sound:
-//            AudioServicesPlaySystemSound(SOUNDID);
-//            break;
-//        case SettingType_vibrate:
-//            NSLog(@"vibrate ......");
-//            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-//            break;
-//        case SettingType_none:
-//            break;
-//        default:
-//            break;
-//    }
     [MobileData checkSettings];
     //处理0的问题
     //以零开头，下次输入的非0，则清空0
@@ -264,10 +251,10 @@ typedef enum {
             showText.text = [NSString stringWithFormat:@"%f",M_E];
             break;
         case 111://x的3次方
-            showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 3)];
+            showText.text =[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 3)];
             break;
         case 112://x的2次方
-            showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 2)];
+            showText.text =[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 2)];
             break;
         case 210://e x
             showText.text =[NSString stringWithFormat:@"%lf",pow(M_E, [showText.text doubleValue])];

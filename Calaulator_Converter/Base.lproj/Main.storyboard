@@ -2889,20 +2889,28 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="775-fq-ydc">
                                 <rect key="frame" x="0.0" y="464" width="375" height="60"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="right.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-5X-TX6">
+                                        <rect key="frame" x="315" y="0.0" width="60" height="60"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="If you like this app, please give us a good rating." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCU-ON-1sp">
                                         <rect key="frame" x="15" y="0.0" width="345" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" red="0.0" green="0.070588235294117646" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.14117647058823529" green="0.52156862745098043" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="eCU-ON-1sp" secondAttribute="trailing" constant="15" id="DsR-Hg-KBL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pd9-5X-TX6" secondAttribute="trailing" id="LJJ-YC-zt1"/>
                                     <constraint firstAttribute="bottom" secondItem="eCU-ON-1sp" secondAttribute="bottom" id="OsM-Po-nBl"/>
                                     <constraint firstItem="eCU-ON-1sp" firstAttribute="leading" secondItem="775-fq-ydc" secondAttribute="leading" constant="15" id="Xhi-yl-YZ5"/>
                                     <constraint firstItem="eCU-ON-1sp" firstAttribute="centerY" secondItem="775-fq-ydc" secondAttribute="centerY" id="YyA-Gx-VzJ"/>
+                                    <constraint firstItem="Pd9-5X-TX6" firstAttribute="top" secondItem="775-fq-ydc" secondAttribute="top" id="cbD-AN-cOg"/>
                                     <constraint firstItem="eCU-ON-1sp" firstAttribute="top" secondItem="775-fq-ydc" secondAttribute="top" id="ggg-PZ-xgP"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pd9-5X-TX6" secondAttribute="bottom" id="h6q-2P-90B"/>
+                                    <constraint firstItem="Pd9-5X-TX6" firstAttribute="height" secondItem="775-fq-ydc" secondAttribute="height" id="hoI-BW-yUD"/>
+                                    <constraint firstItem="Pd9-5X-TX6" firstAttribute="width" secondItem="775-fq-ydc" secondAttribute="width" multiplier="60:375" id="iJR-a8-92d"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4lT-vc-AjI">
@@ -2947,6 +2955,7 @@
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YPM-4O-eTX">
                                 <rect key="frame" x="0.0" y="64" width="375" height="357"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94509803921568625" green="0.94901960784313721" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
