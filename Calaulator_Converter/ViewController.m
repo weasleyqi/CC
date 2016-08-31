@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 
 @property (nonatomic) BOOL shouldGo;
-
+@property (nonatomic) MenuSearchCell *searchCell;
 @end
 
 @implementation ViewController
@@ -65,6 +65,9 @@
     if ([self CheckNetWorkStatus]) {
         [self loadData];
     }
+    
+    _searchCell = [_menuTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    [_searchCell.menuSearchTextField addTarget:self action:@selector(valueChaged:) forControlEvents:UIControlEventEditingChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -281,7 +284,11 @@
                 break;
         }
     }else if (indexPath.section == 1) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_pinArray[indexPath.row-1][@"url"]]];
+        if (indexPath.row == 0) {
+            
+        }else {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_pinArray[indexPath.row-1][@"url"]]];
+        }
     }else {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:_unpinedArray[indexPath.row][@"url"]]];
     }
@@ -323,8 +330,7 @@
     _unpinedArray = [_allDataArray mutableCopy];
     
 }
-
-- (BOOL)textFieldShouldReturn:(UITextField *)aTextfield {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
     
     MenuSearchCell *cell = [_menuTableView cellForRowAtIndexPath:indexPath];
@@ -335,9 +341,32 @@
         return YES;
     }
     [self searchInArray:cell.menuSearchTextField.text];
-    
     return YES;
 }
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    if (_searchCell == nil) {
+        _searchCell = [_menuTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    }
+    
+    if ([_searchCell.menuSearchTextField.text length]+ [string length] <= 0) {
+        _unpinedArray = [_beforeSearchArray mutableCopy];
+//        [_menuTableView reloadData];
+        [_menuTableView reloadSections:[[NSIndexSet alloc] initWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+        return YES;
+    }
+    
+    
+    NSString *str = [_searchCell.menuSearchTextField.text stringByAppendingString:string];
+    [self searchInArray:str];
+    NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
+    
+    [_menuTableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    [_searchCell.menuSearchTextField becomeFirstResponder];
+    return YES;
+}
+
 
 - (void)searchAction:(UIButton *)sender {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:1];
@@ -352,14 +381,24 @@
     [self searchInArray:cell.menuSearchTextField.text];
 }
 
+
+
 - (void)searchInArray:(NSString *)str {
-    [_unpinedArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSLog(@"search text %@",str);
+    if (str.length == 0) {
+        _unpinedArray = [_beforeSearchArray mutableCopy];
+        //        [_menuTableView reloadData];
+        [_menuTableView reloadSections:[[NSIndexSet alloc] initWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
+        return;
+    }
+    [_searchResultArray removeAllObjects];
+    [_beforeSearchArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj[@"name"] rangeOfString:str].location != NSNotFound) {
             [_searchResultArray addObject:obj];
         }
     }];
     _unpinedArray = [_searchResultArray mutableCopy];
-    [_menuTableView reloadData];
-    NSLog(@"resultArray %@",_searchResultArray);
+//    [_menuTableView reloadData];
+//    NSLog(@"resultArray %@",_searchResultArray);
 }
 @end
