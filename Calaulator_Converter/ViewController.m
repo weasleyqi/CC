@@ -357,12 +357,14 @@
         return YES;
     }
     
-    
-    NSString *str = [_searchCell.menuSearchTextField.text stringByAppendingString:string];
-    [self searchInArray:str];
+    NSString *resultingString = [textField.text stringByReplacingCharactersInRange: range withString: string];
+    NSLog(@"resulting string %@",resultingString);
+//    NSString *str = [_searchCell.menuSearchTextField.text stringByAppendingString:string];
+    [self searchInArray:resultingString];
     NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
     
     [_menuTableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+//    _menuTableView.contentOffset = CGPointMake(0, 225);
     [_searchCell.menuSearchTextField becomeFirstResponder];
     return YES;
 }
