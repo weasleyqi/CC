@@ -1811,6 +1811,9 @@
                                 <state key="normal" title="±" backgroundImage="black-button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="calculate:" destination="jFD-mf-EjL" eventType="touchUpInside" id="Urs-jz-e8n"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsq-Qp-5qg" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="159" y="490" width="62" height="41"/>

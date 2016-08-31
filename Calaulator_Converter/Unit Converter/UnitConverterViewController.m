@@ -46,6 +46,7 @@
 @property (weak, nonatomic) IBOutlet UIView *coverView;
 
 @property (strong, nonatomic) NSString *tempStr;
+@property (nonatomic) BOOL isTemp;
 @end
 
 @implementation UnitConverterViewController
@@ -56,6 +57,7 @@
     [super viewDidLoad];
     
     tempStr = @"";
+    _isTemp = NO;
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
     _fromView.userInteractionEnabled = YES;
@@ -74,7 +76,7 @@
     
     _unitTitleArr = @[@"Length",@"Temp.",@"Area",@"Volume",@"Weight",@"Time"];
     _lengthDataArray = @[@{@"Meter":@"1"},@{@"Kilometer":@"0.001"},@{@"Centimeter":@"100"},@{@"Millimeter":@"1000"},@{@"Micrometer":@"1000000"},@{@"Nanometer":@"1000000000"},@{@"Mile":@"0.0006213712"},@{@"Yard":@"1.0936132983"},@{@"Foot":@"3.280839895"},@{@"Inch":@"39.37007874"},@{@"Light Year":@"0.0000000000000001057000834"}];
-    _tempDataArray = @[@{@"Celsius":@"1"},@{@"Kelvin":@"274.15"},@{@"Farenheit":@"33.8"}];
+    _tempDataArray = @[@{@"Celsius":@"-17.222222222"},@{@"Kelvin":@"255.92777778"},@{@"Farenheit":@"1"}];
     _areaDataArray = @[@{@"Square Meter":@"83.612736"},@{@"Square Kilometer":@"0.0000836127"},@{@"Square Centimeter":@"836127.36"},@{@"Square Millimeter":@"83612736"},@{@"Square Micrometer":@"83612735999999"},@{@"Hectare":@"0.0083612736"},@{@"Square Mile":@"0.0000322831"},@{@"Square Yard":@"100"},@{@"Square Foot":@"900"},@{@"Square Inch":@"129600"},@{@"Acre":@"0.0206610744"}];
     _volumeDataArray = @[@{@"Cubic Meter":@"10"},@{@"Cubic Kilometer":@"0.00000001"},@{@"Cubic Centimeter":@"10000000"},@{@"Cubic Millimeter":@"10000000000"},@{@"Liter":@"10000"},@{@"Milliliter":@"10000000"},@{@"US Gallon":@"2641.7205236"},@{@"US Quart":@"10566.882094"},@{@"US Pint":@"21133.764189"},@{@"US Cup":@"42267.528377"},@{@"US Fluid Ounce":@"338140.22702"},@{@"US Table Spoon":@"676280.45404"},@{@"US Tea Spoon":@"2028841.3621"},@{@"Imperial Gallon":@"2199.692483"},@{@"Imperial Quart":@"8798.769932"},@{@"Imperial Pint":@"17597.539864"},@{@"Imperial Fluid Ounce":@"351950.79728"},@{@"Imperial Tabel Spoon":@"563121.27565"},@{@"Imperial Tea Spoon":@"1689363.8269"},@{@"Cubic Mile":@"0.000000002399127585"},@{@"Cubic Yard":@"13.079506193"},@{@"Cubic Foot":@"353.14666721"},@{@"Cubic Inch":@"610237.44095"}];
     _weightDataArray = @[@{@"Kilogarm":@"1"},@{@"Gram":@"1000"},@{@"Milligram":@"1000000"},@{@"Metric Ton":@"0.001"},@{@"Long Ton":@"0.0009842065"},@{@"Short Ton":@"0.0011023113"},@{@"Pound":@"2.2046226218"},@{@"Ounce":@"35.27396195"},@{@"Carrat":@"5000"},@{@"Atomic Mass Unit":@"602213665100000000000000000"}];
@@ -139,6 +141,8 @@
         }
     }];
     _currentShowArray = [NSArray new];
+    _currentSelectedRowIndex = 0;
+    _currentSelectedRowIndex2 = 1;
     switch (_currentSelectedIndex) {
             
         case 0://length
@@ -163,11 +167,17 @@
             _currentShowArray = _lengthDataArray;
             break;
     }
+    
+    if (_currentSelectedIndex == 1) {
+        _isTemp = YES;
+    }else {
+        _isTemp = NO;
+    }
     _fromLabel.text = [_currentShowArray[0] allKeys][0];
     _toLabel.text = [_currentShowArray[1] allKeys][0];
-    _fromShowLabel.text = [_currentShowArray[0] allKeys][0];
-    _toShowLabel.text = [_currentShowArray[1] allKeys][0];
-    _fromValueLabel.text = @"0";
+    
+    [self resultBtnClicked:nil];
+    
 }
 
 - (IBAction)click1:(id)sender {
@@ -205,6 +215,21 @@
 
 
 - (IBAction)resultBtnClicked:(id)sender {
+    if (_isTemp) {
+//        showText.text = [self tempCalWithFirstIndex:_currentSelectedRowIndex secondIndex:_currentSelectedRowIndex2];
+        _fromValueLabel.text = showText.text;
+        _toValueLabel.text = [self tempCalWithFirstIndex:_currentSelectedRowIndex secondIndex:_currentSelectedRowIndex2];
+        //    [_toValueLabel sizeToFit];
+        _toValueLabel.textAlignment = NSTextAlignmentCenter;
+        return;
+//        CKF
+        /*
+         华氏度 = 32 + 摄氏度 × 1.8
+         开氏度=273.16+摄氏度
+         摄氏度 = (华氏度 - 32) ÷ 1.8
+         */
+        
+    }
     double result = [showText.text doubleValue] * [[_currentShowArray[_currentSelectedRowIndex2] allValues][0] doubleValue] / [[_currentShowArray[_currentSelectedRowIndex] allValues][0] doubleValue] ;
     _fromValueLabel.text = showText.text;
     _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
@@ -224,6 +249,39 @@
     }
 }
 
+- (NSString *)tempCalWithFirstIndex:(NSInteger)fIndex secondIndex:(NSInteger)sIndex {
+    /* CKF
+     华氏度 = 32 + 摄氏度 × 1.8
+     开氏度=273.16+摄氏度
+     摄氏度 = (华氏度 - 32) ÷ 1.8
+     */
+    if (fIndex == 0 ) {
+        if (sIndex == 0) {
+            return @"1";
+        }else if (sIndex == 1) {
+            return [NSString stringWithFormat:@"%f",[showText.text doubleValue] + 273.16];
+        }else if (sIndex == 2) {
+            return [NSString stringWithFormat:@"%f",([showText.text doubleValue]*1.8 + 32)];
+        }
+    }else if (fIndex == 1) {
+        if (sIndex == 0 ) {
+            return [NSString stringWithFormat:@"%f",[showText.text doubleValue] - 273.16];
+        }else if (sIndex == 1) {
+            return @"1";
+        }else if (sIndex == 2) {
+            return [NSString stringWithFormat:@"%f",([showText.text doubleValue] -273.16)*1.8 + 32];
+        }
+    }else if (fIndex == 2) {
+        if (sIndex == 0) {
+            return [NSString stringWithFormat:@"%f",([showText.text doubleValue] -32)/1.8];
+        }else if (sIndex == 1) {
+            return [NSString stringWithFormat:@"%f",([showText.text doubleValue]- 32)/1.8 + 273.16];
+        }else if (sIndex == 2) {
+            return @"1";
+        }
+    }
+    return @"1";
+}
 //UIPickView
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;

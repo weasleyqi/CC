@@ -219,7 +219,7 @@ typedef enum {
      e 27
      */
     //RAD 弧度 DEG角度
-    //1角度=（PI/180）弧度 sin计算的值是弧度，需要转换成角度
+    //1角度=（PI/180）弧度 sin计算的值是弧度，需要转换成角度 360°角=2π弧度
     double calculateValue = [showText.text doubleValue];
     tempStr = @"0";
     if (_calculateMode == Mode_DEG) {
@@ -228,21 +228,39 @@ typedef enum {
     switch ([sender tag]) {
         case 20:
             showText.text = [NSString stringWithFormat:@"%f",sin(calculateValue)];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 21:
             showText.text = [NSString stringWithFormat:@"%f",cos(calculateValue)];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 22:
             showText.text = [NSString stringWithFormat:@"%f",tan(calculateValue)];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 23:
-            showText.text = [NSString stringWithFormat:@"%f",asin(calculateValue)];
+            showText.text = [NSString stringWithFormat:@"%f",asin([showText.text doubleValue])*180/M_PI];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 24:
-            showText.text = [NSString stringWithFormat:@"%f",acos(calculateValue)];
+            showText.text = [NSString stringWithFormat:@"%f",acos([showText.text doubleValue])*180/M_PI];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 25:
-            showText.text = [NSString stringWithFormat:@"%f",atan(calculateValue)];
+            showText.text = [NSString stringWithFormat:@"%f",atan([showText.text doubleValue])*180/M_PI];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 26://pi
             showText.text = [NSString stringWithFormat:@"%f",M_PI];
@@ -258,27 +276,54 @@ typedef enum {
             break;
         case 210://e x
             showText.text =[NSString stringWithFormat:@"%lf",pow(M_E, [showText.text doubleValue])];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 211://10 x
             showText.text =[NSString stringWithFormat:@"%lf",pow(10, [showText.text doubleValue])];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 212:
             showText.text =[NSString stringWithFormat:@"%lf",sqrt([showText.text doubleValue])];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 214://开3次方
             showText.text =[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 1.0/3)];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 215://in
             showText.text = [NSString stringWithFormat:@"%lf",log10([showText.text doubleValue]) / log10(M_E)];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 216://log10
             showText.text = [NSString stringWithFormat:@"%lf",log10([showText.text doubleValue])];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 217://1/x
             showText.text = [NSString stringWithFormat:@"%lf",1/ [showText.text doubleValue]];
+            if ([showText.text isEqualToString:@"nan"]) {
+                showText.text = @"ERROR";
+            }
             break;
         case 218://n!
-            showText.text = [NSString stringWithFormat:@"%ld",[self fac]];
+            if ([showText.text intValue] != 0) {
+                showText.text = [NSString stringWithFormat:@"%lld",[self fac]];
+                if ([showText.text isEqualToString:@"0"]) {
+                    showText.text = @"ERROR";
+                }
+            }
+            
             break;
         case 219:
             showText.text = [NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])];
@@ -351,8 +396,8 @@ typedef enum {
     }
 }
 
-- (long)fac {
-    long v = 1;
+- (long long)fac {
+    long long v = 1;
     int a = [showText.text intValue];
     if (a != [showText.text doubleValue]) {
         
