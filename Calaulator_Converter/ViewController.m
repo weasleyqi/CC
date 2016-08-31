@@ -233,7 +233,6 @@
                 onlineCell.onLineLabel.attributedText = content;
                 onlineCell.delegate = self;
                 onlineCell.statusBtn.tag = 1000 + indexPath.row-1;
-                //EDEB98
                 return onlineCell;
             }else{
                 MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell2"];
@@ -242,7 +241,6 @@
         }
     }else{
         if ([_unpinedArray count] > 0) {
-//            NSLog(@"%@",_unpinedArray);
             MenuOnLineCell *onlineCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell3"];
             NSMutableAttributedString *content = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"%@",_unpinedArray[indexPath.row][@"name"]]];
             NSRange contentRange = {0,[content length]};
@@ -352,19 +350,15 @@
     
     if ([_searchCell.menuSearchTextField.text length]+ [string length] <= 0) {
         _unpinedArray = [_beforeSearchArray mutableCopy];
-//        [_menuTableView reloadData];
         [_menuTableView reloadSections:[[NSIndexSet alloc] initWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
         return YES;
     }
     
     NSString *resultingString = [textField.text stringByReplacingCharactersInRange: range withString: string];
-    NSLog(@"resulting string %@",resultingString);
-//    NSString *str = [_searchCell.menuSearchTextField.text stringByAppendingString:string];
     [self searchInArray:resultingString];
     NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2];
     
     [_menuTableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
-//    _menuTableView.contentOffset = CGPointMake(0, 225);
     [_searchCell.menuSearchTextField becomeFirstResponder];
     return YES;
 }
@@ -389,7 +383,6 @@
     NSLog(@"search text %@",str);
     if (str.length == 0) {
         _unpinedArray = [_beforeSearchArray mutableCopy];
-        //        [_menuTableView reloadData];
         [_menuTableView reloadSections:[[NSIndexSet alloc] initWithIndex:2] withRowAnimation:UITableViewRowAnimationAutomatic];
         return;
     }
@@ -400,7 +393,5 @@
         }
     }];
     _unpinedArray = [_searchResultArray mutableCopy];
-//    [_menuTableView reloadData];
-//    NSLog(@"resultArray %@",_searchResultArray);
 }
 @end

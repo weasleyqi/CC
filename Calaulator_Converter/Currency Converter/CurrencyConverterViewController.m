@@ -43,6 +43,9 @@
 @property (nonatomic) NSInteger fromSelectedIndex;
 @property (nonatomic) NSInteger toSelectedIndex;
 
+@property (strong, nonatomic) NSString *timestamp;
+@property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *timestampLabel;
+
 @end
 
 @implementation CurrencyConverterViewController
@@ -59,8 +62,15 @@
     _majorPickArray = [NSMutableArray new];
     
     _currencyDict = [[DataHandlerTool getDataFromDisk] objectForKey:@"Exchange Rates"];;
-//    NSLog(@"currency %@",_currencyDict);
-    
+    _timestamp = _currencyDict[@"timestamp"];
+    NSDate *confromTimesp = [NSDate dateWithTimeIntervalSince1970:[_timestamp longLongValue]];
+    //实例化一个NSDateFormatter对象
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    //用[NSDate date]可以获取系统当前时间
+    NSString *currentDateStr = [dateFormatter stringFromDate:confromTimesp];
+    _timestampLabel.text = [NSString stringWithFormat:@"Exchage Rate Updated at:%@",currentDateStr];
     NSArray *majorArray = @[@"AUD",@"BRL",@"CAD",@"CHF",@"CNY",@"EUR",@"GBP",@"HKD",@"INR",@"JPY",@"KRW",@"MXN",@"RUB",@"SGD",@"USD",@"ZAR"];
     _currencyArray = _currencyDict[@"rates"];
     [_currencyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -87,17 +97,35 @@
     _coverView.tag = 3;
     [_coverView addGestureRecognizer:gesture3];
     
-    if (_majorSwitch.isOn) {
-        _fromExLabel.text = _majorSelectArray[0];
-        _toExLabel.text = _majorSelectArray[1];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    BOOL isM = [userDefaults boolForKey:@"major"];
+    if (isM) {
+        _fromExLabel.text = @"USD";
+        _toExLabel.text = @"EUR";
+        [_majorSelectArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isEqualToString:@"USD"]) {
+                _fromSelectedIndex = idx;
+            }
+            if ([obj isEqualToString:@"EUR"]) {
+                _toSelectedIndex = idx;
+            }
+        }];
+        _majorSwitch.on = YES;
     }else {
-        _fromExLabel.text = _selectShowArray[0];
-        _toExLabel.text = _selectShowArray[1];
+        _fromExLabel.text = @"USD";
+        _toExLabel.text = @"EUR";
+        [_selectShowArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj isEqualToString:@"USD"]) {
+                _fromSelectedIndex = idx;
+            }
+            if ([obj isEqualToString:@"EUR"]) {
+                _toSelectedIndex = idx;
+            }
+        }];
+        _majorSwitch.on = NO;
     }
     _fromShowLabel.text = _fromExLabel.text;
     _toShowLabel.text = _toExLabel.text;
-    _fromSelectedIndex = 0;
-    _toSelectedIndex = 1;
     tempStr = @"0";
 }
 
@@ -153,7 +181,7 @@
 - (IBAction)simpleCalculate:(UIButton *)sender {
     switch (sender.tag) {
         case 11://+-
-            
+            showText.text = [NSString stringWithFormat:@"%f",[showText.text doubleValue]*(-1)];
             break;
             
         case 12://exp
@@ -243,11 +271,15 @@
 
 - (IBAction)switchAction:(id)sender {
     if (_majorSwitch.isOn) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setBool:YES forKey:@"major"];
         _fromExLabel.text = _majorSelectArray[0];
         _toExLabel.text = _majorSelectArray[1];
     }else {
         _fromExLabel.text = _selectShowArray[0];
         _toExLabel.text = _selectShowArray[1];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setBool:NO forKey:@"major"];
     }
     [_pickView reloadAllComponents];
 }

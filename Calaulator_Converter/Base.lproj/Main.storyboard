@@ -2655,6 +2655,7 @@
                         <outlet property="pickAreaView" destination="R0j-Xn-Zlz" id="0eL-x0-dab"/>
                         <outlet property="pickView" destination="fUP-Z0-bJa" id="JBB-UC-Tnn"/>
                         <outlet property="showText" destination="Upk-lk-7iC" id="LCh-nG-oYX"/>
+                        <outlet property="timestampLabel" destination="ute-6E-0qd" id="82a-ZF-Dbv"/>
                         <outlet property="toExLabel" destination="OJy-Rg-0EG" id="Tou-4F-J0L"/>
                         <outlet property="toExView" destination="f7u-9U-UvY" id="noq-Ld-hMV"/>
                         <outlet property="toShowLabel" destination="KgA-y9-G0g" id="kcc-ie-Ik9"/>
