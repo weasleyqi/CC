@@ -137,23 +137,29 @@ typedef enum {
 //                break;
 //        }
     } else{ //不是第一次输入，则计算
+        
         self.num2 = [NSMutableString stringWithFormat:@"%@", showText.text];
         int calculate = [_cal intValue];
+        
+        NSDecimalNumber *a1 =[NSDecimalNumber decimalNumberWithString:self.num1];
+        NSDecimalNumber *a2 =[NSDecimalNumber decimalNumberWithString:self.num2];
+        
+        
         switch (calculate) {
             case 12://将加后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] + [self.num2 doubleValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByAdding:a2]];
                 break;
             case 13://将减后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] - [self.num2 doubleValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberBySubtracting:a2]];
                 break;
             case 14://将乘后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] * [self.num2 doubleValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByMultiplyingBy:a2]];
                 break;
             case 15://将除后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] / [self.num2 doubleValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByDividingBy:a2]];
                 break;
             case 110://x的y次幂
-                showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], [self.num2 doubleValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByRaisingToPower:[self.num2 intValue]]];
                 break;
             case 213:
                 showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 1.0 / [self.num2 doubleValue])];
@@ -184,20 +190,25 @@ typedef enum {
         _cal = [NSNumber numberWithLong:@"0"];
         _count = @0;
     }
+    
     if ([sender tag] == 19) { //等于
         int calculate = [_cal intValue];
+        NSDecimalNumber *a1 =[NSDecimalNumber decimalNumberWithString:self.num1];
+        NSDecimalNumber *a2 =[NSDecimalNumber decimalNumberWithString:self.num2];
+        
         switch (calculate) {
             case 12://将加后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] + [self.num2 intValue])];
+                
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByAdding:a2]];
                 break;
             case 13://将减后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] - [self.num2 intValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberBySubtracting:a2]];
                 break;
             case 14://将乘后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] * [self.num2 intValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByMultiplyingBy:a2]];
                 break;
             case 15://将除后的结果显示
-                showText.text =[NSString stringWithFormat:@"%lf",([self.num1 doubleValue] / [self.num2 intValue])];
+                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByDividingBy:a2]];
                 break;
             default:
                 break;
