@@ -10,6 +10,7 @@
 #define Constant_h
 
 #import <AudioToolbox/AudioToolbox.h> //声音提示
+#import "NSString+DecimaledString.h"
 
 #define SOUNDID  1104
 

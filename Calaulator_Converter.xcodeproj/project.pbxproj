@@ -31,6 +31,7 @@
 		A95A69641D31DCDF00E06075 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A95A69621D31DCDF00E06075 /* LaunchScreen.storyboard */; };
 		A9653AC41D43026400AA559B /* MenuOffLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9653AC31D43026400AA559B /* MenuOffLineCell.m */; };
 		A9653AC71D43027A00AA559B /* MenuOnLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9653AC61D43027A00AA559B /* MenuOnLineCell.m */; };
+		A99373191D7E4D500086788E /* NSString+DecimaledString.m in Sources */ = {isa = PBXBuildFile; fileRef = A99373181D7E4D500086788E /* NSString+DecimaledString.m */; };
 		A99906751D5A43E8004ABFDA /* scheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99906731D5A43E8004ABFDA /* scheck@2x.png */; };
 		A99906761D5A43E8004ABFDA /* suncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99906741D5A43E8004ABFDA /* suncheck@2x.png */; };
 		A99906781D5A443D004ABFDA /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A99906771D5A443D004ABFDA /* unchecked@2x.png */; };
@@ -133,6 +134,8 @@
 		A9653AC31D43026400AA559B /* MenuOffLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOffLineCell.m; sourceTree = "<group>"; };
 		A9653AC51D43027A00AA559B /* MenuOnLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOnLineCell.h; sourceTree = "<group>"; };
 		A9653AC61D43027A00AA559B /* MenuOnLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOnLineCell.m; sourceTree = "<group>"; };
+		A99373171D7E4D500086788E /* NSString+DecimaledString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DecimaledString.h"; sourceTree = "<group>"; };
+		A99373181D7E4D500086788E /* NSString+DecimaledString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DecimaledString.m"; sourceTree = "<group>"; };
 		A99906731D5A43E8004ABFDA /* scheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scheck@2x.png"; sourceTree = "<group>"; };
 		A99906741D5A43E8004ABFDA /* suncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "suncheck@2x.png"; sourceTree = "<group>"; };
 		A99906771D5A443D004ABFDA /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
@@ -373,6 +376,8 @@
 				A9D5E61D1D466C1700B87617 /* CALayer+Addition.m */,
 				A904D7621D6739F100AAB812 /* MobileData.h */,
 				A904D7631D6739F100AAB812 /* MobileData.m */,
+				A99373171D7E4D500086788E /* NSString+DecimaledString.h */,
+				A99373181D7E4D500086788E /* NSString+DecimaledString.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				A9F34D161D47CCB7009490F5 /* MBFontAdapter.m in Sources */,
 				A9F7D9851D65F0B1008F9E00 /* UnitCell.m in Sources */,
 				A904D7641D6739F100AAB812 /* MobileData.m in Sources */,
+				A99373191D7E4D500086788E /* NSString+DecimaledString.m in Sources */,
 				A9D5E61E1D466C1700B87617 /* CALayer+Addition.m in Sources */,
 				A95A69591D31DCDF00E06075 /* AppDelegate.m in Sources */,
 				A9D0B2D91D37D7FA0067B048 /* DataHandlerTool.m in Sources */,

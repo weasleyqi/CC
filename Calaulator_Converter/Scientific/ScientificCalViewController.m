@@ -162,7 +162,7 @@ typedef enum {
                 showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByRaisingToPower:[self.num2 intValue]]];
                 break;
             case 213:
-                showText.text =[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 1.0 / [self.num2 doubleValue])];
+                showText.text =[[NSString stringWithFormat:@"%lf",pow([self.num1 doubleValue], 1.0 / [self.num2 doubleValue])] decimaledString];
                 break;
             default:
                 break;
@@ -175,10 +175,10 @@ typedef enum {
     if ([sender tag] == 16 || [sender tag] == 17) {//单目运算正负和%
         switch ([sender tag]) {
             case 16://将乘负后的结果显示
-                showText.text =[NSString stringWithFormat:@"%f",([self.num1 doubleValue] *(-1))];
+                showText.text =[[NSString stringWithFormat:@"%f",([self.num1 doubleValue] *(-1))] decimaledString];
                 break;
             case 17://将取百分后的结果显示
-                showText.text =[NSString stringWithFormat:@"%f",([self.num1 doubleValue] / 100)];
+                showText.text =[[NSString stringWithFormat:@"%f",([self.num1 doubleValue] / 100)] decimaledString];
                 break;
             default:
                 break;
@@ -238,7 +238,7 @@ typedef enum {
     }
     switch ([sender tag]) {
         case 20:
-            showText.text = [NSString stringWithFormat:@"%f",sin(calculateValue)];
+            showText.text = [[NSString stringWithFormat:@"%f",sin(calculateValue)] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
@@ -277,59 +277,59 @@ typedef enum {
             showText.text = [NSString stringWithFormat:@"%f",M_PI];
             break;
         case 27://e
-            showText.text = [NSString stringWithFormat:@"%f",M_E];
+            showText.text = [[NSString stringWithFormat:@"%f",M_E] decimaledString];
             break;
         case 111://x的3次方
-            showText.text =[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 3)];
+            showText.text =[[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 3)] decimaledString];
             break;
         case 112://x的2次方
-            showText.text =[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 2)];
+            showText.text =[[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 2)] decimaledString];
             break;
         case 210://e x
-            showText.text =[NSString stringWithFormat:@"%lf",pow(M_E, [showText.text doubleValue])];
+            showText.text =[[NSString stringWithFormat:@"%lf",pow(M_E, [showText.text doubleValue])] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 211://10 x
-            showText.text =[NSString stringWithFormat:@"%lf",pow(10, [showText.text doubleValue])];
+            showText.text =[[NSString stringWithFormat:@"%lf",pow(10, [showText.text doubleValue])] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 212:
-            showText.text =[NSString stringWithFormat:@"%lf",sqrt([showText.text doubleValue])];
+            showText.text =[[NSString stringWithFormat:@"%lf",sqrt([showText.text doubleValue])] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 214://开3次方
-            showText.text =[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 1.0/3)];
+            showText.text =[[NSString stringWithFormat:@"%lf",pow([showText.text doubleValue], 1.0/3)] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 215://in
-            showText.text = [NSString stringWithFormat:@"%lf",log10([showText.text doubleValue]) / log10(M_E)];
+            showText.text = [[NSString stringWithFormat:@"%lf",log10([showText.text doubleValue]) / log10(M_E)] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 216://log10
-            showText.text = [NSString stringWithFormat:@"%lf",log10([showText.text doubleValue])];
+            showText.text = [[NSString stringWithFormat:@"%lf",log10([showText.text doubleValue])] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 217://1/x
-            showText.text = [NSString stringWithFormat:@"%lf",1/ [showText.text doubleValue]];
+            showText.text = [[NSString stringWithFormat:@"%lf",1/ [showText.text doubleValue]] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 218://n!
             if ([showText.text intValue] != 0) {
-                showText.text = [NSString stringWithFormat:@"%lld",[self fac]];
+                showText.text = [[NSString stringWithFormat:@"%lld",[self fac]] decimaledString];
                 if ([showText.text isEqualToString:@"0"]) {
                     showText.text = @"ERROR";
                 }
@@ -337,10 +337,10 @@ typedef enum {
             
             break;
         case 219:
-            showText.text = [NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])];
+            showText.text = [[NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])] decimaledString];
             break;
         case 220:
-            showText.text = [NSString stringWithFormat:@"%lf",(double)(arc4random()%10000) /10000];
+            showText.text = [[NSString stringWithFormat:@"%lf",(double)(arc4random()%10000) /10000] decimaledString];
             break;
         case 221://M+
             if (_mp1 == 0.00) {
@@ -358,37 +358,37 @@ typedef enum {
             break;
         case 223://MR
             if (_mp1 != 0.00 & _mp2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mp2)];
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mp2)].decimaledString;
                 _mp1 = 0.00;
                 _mp2 = 0.00;
                 _mm1 = 0.00;
                 _mm2 = 0.00;
             }else if(_mp1 != 0.00 & _mm1 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mm1)];
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mm1)].decimaledString;
                 _mp1 = 0.00;
                 _mp2 = 0.00;
                 _mm1 = 0.00;
                 _mm2 = 0.00;
             }else if(_mp1 != 0.00 & _mm2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mm2)];
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp1 + _mm2)].decimaledString;
                 _mp1 = 0.00;
                 _mp2 = 0.00;
                 _mm1 = 0.00;
                 _mm2 = 0.00;
             }else if(_mp2 != 0.00 & _mm1 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%lf",(_mp2 + _mm1)];
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp2 + _mm1)].decimaledString;
                 _mp1 = 0.00;
                 _mp2 = 0.00;
                 _mm1 = 0.00;
                 _mm2 = 0.00;
             }else if(_mp2 != 0.00 & _mm2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%lf",(_mp2 + _mm2)];
+                showText.text = [NSString stringWithFormat:@"%lf",(_mp2 + _mm2)].decimaledString;
                 _mp1 = 0.00;
                 _mp2 = 0.00;
                 _mm1 = 0.00;
                 _mm2 = 0.00;
             }else if(_mm1 != 0.00 & _mm2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%lf",(_mm1 + _mm2)];
+                showText.text = [NSString stringWithFormat:@"%lf",(_mm1 + _mm2)].decimaledString;
                 _mp1 = 0.00;
                 _mp2 = 0.00;
                 _mm1 = 0.00;
