@@ -124,7 +124,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%f",sum / [_addedNumArr count]];
+                showText.text = [[NSString stringWithFormat:@"%f",sum / [_addedNumArr count]] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Mean (Avergae) ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -136,7 +136,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue] * [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%f",sum / [_addedNumArr count]];
+                showText.text = [[NSString stringWithFormat:@"%f",sum / [_addedNumArr count]] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Mean of the Square of the Values ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -148,7 +148,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%f",sum];
+                showText.text = [[NSString stringWithFormat:@"%f",sum] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Sum ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -160,7 +160,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue] * [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%f",sum];
+                showText.text = [[NSString stringWithFormat:@"%f",sum] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Sum of the Square of the Values ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -179,7 +179,7 @@
                 }];
                 
                 double std = sqrt(sum/[_addedNumArr count]);
-                showText.text = [NSString stringWithFormat:@"%f",std];
+                showText.text = [[NSString stringWithFormat:@"%f",std] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Deviation",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -197,7 +197,7 @@
                     sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
                 }];
                 
-                showText.text = [NSString stringWithFormat:@"%f",sum/[_addedNumArr count]];
+                showText.text = [[NSString stringWithFormat:@"%f",sum/[_addedNumArr count]] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Deviation",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -215,7 +215,7 @@
                     sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
                 }];
                 double std = sqrt(sum/([_addedNumArr count]-1));
-                showText.text = [NSString stringWithFormat:@"%f",std];
+                showText.text = [[NSString stringWithFormat:@"%f",std] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Simple Standard Deviation ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -234,7 +234,7 @@
                     sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
                 }];
                 
-                showText.text = [NSString stringWithFormat:@"%f",sum/([_addedNumArr count]-1)];
+                showText.text = [[NSString stringWithFormat:@"%f",sum/([_addedNumArr count]-1)] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Simple Standard Variance ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -251,7 +251,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum * [obj doubleValue];
                 }];
-                showText.text =[NSString stringWithFormat:@"%lf",pow(sum , 1.0/[_addedNumArr count])];
+                showText.text =[[NSString stringWithFormat:@"%lf",pow(sum , 1.0/[_addedNumArr count])] decimaledString];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Geometric Mean ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -269,7 +269,7 @@
             break;
             
         case 202://exp
-            showText.text = [NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])];
+            showText.text = [[NSString stringWithFormat:@"%lf",exp([showText.text doubleValue])] decimaledString];
             break;
         case 18: // C
             showText.text = @"0";

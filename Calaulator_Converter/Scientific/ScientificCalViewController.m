@@ -147,16 +147,16 @@ typedef enum {
         
         switch (calculate) {
             case 12://将加后的结果显示
-                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByAdding:a2]];
+                showText.text =[NSString stringWithFormat:@"%.10f",[self.num1 doubleValue] + [self.num2 doubleValue]].decimaledString;
                 break;
             case 13://将减后的结果显示
-                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberBySubtracting:a2]];
+                showText.text =[NSString stringWithFormat:@"%.10f",[self.num1 doubleValue] - [self.num2 doubleValue]].decimaledString;
                 break;
             case 14://将乘后的结果显示
-                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByMultiplyingBy:a2]];
+                showText.text =[NSString stringWithFormat:@"%.10f",[self.num1 doubleValue] * [self.num2 doubleValue]].decimaledString;
                 break;
             case 15://将除后的结果显示
-                showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByDividingBy:a2]];
+                showText.text =[NSString stringWithFormat:@"%.10f",[self.num1 doubleValue] / [self.num2 doubleValue]].decimaledString;
                 break;
             case 110://x的y次幂
                 showText.text =[NSString stringWithFormat:@"%@",[a1 decimalNumberByRaisingToPower:[self.num2 intValue]]];
@@ -178,7 +178,7 @@ typedef enum {
                 showText.text =[[NSString stringWithFormat:@"%f",([self.num1 doubleValue] *(-1))] decimaledString];
                 break;
             case 17://将取百分后的结果显示
-                showText.text =[[NSString stringWithFormat:@"%f",([self.num1 doubleValue] / 100)] decimaledString];
+                showText.text =[[NSString stringWithFormat:@"%.10f",([self.num1 doubleValue] / 100)] decimaledString];
                 break;
             default:
                 break;
@@ -244,37 +244,37 @@ typedef enum {
             }
             break;
         case 21:
-            showText.text = [NSString stringWithFormat:@"%f",cos(calculateValue)];
+            showText.text = [[NSString stringWithFormat:@"%f",cos(calculateValue)] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 22:
-            showText.text = [NSString stringWithFormat:@"%f",tan(calculateValue)];
+            showText.text = [[NSString stringWithFormat:@"%f",tan(calculateValue)] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 23:
-            showText.text = [NSString stringWithFormat:@"%f",asin([showText.text doubleValue])*180/M_PI];
+            showText.text = [[NSString stringWithFormat:@"%f",asin([showText.text doubleValue])*180/M_PI] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 24:
-            showText.text = [NSString stringWithFormat:@"%f",acos([showText.text doubleValue])*180/M_PI];
+            showText.text = [[NSString stringWithFormat:@"%f",acos([showText.text doubleValue])*180/M_PI] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 25:
-            showText.text = [NSString stringWithFormat:@"%f",atan([showText.text doubleValue])*180/M_PI];
+            showText.text = [[NSString stringWithFormat:@"%f",atan([showText.text doubleValue])*180/M_PI] decimaledString];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 26://pi
-            showText.text = [NSString stringWithFormat:@"%f",M_PI];
+            showText.text = [[NSString stringWithFormat:@"%f",M_PI] decimaledString];
             break;
         case 27://e
             showText.text = [[NSString stringWithFormat:@"%f",M_E] decimaledString];

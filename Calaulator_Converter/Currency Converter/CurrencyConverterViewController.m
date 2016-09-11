@@ -170,18 +170,18 @@
     if (_majorSwitch.isOn) {
         double result = [showText.text doubleValue] * [_majorDataArray[_toSelectedIndex][@"value"] doubleValue] / [_majorDataArray[_fromSelectedIndex][@"value"] doubleValue] ;
         _fromValueLabel.text = showText.text;
-        _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
+        _toValueLabel.text = [[NSString stringWithFormat:@"%lf",result] decimaledString];
     }else {
         double result = [showText.text doubleValue] * [_currencyArray[_toSelectedIndex][@"value"] doubleValue] / [_currencyArray[_fromSelectedIndex][@"value"] doubleValue] ;
         _fromValueLabel.text = showText.text;
-        _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
+        _toValueLabel.text = [[NSString stringWithFormat:@"%lf",result] decimaledString];
     }
 }
 
 - (IBAction)simpleCalculate:(UIButton *)sender {
     switch (sender.tag) {
         case 11://+-
-            showText.text = [NSString stringWithFormat:@"%f",[showText.text doubleValue]*(-1)];
+            showText.text = [[NSString stringWithFormat:@"%f",[showText.text doubleValue]*(-1)] decimaledString];
             break;
             
         case 12://exp
