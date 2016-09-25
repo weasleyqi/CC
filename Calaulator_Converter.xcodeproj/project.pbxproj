@@ -93,6 +93,8 @@
 		A9D5E6211D466F6300B87617 /* MenuSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D5E6201D466F6300B87617 /* MenuSearchCell.m */; };
 		A9DDBC5A1D64C2FF009D30E3 /* AddedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9DDBC591D64C2FF009D30E3 /* AddedView.m */; };
 		A9DDBC5C1D64C30E009D30E3 /* AddedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9DDBC5B1D64C30E009D30E3 /* AddedView.xib */; };
+		A9EB24921D98070400F54B9A /* average1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB24901D98070400F54B9A /* average1@2x.png */; };
+		A9EB24931D98070400F54B9A /* average2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9EB24911D98070400F54B9A /* average2@2x.png */; };
 		A9F34D121D47CCB7009490F5 /* MBButtonWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D081D47CCB7009490F5 /* MBButtonWithFontAdapter.m */; };
 		A9F34D131D47CCB7009490F5 /* MBLabelWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0A1D47CCB7009490F5 /* MBLabelWithFontAdapter.m */; };
 		A9F34D141D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F34D0C1D47CCB7009490F5 /* MBTextFieldWithFontAdapter.m */; };
@@ -207,6 +209,8 @@
 		A9DDBC581D64C2FF009D30E3 /* AddedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddedView.h; path = ../Scientific/AddedView.h; sourceTree = "<group>"; };
 		A9DDBC591D64C2FF009D30E3 /* AddedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddedView.m; path = ../Scientific/AddedView.m; sourceTree = "<group>"; };
 		A9DDBC5B1D64C30E009D30E3 /* AddedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddedView.xib; path = ../Scientific/AddedView.xib; sourceTree = "<group>"; };
+		A9EB24901D98070400F54B9A /* average1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "average1@2x.png"; sourceTree = "<group>"; };
+		A9EB24911D98070400F54B9A /* average2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "average2@2x.png"; sourceTree = "<group>"; };
 		A9F34D071D47CCB7009490F5 /* MBButtonWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBButtonWithFontAdapter.h; sourceTree = "<group>"; };
 		A9F34D081D47CCB7009490F5 /* MBButtonWithFontAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBButtonWithFontAdapter.m; sourceTree = "<group>"; };
 		A9F34D091D47CCB7009490F5 /* MBLabelWithFontAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBLabelWithFontAdapter.h; sourceTree = "<group>"; };
@@ -443,6 +447,8 @@
 		A9D5E5C51D43D13000B87617 /* 03_Statistics-Calcuator */ = {
 			isa = PBXGroup;
 			children = (
+				A9EB24901D98070400F54B9A /* average1@2x.png */,
+				A9EB24911D98070400F54B9A /* average2@2x.png */,
 				A9D5E5C61D43D13000B87617 /* black-button@2x.png */,
 				A9D5E5C71D43D13000B87617 /* button01@2x.png */,
 				A9D5E5C81D43D13000B87617 /* button02@2x.png */,
@@ -602,6 +608,7 @@
 				A9D5E60C1D43D13000B87617 /* line@2x.png in Resources */,
 				A904D7941D67F29000AAB812 /* Default-Landscape-736h.png in Resources */,
 				A9D5E6121D43D13000B87617 /* top@2x.png in Resources */,
+				A9EB24931D98070400F54B9A /* average2@2x.png in Resources */,
 				A9D5E5F11D43D13000B87617 /* black-button@2x.png in Resources */,
 				A9D5E5FD1D43D13000B87617 /* input-box-@2x.png in Resources */,
 				A904D7911D67F29000AAB812 /* Default-568h@2x~iphone.png in Resources */,
@@ -629,6 +636,7 @@
 				A9D5E5F01D43D13000B87617 /* back@2x.png in Resources */,
 				A95A695F1D31DCDF00E06075 /* Main.storyboard in Resources */,
 				A9D5E6071D43D13000B87617 /* black-button@2x.png in Resources */,
+				A9EB24921D98070400F54B9A /* average1@2x.png in Resources */,
 				A9D5E6031D43D13000B87617 /* input-box@2x.png in Resources */,
 				A904D7961D67F29000AAB812 /* Default-Landscape~ipad.png in Resources */,
 				A99906761D5A43E8004ABFDA /* suncheck@2x.png in Resources */,
