@@ -94,12 +94,12 @@
         }
         cell.tag = idx;
         x = (cell.frame.size.width *WIDTH / 375)* idx;
-        NSLog(@"xxxxxx %f",x);
+        NSLog(@"xxxxxx %g",x);
         CGRect rect = cell.frame;
         rect.size.width = cell.frame.size.width *WIDTH / 375;
         rect.origin.x = x;
         cell.frame = rect;
-        NSLog(@"yyyyyy %f  %F",cell.frame.origin.x,cell.frame.size.width);
+        NSLog(@"yyyyyy %g  %F",cell.frame.origin.x,cell.frame.size.width);
         [_unitScrollView addSubview:cell];
         
         _unitScrollView.contentSize = CGSizeMake(cell.frame.size.width * [_unitTitleArr count], _unitScrollView.frame.size.height);
@@ -259,23 +259,23 @@
         if (sIndex == 0) {
             return @"1";
         }else if (sIndex == 1) {
-            return [NSString stringWithFormat:@"%f",[showText.text doubleValue] + 273.16];
+            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 273.16];
         }else if (sIndex == 2) {
-            return [NSString stringWithFormat:@"%f",([showText.text doubleValue]*1.8 + 32)];
+            return [NSString stringWithFormat:@"%g",([showText.text doubleValue]*1.8 + 32)];
         }
     }else if (fIndex == 1) {
         if (sIndex == 0 ) {
-            return [NSString stringWithFormat:@"%f",[showText.text doubleValue] - 273.16];
+            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] - 273.16];
         }else if (sIndex == 1) {
             return @"1";
         }else if (sIndex == 2) {
-            return [NSString stringWithFormat:@"%f",([showText.text doubleValue] -273.16)*1.8 + 32];
+            return [NSString stringWithFormat:@"%g",([showText.text doubleValue] -273.16)*1.8 + 32];
         }
     }else if (fIndex == 2) {
         if (sIndex == 0) {
-            return [NSString stringWithFormat:@"%f",([showText.text doubleValue] -32)/1.8];
+            return [NSString stringWithFormat:@"%g",([showText.text doubleValue] -32)/1.8];
         }else if (sIndex == 1) {
-            return [NSString stringWithFormat:@"%f",([showText.text doubleValue]- 32)/1.8 + 273.16];
+            return [NSString stringWithFormat:@"%g",([showText.text doubleValue]- 32)/1.8 + 273.16];
         }else if (sIndex == 2) {
             return @"1";
         }
@@ -319,7 +319,7 @@
     [MobileData checkSettings];
     switch (sender.tag) {
         case 21://+-
-            showText.text = [NSString stringWithFormat:@"%f",[showText.text doubleValue]*(-1)];
+            showText.text = [NSString stringWithFormat:@"%g",[showText.text doubleValue]*(-1)];
             break;
         case 22://EXP
             break;
