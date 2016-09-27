@@ -47,17 +47,24 @@
 
 @property (strong, nonatomic) NSString *tempStr;
 @property (nonatomic) BOOL isTemp;
+@property (nonatomic) BOOL isExp;
+@property (nonatomic) BOOL expPressed;
+@property (strong, nonatomic) NSString *expString;
 @end
 
 @implementation UnitConverterViewController
 @synthesize tempStr;
 @synthesize showText;
+@synthesize isExp;
+@synthesize expPressed,expString;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     tempStr = @"";
     _isTemp = NO;
+    isExp = NO;
+    expPressed = NO;
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(taptap:)];
     _fromView.userInteractionEnabled = YES;
@@ -182,6 +189,12 @@
 
 - (IBAction)click1:(id)sender {
     [MobileData checkSettings];
+    if (isExp && expPressed) {
+        showText.text = @"";
+        tempStr = @"";
+        expPressed = NO;
+    }
+    
     if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
         tempStr = @"";
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
@@ -210,11 +223,20 @@
         tempStr = [tempStr stringByAppendingString:[NSString stringWithFormat:@"%ld",[sender tag]]];
     }
     showText.text = tempStr;
-    [self resultBtnClicked:nil];
+    if (isExp) {
+        
+    }else {
+        [self resultBtnClicked:nil];
+    }
 }
 
 
 - (IBAction)resultBtnClicked:(id)sender {
+    if (isExp) {
+        showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+//        isExp = NO;
+        expString = @"";
+    }
     if (_isTemp) {
 //        showText.text = [self tempCalWithFirstIndex:_currentSelectedRowIndex secondIndex:_currentSelectedRowIndex2];
         _fromValueLabel.text = showText.text;
@@ -232,9 +254,14 @@
     }
     double result = [showText.text doubleValue] * [[_currentShowArray[_currentSelectedRowIndex2] allValues][0] doubleValue] / [[_currentShowArray[_currentSelectedRowIndex] allValues][0] doubleValue] ;
     _fromValueLabel.text = showText.text;
-    _toValueLabel.text = [NSString stringWithFormat:@"%lf",result];
+    _toValueLabel.text = [NSString stringWithFormat:@"%g",result];
 //    [_toValueLabel sizeToFit];
     _toValueLabel.textAlignment = NSTextAlignmentCenter;
+    if (isExp) {
+        tempStr = @"";
+        isExp = NO;
+    }
+//    tempStr = @"";
 }
 
 - (void)taptap:(UITapGestureRecognizer *)gesture {
@@ -317,11 +344,21 @@
 //calcualte
 - (IBAction)calculate:(UIButton *)sender {
     [MobileData checkSettings];
+    if (isExp && expPressed) {
+        showText.text = @"";
+        tempStr = @"";
+    }
     switch (sender.tag) {
         case 21://+-
             showText.text = [NSString stringWithFormat:@"%g",[showText.text doubleValue]*(-1)];
             break;
         case 22://EXP
+            if (isExp) {
+                showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+            }
+            isExp = YES;
+            expPressed = YES;
+            expString = showText.text;
             break;
         case 23://C
             showText.text = @"0";

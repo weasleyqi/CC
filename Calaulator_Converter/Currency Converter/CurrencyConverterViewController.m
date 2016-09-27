@@ -46,10 +46,14 @@
 @property (strong, nonatomic) NSString *timestamp;
 @property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *timestampLabel;
 
+@property (nonatomic) BOOL isExp;
+@property (nonatomic) BOOL expPressed;
+@property (strong, nonatomic) NSString *expString;
 @end
 
 @implementation CurrencyConverterViewController
 @synthesize tempStr,showText;
+@synthesize isExp,expPressed,expString;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,6 +64,9 @@
     _majorDataArray = [NSMutableArray new];
     _majorSelectArray = [NSMutableArray new];
     _majorPickArray = [NSMutableArray new];
+    
+    isExp = NO;
+    expPressed = NO;
     
     _currencyDict = [[DataHandlerTool getDataFromDisk] objectForKey:@"Exchange Rates"];;
     _timestamp = _currencyDict[@"timestamp"];
@@ -136,6 +143,13 @@
 
 - (IBAction)inputNumbers:(id)sender {
     [MobileData checkSettings];
+    
+    if (isExp && expPressed) {
+        showText.text = @"";
+        tempStr = @"";
+        expPressed = NO;
+    }
+    
     if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
         tempStr = @"";
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
@@ -164,9 +178,18 @@
         tempStr = [tempStr stringByAppendingString:[NSString stringWithFormat:@"%ld",[sender tag]]];
     }
     showText.text = tempStr;
-    [self resultGet:nil];
+    if (isExp) {
+        
+    }else {
+        [self resultGet:nil];
+    }
 }
 - (IBAction)resultGet:(id)sender {
+    if (isExp) {
+        showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+//        isExp = NO;
+        expString = @"";
+    }
     if (_majorSwitch.isOn) {
         double result = [showText.text doubleValue] * [_majorDataArray[_toSelectedIndex][@"value"] doubleValue] / [_majorDataArray[_fromSelectedIndex][@"value"] doubleValue] ;
         _fromValueLabel.text = showText.text;
@@ -176,16 +199,29 @@
         _fromValueLabel.text = showText.text;
         _toValueLabel.text = [NSString stringWithFormat:@"%g",result];
     }
+    if (isExp) {
+        tempStr = @"";
+        isExp = NO;
+    }
 }
 
 - (IBAction)simpleCalculate:(UIButton *)sender {
+    if (isExp && expPressed) {
+        showText.text = @"";
+        tempStr = @"";
+    }
     switch (sender.tag) {
         case 11://+-
             showText.text = [NSString stringWithFormat:@"%g",[showText.text doubleValue]*(-1)];
             break;
             
         case 12://exp
-            
+            if (isExp) {
+                showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+            }
+            isExp = YES;
+            expPressed = YES;
+            expString = showText.text;
             break;
             
         case 13://c

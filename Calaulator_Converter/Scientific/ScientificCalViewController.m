@@ -24,6 +24,7 @@ typedef enum {
 @property (nonatomic) NSNumber *cal;
 @property (strong, nonatomic) NSMutableString *num1;
 @property (strong, nonatomic) NSMutableString *num2;
+@property (strong, nonatomic) NSString *expString;
 @property (weak, nonatomic) IBOutlet UIView *DEG_View;
 @property (weak, nonatomic) IBOutlet UIImageView *DEG_image;
 @property (weak, nonatomic) IBOutlet UIView *RAD_View;
@@ -36,14 +37,14 @@ typedef enum {
 @property (nonatomic) double mm1;//M-
 @property (nonatomic) double mm2;//M-
 
-@property (nonatomic) double resultValue;
-
+@property (nonatomic) BOOL isExp;
 @end
 
 @implementation ScientificCalViewController
 @synthesize showText;
 @synthesize tempStr;
-@synthesize resultValue;
+@synthesize isExp;
+@synthesize expString;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,7 +64,7 @@ typedef enum {
     _mp2 = 0.00;
     _mm1 = 0.00;
     _mm2 = 0.00;
-    resultValue = 0;
+    isExp = NO;
 }
 
 - (void)changeRadAndDeg:(UITapGestureRecognizer *)sender {
@@ -127,26 +128,28 @@ typedef enum {
     self.tempStr = [NSMutableString stringWithString:@""];
     
     if(0 == _count) {//如果是第一次输入
+        NSLog(@"===== first input %@",self.num1);
         _cal = [NSNumber numberWithLong:[sender tag]];
-        self.num1 = [NSMutableString stringWithFormat:@"%@",showText.text];
-//        switch ([_cal intValue]) {
-//            case 111://x的3次方
-//                showText.text =[NSString stringWithFormat:@"%g",pow([self.num1 doubleValue], 3)];
-//                break;
-//            case 112://x的2次方
-//                showText.text =[NSString stringWithFormat:@"%g",pow([self.num1 doubleValue], 2)];
-//                
-//            default:
-//                break;
-//        }
+        if (isExp) {
+            self.num1 = [NSMutableString stringWithFormat:@"%g",[self.num1 doubleValue] * pow(10, [showText.text doubleValue])];
+            showText.text = self.num1;
+            isExp = NO;
+            NSLog(@"first in num1 %@",self.num1);
+        }else {
+            self.num1 = [NSMutableString stringWithFormat:@"%@",showText.text];
+        }
+        
     } else{ //不是第一次输入，则计算
-        
-        self.num2 = [NSMutableString stringWithFormat:@"%@", showText.text];
+        NSLog(@"===== second input");
+        if (isExp) {
+            self.num2 = [NSMutableString stringWithFormat:@"%g",[self.num2 doubleValue] * pow(10, [showText.text doubleValue])];
+            showText.text = self.num2;
+            isExp = NO;
+        }else {
+            self.num2 = [NSMutableString stringWithFormat:@"%@",showText.text];
+        }
+//        self.num2 = [NSMutableString stringWithFormat:@"%@", showText.text];
         int calculate = [_cal intValue];
-        
-        NSDecimalNumber *a1 =[NSDecimalNumber decimalNumberWithString:self.num1];
-        NSDecimalNumber *a2 =[NSDecimalNumber decimalNumberWithString:self.num2];
-        
         
         switch (calculate) {
             case 12://将加后的结果显示
@@ -174,7 +177,7 @@ typedef enum {
         _cal = [NSNumber numberWithLong:[sender tag]];
         
     }
-    _count = @1;
+    _count = 1;
     if ([sender tag] == 16 || [sender tag] == 17) {//单目运算正负和%
         switch ([sender tag]) {
             case 16://将乘负后的结果显示
@@ -190,14 +193,12 @@ typedef enum {
     }
     if ([sender tag] == 18) { //Clear
         showText.text = @"0";
-        _cal = [NSNumber numberWithLong:@"0"];
-        _count = @0;
+        _cal = [NSNumber numberWithLong:0];
+        _count = 0;
     }
     
     if ([sender tag] == 19) { //等于
         int calculate = [_cal intValue];
-        NSDecimalNumber *a1 =[NSDecimalNumber decimalNumberWithString:self.num1];
-        NSDecimalNumber *a2 =[NSDecimalNumber decimalNumberWithString:self.num2];
         
         switch (calculate) {
             case 12://将加后的结果显示
@@ -234,6 +235,16 @@ typedef enum {
      */
     //RAD 弧度 DEG角度
     //1角度=（PI/180）弧度 sin计算的值是弧度，需要转换成角度 360°角=2π弧度
+    
+    NSLog(@"first/sec %d num1 %@ num2 %@",_count,self.num1,self.num2);
+    if (_count == 0 && isExp) {
+        showText.text = [NSString stringWithFormat:@"%g",[self.num1 doubleValue]* pow(10, [showText.text doubleValue])];
+        isExp = NO;
+    }else if(isExp && _count != 0){
+        showText.text = [NSString stringWithFormat:@"%g",[self.num2 doubleValue]* pow(10, [showText.text doubleValue])];
+        isExp = NO;
+    }
+    
     double calculateValue = [showText.text doubleValue];
     tempStr = @"0";
     if (_calculateMode == Mode_DEG) {
@@ -340,7 +351,12 @@ typedef enum {
             
             break;
         case 219:
-            showText.text = [NSString stringWithFormat:@"%g",exp([showText.text doubleValue])];
+            if (_count == 0) {
+                self.num1 = [NSMutableString stringWithFormat:@"%@",showText.text];
+            }else {
+                self.num2 = [NSMutableString stringWithFormat:@"%@",showText.text];
+            }
+            isExp = YES;
             break;
         case 220:
             showText.text = [NSString stringWithFormat:@"%g",(double)(arc4random()%10000) /10000];

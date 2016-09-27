@@ -18,17 +18,25 @@
 @property (weak, nonatomic) IBOutlet UILabel *countLabel;
 @property (strong, nonatomic) NSString *tempStr;
 @property (weak, nonatomic) IBOutlet UILabel *showText;
+
+@property (nonatomic) BOOL isExp;
+@property (nonatomic) BOOL expPressed;
+@property (strong, nonatomic) NSString *expString;
 @end
 
 @implementation StatisticsCalViewController
 @synthesize tempStr;
 @synthesize showText;
+@synthesize isExp;
+@synthesize expString;
+@synthesize expPressed;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     tempStr = @"";
     _addedarr = [NSMutableArray new];
     _addedNumArr = [NSMutableArray new];
+    isExp = NO;
     // Do any additional setup after loading the view.
 }
 
@@ -38,6 +46,11 @@
 }
 - (IBAction)add:(id)sender {
     [MobileData checkSettings];
+    if (isExp) {
+        showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+        isExp = NO;
+        expString = @"";
+    }
     float x = 15;
     float y = -80   ;
     NSInteger count = [_addedarr count];
@@ -117,6 +130,11 @@
 
 - (IBAction)calculate:(UIButton *)sender {
     [MobileData checkSettings];
+    if (isExp) {
+        showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+        isExp = NO;
+        expString = @"";
+    }
     switch (sender.tag) {
         case 100://x average
             if ([_addedNumArr count] > 0) {
@@ -251,7 +269,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum * [obj doubleValue];
                 }];
-                showText.text =[NSString stringWithFormat:@"%lf",pow(sum , 1.0/[_addedNumArr count])];
+                showText.text =[NSString stringWithFormat:@"%g",pow(sum , 1.0/[_addedNumArr count])];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Geometric Mean ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -269,7 +287,12 @@
             break;
             
         case 202://exp
-            showText.text = [NSString stringWithFormat:@"%g",exp([showText.text doubleValue])];
+            if (isExp) {
+                showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+            }
+            isExp = YES;
+            expPressed = YES;
+            expString = showText.text;
             break;
         case 18: // C
             showText.text = @"0";
@@ -290,6 +313,11 @@
 
 - (IBAction)inputNum:(UIButton *)sender {
     [MobileData checkSettings];
+    if (isExp && expPressed) {
+        showText.text = @"";
+        tempStr = @"";
+        expPressed = NO;
+    }
     if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
         tempStr = @"";
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
