@@ -261,7 +261,6 @@
         tempStr = @"";
         isExp = NO;
     }
-//    tempStr = @"";
 }
 
 - (void)taptap:(UITapGestureRecognizer *)gesture {
