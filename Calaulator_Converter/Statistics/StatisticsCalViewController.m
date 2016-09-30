@@ -216,7 +216,7 @@
                 }];
                 
                 showText.text = [NSString stringWithFormat:@"%g",sum/[_addedNumArr count]];
-                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Deviation",[_addedarr count]];
+                _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Variance",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
             }
@@ -297,7 +297,7 @@
         case 18: // C
             showText.text = @"0";
             tempStr = @"0";
-            
+            break;
         default:
             break;
     }

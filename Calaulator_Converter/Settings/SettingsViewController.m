@@ -111,7 +111,7 @@
             break;
             
         case 1005:
-            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/calculator-converter/id915839937?l=en&mt=8"]];
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id915839937"]];
             break;
         case 1006:
             _pickAreaView.hidden = YES;
