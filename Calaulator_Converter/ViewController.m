@@ -388,7 +388,8 @@
     }
     [_searchResultArray removeAllObjects];
     [_beforeSearchArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj[@"name"] rangeOfString:str].location != NSNotFound) {
+        NSString *nameString = obj[@"name"];
+        if ([nameString.uppercaseString rangeOfString:str.uppercaseString].location != NSNotFound) {
             [_searchResultArray addObject:obj];
         }
     }];

@@ -182,6 +182,8 @@
     }
     _fromLabel.text = [_currentShowArray[0] allKeys][0];
     _toLabel.text = [_currentShowArray[1] allKeys][0];
+    _fromShowLabel.text = [_currentShowArray[0] allKeys][0];
+    _toShowLabel.text = [_currentShowArray[1] allKeys][0];
     
     [self resultBtnClicked:nil];
     
@@ -283,7 +285,7 @@
      */
     if (fIndex == 0 ) {
         if (sIndex == 0) {
-            return @"1";
+            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 0];
         }else if (sIndex == 1) {
             return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 273.16];
         }else if (sIndex == 2) {
@@ -293,7 +295,7 @@
         if (sIndex == 0 ) {
             return [NSString stringWithFormat:@"%g",[showText.text doubleValue] - 273.16];
         }else if (sIndex == 1) {
-            return @"1";
+            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 0];
         }else if (sIndex == 2) {
             return [NSString stringWithFormat:@"%g",([showText.text doubleValue] -273.16)*1.8 + 32];
         }
@@ -303,7 +305,7 @@
         }else if (sIndex == 1) {
             return [NSString stringWithFormat:@"%g",([showText.text doubleValue]- 32)/1.8 + 273.16];
         }else if (sIndex == 2) {
-            return @"1";
+            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 0];
         }
     }
     return @"1";
