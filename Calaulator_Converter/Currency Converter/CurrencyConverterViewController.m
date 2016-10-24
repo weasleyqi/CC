@@ -311,13 +311,22 @@
         [userDefaults setBool:YES forKey:@"major"];
         _fromExLabel.text = _majorSelectArray[0];
         _toExLabel.text = _majorSelectArray[1];
+        _fromShowLabel.text = _majorSelectArray[0];
+        _toShowLabel.text = _majorSelectArray[1];
+        _fromSelectedIndex = 0;
+        _toSelectedIndex = 1;
     }else {
         _fromExLabel.text = _selectShowArray[0];
         _toExLabel.text = _selectShowArray[1];
+        _fromShowLabel.text = _selectShowArray[0];
+        _toShowLabel.text = _selectShowArray[1];
+        _fromSelectedIndex = 0;
+        _toSelectedIndex = 1;
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults setBool:NO forKey:@"major"];
     }
     [_pickView reloadAllComponents];
+    [self resultGet:nil];
 }
 
 @end
