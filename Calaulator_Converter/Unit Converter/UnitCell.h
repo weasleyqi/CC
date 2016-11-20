@@ -21,4 +21,6 @@
 @property (weak, nonatomic) IBOutlet MBLabelWithFontAdapter *title1;
 
 @property (weak, nonatomic) NSObject <UnitSelecteDelegate>*delegate;
+
+- (id)initWithFrame:(CGRect)frame tag:(NSInteger) tag text:(NSString *)txt;
 @end

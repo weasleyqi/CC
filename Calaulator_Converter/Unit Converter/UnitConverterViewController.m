@@ -101,15 +101,20 @@
             cell.title.textColor = UIColorFromRGB(0x047dce, 1);//047DCE
         }
         cell.tag = idx;
-        x = (cell.frame.size.width *WIDTH / 375)* idx;
+        x = (64)* idx;
         NSLog(@"xxxxxx %g",x);
         CGRect rect = cell.frame;
-        rect.size.width = cell.frame.size.width *WIDTH / 375;
+//        rect.size.width = cell.frame.size.width *WIDTH / 375;
         rect.origin.x = x;
         cell.frame = rect;
         cell.title.textAlignment = NSTextAlignmentCenter;
         NSLog(@"yyyyyy %g  %F",cell.frame.origin.x,cell.frame.size.width);
         [_unitScrollView addSubview:cell];
+
+//        UnitCell *cell = [[UnitCell alloc] initWithFrame:CGRectMake(idx*64, 0, 64, _unitScrollView.frame.size.height) tag:idx text:_unitTitleArr[idx]];
+//        cell.delegate = self;
+//        cell.backgroundColor = [UIColor redColor];
+//        [_unitScrollView addSubview:cell];
         
         _unitScrollView.contentSize = CGSizeMake(cell.frame.size.width * [_unitTitleArr count], _unitScrollView.frame.size.height);
     }];
