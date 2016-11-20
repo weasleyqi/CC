@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,31 +11,49 @@
             <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GQ-aM-7EZ" customClass="MBLabelWithFontAdapter">
-                    <rect key="frame" x="7" y="14" width="75" height="21"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                    <color key="textColor" red="0.58039215686274515" green="0.63137254901960782" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unitline.png" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-q5-6oh">
-                    <rect key="frame" x="0.0" y="47" width="75" height="3"/>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ez-eh-wdy">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpC-fW-RjX">
                     <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
-                    <connections>
-                        <action selector="unitSelect:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Ab-Bc-k15"/>
-                    </connections>
-                </button>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GQ-aM-7EZ" customClass="MBLabelWithFontAdapter">
+                            <rect key="frame" x="0.0" y="14" width="75" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" red="0.58039215686274515" green="0.63137254901960782" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unitline.png" translatesAutoresizingMaskIntoConstraints="NO" id="JH8-q5-6oh">
+                            <rect key="frame" x="0.0" y="47" width="75" height="3"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="3" id="raZ-MP-L6L"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ez-eh-wdy">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                            <connections>
+                                <action selector="unitSelect:" destination="iN0-l3-epB" eventType="touchUpInside" id="5Ab-Bc-k15"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6ez-eh-wdy" firstAttribute="leading" secondItem="xpC-fW-RjX" secondAttribute="leading" id="4IM-FV-mn2"/>
+                        <constraint firstAttribute="bottom" secondItem="6ez-eh-wdy" secondAttribute="bottom" id="54p-h0-3JT"/>
+                        <constraint firstAttribute="trailing" secondItem="JH8-q5-6oh" secondAttribute="trailing" id="8rt-1M-Rsl"/>
+                        <constraint firstAttribute="trailing" secondItem="6ez-eh-wdy" secondAttribute="trailing" id="A8F-cM-027"/>
+                        <constraint firstAttribute="trailing" secondItem="1GQ-aM-7EZ" secondAttribute="trailing" id="CBj-Eu-11D"/>
+                        <constraint firstItem="6ez-eh-wdy" firstAttribute="top" secondItem="xpC-fW-RjX" secondAttribute="top" id="duC-Gu-tfd"/>
+                        <constraint firstItem="1GQ-aM-7EZ" firstAttribute="leading" secondItem="xpC-fW-RjX" secondAttribute="leading" id="hum-nY-WSs"/>
+                        <constraint firstItem="1GQ-aM-7EZ" firstAttribute="centerY" secondItem="xpC-fW-RjX" secondAttribute="centerY" id="t8z-Zb-Q4V"/>
+                        <constraint firstItem="JH8-q5-6oh" firstAttribute="leading" secondItem="xpC-fW-RjX" secondAttribute="leading" id="xu8-ED-Cwa"/>
+                        <constraint firstAttribute="bottom" secondItem="JH8-q5-6oh" secondAttribute="bottom" id="ye3-CZ-KFW"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="1GQ-aM-7EZ" secondAttribute="trailing" id="HIo-qC-rrY"/>
-                <constraint firstItem="1GQ-aM-7EZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="7" id="HJs-36-Bj6"/>
-                <constraint firstItem="JH8-q5-6oh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K5c-5y-Yjh"/>
-                <constraint firstItem="JH8-q5-6oh" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="3:50" id="KCs-6K-sLi"/>
-                <constraint firstAttribute="trailing" secondItem="JH8-q5-6oh" secondAttribute="trailing" id="Zip-OJ-OuG"/>
-                <constraint firstItem="1GQ-aM-7EZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dDw-4n-Joh"/>
-                <constraint firstAttribute="bottom" secondItem="JH8-q5-6oh" secondAttribute="bottom" id="kcu-yr-OZE"/>
+                <constraint firstItem="xpC-fW-RjX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3gI-6v-4wb"/>
+                <constraint firstAttribute="bottom" secondItem="xpC-fW-RjX" secondAttribute="bottom" id="jIo-yP-gL9"/>
+                <constraint firstItem="xpC-fW-RjX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jdk-ib-kr0"/>
+                <constraint firstAttribute="trailing" secondItem="xpC-fW-RjX" secondAttribute="trailing" id="zX4-zD-JlD"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

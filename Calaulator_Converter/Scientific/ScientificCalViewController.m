@@ -30,6 +30,7 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIView *RAD_View;
 @property (weak, nonatomic) IBOutlet UIImageView *RAD_image;
 @property (assign) CalculatorMode calculateMode;
+@property (strong, nonatomic) NSString *expShowString;
 
 
 @property (nonatomic) double mp1;//M+
@@ -41,7 +42,7 @@ typedef enum {
 @end
 
 @implementation ScientificCalViewController
-@synthesize showText;
+@synthesize showText,expShowString;
 @synthesize tempStr;
 @synthesize isExp;
 @synthesize expString;
@@ -118,7 +119,17 @@ typedef enum {
     }else {
         tempStr = [tempStr stringByAppendingString:[NSString stringWithFormat:@"%ld",[sender tag]]];
     }
-    showText.text = tempStr;
+    if (isExp) {
+        if ([showText.text containsString:@" +"]) {
+            NSRange range = [showText.text rangeOfString:@"+"];
+            NSString *str = [showText.text substringToIndex:range.location];
+            showText.text = [[str stringByAppendingString:@"+"] stringByAppendingString:tempStr];
+        }
+//        showText.text = [[showText.text stringByAppendingString:@" +"] stringByAppendingString:tempStr];
+        expShowString = tempStr;
+    }else {
+        showText.text = tempStr;
+    }
 }
 
 - (IBAction)basicCalculate:(id)sender {
@@ -131,7 +142,7 @@ typedef enum {
         NSLog(@"===== first input %@",self.num1);
         _cal = [NSNumber numberWithLong:[sender tag]];
         if (isExp) {
-            self.num1 = [NSMutableString stringWithFormat:@"%.10g",[self.num1 doubleValue] * pow(10, [showText.text doubleValue])];
+            self.num1 = [NSMutableString stringWithFormat:@"%.10g",[self.num1 doubleValue] * pow(10, [expShowString doubleValue])];
             showText.text = self.num1;
             isExp = NO;
             NSLog(@"first in num1 %@",self.num1);
@@ -142,7 +153,7 @@ typedef enum {
     } else{ //不是第一次输入，则计算
         NSLog(@"===== second input");
         if (isExp) {
-            self.num2 = [NSMutableString stringWithFormat:@"%.10g",[self.num2 doubleValue] * pow(10, [showText.text doubleValue])];
+            self.num2 = [NSMutableString stringWithFormat:@"%.10g",[self.num2 doubleValue] * pow(10, [expShowString doubleValue])];
             showText.text = self.num2;
             isExp = NO;
         }else {
@@ -372,6 +383,7 @@ typedef enum {
             }else {
                 self.num2 = [NSMutableString stringWithFormat:@"%@",showText.text];
             }
+            showText.text = [[showText.text stringByAppendingString:@" +"] stringByAppendingString:@"0"];
             isExp = YES;
             break;
         case 220:

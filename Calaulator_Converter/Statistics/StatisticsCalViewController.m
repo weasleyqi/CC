@@ -22,10 +22,11 @@
 @property (nonatomic) BOOL isExp;
 @property (nonatomic) BOOL expPressed;
 @property (strong, nonatomic) NSString *expString;
+@property (strong, nonatomic) NSString *expShowString;
 @end
 
 @implementation StatisticsCalViewController
-@synthesize tempStr;
+@synthesize tempStr,expShowString;
 @synthesize showText;
 @synthesize isExp;
 @synthesize expString;
@@ -47,7 +48,7 @@
 - (IBAction)add:(id)sender {
     [MobileData checkSettings];
     if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
         isExp = NO;
         expString = @"";
     }
@@ -131,7 +132,7 @@
 - (IBAction)calculate:(UIButton *)sender {
     [MobileData checkSettings];
     if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
         isExp = NO;
         expString = @"";
     }
@@ -288,11 +289,14 @@
             
         case 202://exp
             if (isExp) {
-                showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+                showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
             }
+            expString = showText.text;
+            showText.text = [[showText.text stringByAppendingString:@" +"] stringByAppendingString:@"0"];
             isExp = YES;
             expPressed = YES;
-            expString = showText.text;
+            
+            tempStr = @"";
             break;
         case 18: // C
             showText.text = @"0";
@@ -301,6 +305,7 @@
         default:
             break;
     }
+    
 }
 
 - (void)showAttributedLabel {
@@ -313,11 +318,11 @@
 
 - (IBAction)inputNum:(UIButton *)sender {
     [MobileData checkSettings];
-    if (isExp && expPressed) {
-        showText.text = @"";
-        tempStr = @"";
-        expPressed = NO;
-    }
+//    if (isExp && expPressed) {
+//        showText.text = @"";
+//        tempStr = @"";
+//        expPressed = NO;
+//    }
     if ([tempStr hasPrefix:@"0"] && [sender tag] > 0 && [sender tag] <10 && ![tempStr hasPrefix:@"0."]) {
         tempStr = @"";
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
@@ -345,7 +350,17 @@
     }else {
         tempStr = [tempStr stringByAppendingString:[NSString stringWithFormat:@"%ld",[sender tag]]];
     }
-    showText.text = tempStr;
+    if (isExp) {
+        if ([showText.text containsString:@" +"]) {
+            NSRange range = [showText.text rangeOfString:@"+"];
+            NSString *str = [showText.text substringToIndex:range.location];
+            showText.text = [[str stringByAppendingString:@"+"] stringByAppendingString:tempStr];
+        }
+        //        showText.text = [[showText.text stringByAppendingString:@" +"] stringByAppendingString:tempStr];
+        expShowString = tempStr;
+    }else {
+        showText.text = tempStr;
+    }
 }
 
 @end
