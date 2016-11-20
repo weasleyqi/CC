@@ -47,7 +47,7 @@
 - (IBAction)add:(id)sender {
     [MobileData checkSettings];
     if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
         isExp = NO;
         expString = @"";
     }
@@ -131,7 +131,7 @@
 - (IBAction)calculate:(UIButton *)sender {
     [MobileData checkSettings];
     if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
         isExp = NO;
         expString = @"";
     }
@@ -142,7 +142,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%g",sum / [_addedNumArr count]];
+                showText.text = [NSString stringWithFormat:@"%.10g",sum / [_addedNumArr count]];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Mean (Avergae) ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -154,7 +154,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue] * [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%g",sum / [_addedNumArr count]];
+                showText.text = [NSString stringWithFormat:@"%.10g",sum / [_addedNumArr count]];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Mean of the Square of the Values ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -166,7 +166,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%g",sum];
+                showText.text = [NSString stringWithFormat:@"%.10g",sum];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Sum ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -178,7 +178,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum + [obj doubleValue] * [obj doubleValue];
                 }];
-                showText.text = [NSString stringWithFormat:@"%g",sum];
+                showText.text = [NSString stringWithFormat:@"%.10g",sum];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Sum of the Square of the Values ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -197,7 +197,7 @@
                 }];
                 
                 double std = sqrt(sum/[_addedNumArr count]);
-                showText.text = [NSString stringWithFormat:@"%g",std];
+                showText.text = [NSString stringWithFormat:@"%.10g",std];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Deviation",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -215,7 +215,7 @@
                     sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
                 }];
                 
-                showText.text = [NSString stringWithFormat:@"%g",sum/[_addedNumArr count]];
+                showText.text = [NSString stringWithFormat:@"%.10g",sum/[_addedNumArr count]];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Population Standard Variance",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -233,7 +233,7 @@
                     sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
                 }];
                 double std = sqrt(sum/([_addedNumArr count]-1));
-                showText.text = [NSString stringWithFormat:@"%g",std];
+                showText.text = [NSString stringWithFormat:@"%.10g",std];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Simple Standard Deviation ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -252,14 +252,14 @@
                     sum = sum + ([obj doubleValue] - average) * ([obj doubleValue] - average);
                 }];
                 
-                showText.text = [NSString stringWithFormat:@"%g",sum/([_addedNumArr count]-1)];
+                showText.text = [NSString stringWithFormat:@"%.10g",sum/([_addedNumArr count]-1)];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Simple Standard Variance ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
             }
             break;
         case 108://正负
-            showText.text = [NSString stringWithFormat:@"%g",[showText.text doubleValue]* -1 ];
+            showText.text = [NSString stringWithFormat:@"%.10g",[showText.text doubleValue]* -1 ];
             tempStr = showText.text;
             break;
             
@@ -269,7 +269,7 @@
                 [_addedNumArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     sum = sum * [obj doubleValue];
                 }];
-                showText.text =[NSString stringWithFormat:@"%g",pow(sum , 1.0/[_addedNumArr count])];
+                showText.text =[NSString stringWithFormat:@"%.10g",pow(sum , 1.0/[_addedNumArr count])];
                 _countLabel.text = [NSString stringWithFormat:@"Count=%ld, Geometric Mean ",[_addedarr count]];
             }else {
                 [self showAttributedLabel];
@@ -288,7 +288,7 @@
             
         case 202://exp
             if (isExp) {
-                showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+                showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
             }
             isExp = YES;
             expPressed = YES;

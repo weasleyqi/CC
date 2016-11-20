@@ -235,7 +235,7 @@
 
 - (IBAction)resultBtnClicked:(id)sender {
     if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
 //        isExp = NO;
         expString = @"";
     }
@@ -256,7 +256,7 @@
     }
     double result = [showText.text doubleValue] * [[_currentShowArray[_currentSelectedRowIndex2] allValues][0] doubleValue] / [[_currentShowArray[_currentSelectedRowIndex] allValues][0] doubleValue] ;
     _fromValueLabel.text = showText.text;
-    _toValueLabel.text = [NSString stringWithFormat:@"%g",result];
+    _toValueLabel.text = [NSString stringWithFormat:@"%.10g",result];
 //    [_toValueLabel sizeToFit];
     _toValueLabel.textAlignment = NSTextAlignmentCenter;
     if (isExp) {
@@ -285,27 +285,27 @@
      */
     if (fIndex == 0 ) {
         if (sIndex == 0) {
-            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 0];
+            return [NSString stringWithFormat:@"%.10g",[showText.text doubleValue] + 0];
         }else if (sIndex == 1) {
-            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 273.16];
+            return [NSString stringWithFormat:@"%.10g",[showText.text doubleValue] + 273.16];
         }else if (sIndex == 2) {
-            return [NSString stringWithFormat:@"%g",([showText.text doubleValue]*1.8 + 32)];
+            return [NSString stringWithFormat:@"%.10g",([showText.text doubleValue]*1.8 + 32)];
         }
     }else if (fIndex == 1) {
         if (sIndex == 0 ) {
-            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] - 273.16];
+            return [NSString stringWithFormat:@"%.10g",[showText.text doubleValue] - 273.16];
         }else if (sIndex == 1) {
-            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 0];
+            return [NSString stringWithFormat:@"%.10g",[showText.text doubleValue] + 0];
         }else if (sIndex == 2) {
-            return [NSString stringWithFormat:@"%g",([showText.text doubleValue] -273.16)*1.8 + 32];
+            return [NSString stringWithFormat:@"%.10g",([showText.text doubleValue] -273.16)*1.8 + 32];
         }
     }else if (fIndex == 2) {
         if (sIndex == 0) {
-            return [NSString stringWithFormat:@"%g",([showText.text doubleValue] -32)/1.8];
+            return [NSString stringWithFormat:@"%.10g",([showText.text doubleValue] -32)/1.8];
         }else if (sIndex == 1) {
-            return [NSString stringWithFormat:@"%g",([showText.text doubleValue]- 32)/1.8 + 273.16];
+            return [NSString stringWithFormat:@"%.10g",([showText.text doubleValue]- 32)/1.8 + 273.16];
         }else if (sIndex == 2) {
-            return [NSString stringWithFormat:@"%g",[showText.text doubleValue] + 0];
+            return [NSString stringWithFormat:@"%.10g",[showText.text doubleValue] + 0];
         }
     }
     return @"1";
@@ -351,11 +351,11 @@
     }
     switch (sender.tag) {
         case 21://+-
-            showText.text = [NSString stringWithFormat:@"%g",[showText.text doubleValue]*(-1)];
+            showText.text = [NSString stringWithFormat:@"%.10g",[showText.text doubleValue]*(-1)];
             break;
         case 22://EXP
             if (isExp) {
-                showText.text = [NSString stringWithFormat:@"%g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
+                showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [showText.text doubleValue])];
             }
             isExp = YES;
             expPressed = YES;
