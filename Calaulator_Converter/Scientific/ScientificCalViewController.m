@@ -258,6 +258,10 @@ typedef enum {
             }
             break;
         case 21:
+            if (showText.text.intValue == 90 && _calculateMode == Mode_DEG) {
+                showText.text = @"0";
+                break;
+            }
             showText.text = [NSString stringWithFormat:@"%.10g",cos(calculateValue)];
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
@@ -270,19 +274,31 @@ typedef enum {
             }
             break;
         case 23:
-            showText.text = [NSString stringWithFormat:@"%.10g",asin([showText.text doubleValue])*180/M_PI];
+            if (_calculateMode == Mode_RAD) {
+                showText.text = [NSString stringWithFormat:@"%.10g",asin([showText.text doubleValue])];
+            }else {
+                showText.text = [NSString stringWithFormat:@"%.10g",asin([showText.text doubleValue])*180/M_PI];
+            }
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 24:
-            showText.text = [NSString stringWithFormat:@"%.10g",acos([showText.text doubleValue])*180/M_PI];
+            if (_calculateMode == Mode_RAD) {
+                showText.text = [NSString stringWithFormat:@"%.10g",acos([showText.text doubleValue])];
+            }else {
+                showText.text = [NSString stringWithFormat:@"%.10g",acos([showText.text doubleValue])*180/M_PI];
+            }
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
             break;
         case 25:
-            showText.text = [NSString stringWithFormat:@"%.10g",atan([showText.text doubleValue])*180/M_PI];
+            if (_calculateMode == Mode_RAD) {
+                showText.text = [NSString stringWithFormat:@"%.10g",atan([showText.text doubleValue])];
+            }else {
+                showText.text = [NSString stringWithFormat:@"%.10g",atan([showText.text doubleValue])*180/M_PI];
+            }
             if ([showText.text isEqualToString:@"nan"]) {
                 showText.text = @"ERROR";
             }
