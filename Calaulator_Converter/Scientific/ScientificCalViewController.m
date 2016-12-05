@@ -369,11 +369,19 @@ typedef enum {
             }
             break;
         case 218://n!
-            if ([showText.text intValue] != 0) {
-                showText.text = [NSString stringWithFormat:@"%.10g",[self fac]];
-                if ([showText.text isEqualToString:@"0"]) {
+            if ([showText.text intValue] > 0) {
+                //判断输入为正整数
+                float x = [showText.text integerValue];
+                if (x != [showText.text floatValue]) {
                     showText.text = @"ERROR";
+                }else {
+                    showText.text = [NSString stringWithFormat:@"%.10g",[self fac]];
+                    if ([showText.text isEqualToString:@"0"]) {
+                        showText.text = @"ERROR";
+                    }
                 }
+            }else{
+                showText.text = @"ERROR";
             }
             
             break;
