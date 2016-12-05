@@ -2868,8 +2868,9 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6br-kO-BbD">
                                 <rect key="frame" x="0.0" y="394" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This App was created by Calculator.net. We work hard to provide free mobile and online calculators." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-0e-dV8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEH-0e-dV8">
                                         <rect key="frame" x="15" y="0.0" width="345" height="60"/>
+                                        <string key="text">This App was created by Calculator.net. We work hard to provide free mobile and online calculators.If you like this app, please give us a good rating.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <color key="textColor" red="0.0" green="0.070588235294117646" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2890,7 +2891,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="775-fq-ydc">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="775-fq-ydc">
                                 <rect key="frame" x="0.0" y="464" width="375" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="right.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pd9-5X-TX6">
@@ -2929,14 +2930,14 @@
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ep-mr-zNL">
                                         <rect key="frame" x="321" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="确定"/>
+                                        <state key="normal" title="OK"/>
                                         <connections>
                                             <action selector="pickSelect:" destination="Wg3-hZ-c1v" eventType="touchUpInside" id="qKL-8R-qM1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJp-2J-F04">
                                         <rect key="frame" x="8" y="0.0" width="46" height="30"/>
-                                        <state key="normal" title="取消"/>
+                                        <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="pickUnSelect:" destination="Wg3-hZ-c1v" eventType="touchUpInside" id="nBk-Hj-z18"/>
                                         </connections>
