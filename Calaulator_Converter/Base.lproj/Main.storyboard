@@ -679,12 +679,15 @@
                                     <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="gll-fI-3TG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0S2-Ha-EVc" customClass="MBButtonWithFontAdapter">
+                            <button opaque="NO" tag="225" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0S2-Ha-EVc" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="354" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="MS" backgroundImage="button02.png">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="advancedCalculate:" destination="ccj-Q2-GUe" eventType="touchUpInside" id="2pV-xq-ERS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="221" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bq0-e7-wsH" customClass="MBButtonWithFontAdapter">
                                 <rect key="frame" x="239" y="394" width="46" height="30"/>

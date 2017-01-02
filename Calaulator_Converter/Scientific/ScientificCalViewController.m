@@ -33,10 +33,12 @@ typedef enum {
 @property (strong, nonatomic) NSString *expShowString;
 
 
+@property (nonatomic) double MSValue; //MS
 @property (nonatomic) double mp1;//M+
 @property (nonatomic) double mp2;//m+
 @property (nonatomic) double mm1;//M-
 @property (nonatomic) double mm2;//M-
+@property (nonatomic) int mOper;
 
 @property (nonatomic) BOOL isExp;
 @end
@@ -65,6 +67,8 @@ typedef enum {
     _mp2 = 0.00;
     _mm1 = 0.00;
     _mm2 = 0.00;
+    _MSValue = 0.00;
+    _mOper = 0;
     isExp = NO;
 }
 
@@ -457,56 +461,19 @@ typedef enum {
             showText.text = [NSString stringWithFormat:@"%.10g",(double)(arc4random()%10000) /10000];
             break;
         case 221://M+
-            if (_mp1 == 0.00) {
-                _mp1 = _mp1 + [showText.text doubleValue];
-            }else {
-                _mp2 = _mp2 + [showText.text doubleValue];
-            }
+            _mOper = 1;
             break;
         case 222://M-
-            if (_mm1 == 0.00) {
-                _mm1 = _mm1 - [showText.text doubleValue];
-            }else {
-                _mm2 = _mm2 - [showText.text doubleValue];
-            }
+            _mOper = 2;
             break;
         case 223://MR
-            if (_mp1 != 0.00 & _mp2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%.10g",(_mp1 + _mp2)];
-                _mp1 = 0.00;
-                _mp2 = 0.00;
-                _mm1 = 0.00;
-                _mm2 = 0.00;
-            }else if(_mp1 != 0.00 & _mm1 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%.10g",(_mp1 + _mm1)];
-                _mp1 = 0.00;
-                _mp2 = 0.00;
-                _mm1 = 0.00;
-                _mm2 = 0.00;
-            }else if(_mp1 != 0.00 & _mm2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%.10g",(_mp1 + _mm2)];
-                _mp1 = 0.00;
-                _mp2 = 0.00;
-                _mm1 = 0.00;
-                _mm2 = 0.00;
-            }else if(_mp2 != 0.00 & _mm1 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%.10g",(_mp2 + _mm1)];
-                _mp1 = 0.00;
-                _mp2 = 0.00;
-                _mm1 = 0.00;
-                _mm2 = 0.00;
-            }else if(_mp2 != 0.00 & _mm2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%.10g",(_mp2 + _mm2)];
-                _mp1 = 0.00;
-                _mp2 = 0.00;
-                _mm1 = 0.00;
-                _mm2 = 0.00;
-            }else if(_mm1 != 0.00 & _mm2 != 0.00) {
-                showText.text = [NSString stringWithFormat:@"%.10g",(_mm1 + _mm2)];
-                _mp1 = 0.00;
-                _mp2 = 0.00;
-                _mm1 = 0.00;
-                _mm2 = 0.00;
+            if (_mOper == 1 || _mOper == 2) {
+                double value = [showText.text doubleValue] + _MSValue;
+                showText.text = [NSString stringWithFormat:@"%.10g",value];
+                _MSValue = value;
+                _mOper = 0;
+            }else {
+                showText.text = [NSString stringWithFormat:@"%.10g",_MSValue];
             }
             break;
         case 224://MC
@@ -514,7 +481,11 @@ typedef enum {
             _mp2 = 0.00;
             _mm1 = 0.00;
             _mm2 = 0.00;
+            _MSValue = 0.00;
             showText.text = @"0";
+            break;
+        case 225://MS
+            _MSValue = showText.text.doubleValue;
             break;
         default:
             break;
