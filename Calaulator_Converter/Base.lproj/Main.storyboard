@@ -1883,7 +1883,6 @@
                                 </state>
                                 <connections>
                                     <action selector="calculate:" destination="jFD-mf-EjL" eventType="touchUpInside" id="JCy-fi-RZ1"/>
-                                    <action selector="resultBtnClicked:" destination="jFD-mf-EjL" eventType="touchUpInside" id="a9a-3Y-CcW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfG-IT-yN0" customClass="MBButtonWithFontAdapter">

@@ -97,6 +97,13 @@ typedef enum {
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
         //如果是以0开头，但是不是以0.开头，则直接返回
         return;
+    }else if (isExp) {
+        NSRange range = [showText.text rangeOfString:@" -"];
+        if (range.length == 0) {
+            
+        }else {
+            tempStr = [showText.text substringFromIndex:range.location+1];
+        }
     }
 
     //处理小数点的问题
@@ -124,6 +131,10 @@ typedef enum {
             NSRange range = [showText.text rangeOfString:@"+"];
             NSString *str = [showText.text substringToIndex:range.location];
             showText.text = [[str stringByAppendingString:@"+"] stringByAppendingString:tempStr];
+        }else if ([showText.text containsString:@" -"]) {
+            NSRange range = [showText.text rangeOfString:@"-"];
+            NSString *str = [showText.text substringToIndex:range.location];
+            showText.text = [[str stringByAppendingString:@"-"] stringByAppendingString:tempStr];
         }
 //        showText.text = [[showText.text stringByAppendingString:@" +"] stringByAppendingString:tempStr];
         expShowString = tempStr;
@@ -141,22 +152,50 @@ typedef enum {
     if(0 == _count) {//如果是第一次输入
         NSLog(@"===== first input %@",self.num1);
         _cal = [NSNumber numberWithLong:[sender tag]];
-        if (isExp) {
-            self.num1 = [NSMutableString stringWithFormat:@"%.10g",[self.num1 doubleValue] * pow(10, [expShowString doubleValue])];
+        if (isExp && [sender tag] != 16 && [sender tag] != 19) {
+            if ([showText.text containsString:@" -"]) {
+                self.num1 = [NSMutableString stringWithFormat:@"%.10g",[self.num1 doubleValue] * pow(10, -[expShowString doubleValue])];
+            }else {
+                self.num1 = [NSMutableString stringWithFormat:@"%.10g",[self.num1 doubleValue] * pow(10, [expShowString doubleValue])];
+            }
+            
             showText.text = self.num1;
             isExp = NO;
             NSLog(@"first in num1 %@",self.num1);
-        }else {
+        }else if (isExp && [sender tag] == 19) {
+            if ([showText.text containsString:@" -"]) {
+                self.num1 = [NSMutableString stringWithFormat:@"%.10g",[self.num1 doubleValue] * pow(10, -[expShowString doubleValue])];
+            }else{
+                self.num1 = [NSMutableString stringWithFormat:@"%.10g",[self.num1 doubleValue] * pow(10, [expShowString doubleValue])];
+            }
+            showText.text = self.num1;
+            isExp = NO;
+        }
+        else if(!isExp) {
             self.num1 = [NSMutableString stringWithFormat:@"%@",showText.text];
         }
         
     } else{ //不是第一次输入，则计算
         NSLog(@"===== second input");
-        if (isExp) {
-            self.num2 = [NSMutableString stringWithFormat:@"%.10g",[self.num2 doubleValue] * pow(10, [expShowString doubleValue])];
+        if (isExp && [sender tag] != 16 && [sender tag] != 19) {
+            if ([showText.text containsString:@" -"]) {
+                self.num2 = [NSMutableString stringWithFormat:@"%.10g",[self.num2 doubleValue] * pow(10, -[expShowString doubleValue])];
+            }else {
+                self.num2 = [NSMutableString stringWithFormat:@"%.10g",[self.num2 doubleValue] * pow(10, [expShowString doubleValue])];
+            }
+            
             showText.text = self.num2;
             isExp = NO;
-        }else {
+        }else if (isExp && [sender tag] == 19) {
+            if ([showText.text containsString:@" -"]) {
+                self.num2 = [NSMutableString stringWithFormat:@"%.10g",[self.num2 doubleValue] * pow(10, -[expShowString doubleValue])];
+            }else {
+                self.num2 = [NSMutableString stringWithFormat:@"%.10g",[self.num2 doubleValue] * pow(10, [expShowString doubleValue])];
+            }
+            showText.text = self.num2;
+            isExp = NO;
+        }
+        else if(!isExp) {
             self.num2 = [NSMutableString stringWithFormat:@"%@",showText.text];
         }
 //        self.num2 = [NSMutableString stringWithFormat:@"%@", showText.text];
@@ -192,15 +231,25 @@ typedef enum {
     if ([sender tag] == 16 || [sender tag] == 17) {//单目运算正负和%
         switch ([sender tag]) {
             case 16://将乘负后的结果显示
-                showText.text =[NSString stringWithFormat:@"%.10g",([self.num1 doubleValue] *(-1))];
+                if (isExp) {
+                    if ([showText.text containsString:@" +"]) {
+                        showText.text = [showText.text stringByReplacingOccurrencesOfString:@" +" withString:@" -"];
+                    }else if ([showText.text containsString:@" -"]) {
+                        showText.text = [showText.text stringByReplacingOccurrencesOfString:@" -" withString:@" +"];
+                    }
+                }else {
+                    showText.text =[NSString stringWithFormat:@"%.10g",([self.num1 doubleValue] *(-1))];
+                    self.num1 = [NSMutableString stringWithFormat:@"%@", showText.text];
+                }
                 break;
             case 17://将取百分后的结果显示
                 showText.text =[NSString stringWithFormat:@"%.10g",([self.num1 doubleValue] / 100)];
+                self.num1 = [NSMutableString stringWithFormat:@"%@", showText.text];
                 break;
             default:
                 break;
         }
-        self.num1 = [NSMutableString stringWithFormat:@"%@", showText.text];
+        
     }
     if ([sender tag] == 18) { //Clear
         showText.text = @"0";
@@ -249,10 +298,20 @@ typedef enum {
     
     NSLog(@"first/sec %d num1 %@ num2 %@",_count,self.num1,self.num2);
     if (_count == 0 && isExp) {
-        showText.text = [NSString stringWithFormat:@"%.10g",[self.num1 doubleValue]* pow(10, [showText.text doubleValue])];
+        if ([showText.text containsString:@" +"]) {
+            showText.text = [NSString stringWithFormat:@"%.10g",[self.num1 doubleValue]* pow(10, [showText.text doubleValue])];
+        }else {
+            showText.text = [NSString stringWithFormat:@"%.10g",[self.num1 doubleValue]* pow(10, -[showText.text doubleValue])];
+        }
+        
         isExp = NO;
     }else if(isExp && _count != 0){
-        showText.text = [NSString stringWithFormat:@"%.10g",[self.num2 doubleValue]* pow(10, [showText.text doubleValue])];
+        if ([showText.text containsString:@" +"]) {
+            showText.text = [NSString stringWithFormat:@"%.10g",[self.num2 doubleValue]* pow(10, [showText.text doubleValue])];
+        }else {
+            showText.text = [NSString stringWithFormat:@"%.10g",[self.num2 doubleValue]* pow(10, -[showText.text doubleValue])];
+        }
+        
         isExp = NO;
     }
     

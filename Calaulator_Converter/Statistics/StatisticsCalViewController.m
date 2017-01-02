@@ -48,7 +48,11 @@
 - (IBAction)add:(id)sender {
     [MobileData checkSettings];
     if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+        if ([showText.text containsString:@" -"]) {
+            showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, -[expShowString doubleValue])];
+        }else {
+            showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+        }
         isExp = NO;
         expString = @"";
     }
@@ -131,10 +135,24 @@
 
 - (IBAction)calculate:(UIButton *)sender {
     [MobileData checkSettings];
-    if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+    if (isExp && [sender tag] != 108) {
+        if ([showText.text containsString:@" -"]) {
+            showText.text = [NSMutableString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, -[expShowString doubleValue])];
+        }else {
+            showText.text = [NSMutableString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+        }
+        
         isExp = NO;
+//        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+//        isExp = NO;
         expString = @"";
+    }else if (isExp && [sender tag] == 19) {
+        if ([showText.text containsString:@" -"]) {
+            showText.text = [NSMutableString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, -[expShowString doubleValue])];
+        }else {
+            showText.text = [NSMutableString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+        }
+        isExp = NO;
     }
     switch (sender.tag) {
         case 100://x average
@@ -260,7 +278,15 @@
             }
             break;
         case 108://正负
-            showText.text = [NSString stringWithFormat:@"%.10g",[showText.text doubleValue]* -1 ];
+            if (isExp) {
+                if ([showText.text containsString:@" +"]) {
+                    showText.text = [showText.text stringByReplacingOccurrencesOfString:@" +" withString:@" -"];
+                }else if ([showText.text containsString:@" -"]) {
+                    showText.text = [showText.text stringByReplacingOccurrencesOfString:@" -" withString:@" +"];
+                }
+            }else {
+                showText.text =[NSString stringWithFormat:@"%.10g",([showText.text doubleValue] *(-1))];
+            }
             tempStr = showText.text;
             break;
             
@@ -328,6 +354,13 @@
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
         //如果是以0开头，但是不是以0.开头，则直接返回
         return;
+    }else if (isExp) {
+        NSRange range = [showText.text rangeOfString:@"-"];
+        if (range.length == 0) {
+            
+        }else {
+            tempStr = [showText.text substringFromIndex:range.location+1];
+        }
     }
     
     //处理小数点的问题
@@ -355,6 +388,10 @@
             NSRange range = [showText.text rangeOfString:@"+"];
             NSString *str = [showText.text substringToIndex:range.location];
             showText.text = [[str stringByAppendingString:@"+"] stringByAppendingString:tempStr];
+        }else if ([showText.text containsString:@" -"]) {
+            NSRange range = [showText.text rangeOfString:@"-"];
+            NSString *str = [showText.text substringToIndex:range.location];
+            showText.text = [[str stringByAppendingString:@"-"] stringByAppendingString:tempStr];
         }
         //        showText.text = [[showText.text stringByAppendingString:@" +"] stringByAppendingString:tempStr];
         expShowString = tempStr;

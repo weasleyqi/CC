@@ -210,6 +210,13 @@
     } else if ([tempStr hasPrefix:@"0"] && [sender tag] == 0 && ![tempStr hasPrefix:@"0."]) {
         //如果是以0开头，但是不是以0.开头，则直接返回
         return;
+    }else if (isExp) {
+        NSRange range = [showText.text rangeOfString:@" -"];
+        if (range.length == 0) {
+            
+        }else {
+            tempStr = [showText.text substringFromIndex:range.location+1];
+        }
     }
     
     //处理小数点的问题
@@ -238,25 +245,36 @@
             NSRange range = [showText.text rangeOfString:@"+"];
             NSString *str = [showText.text substringToIndex:range.location];
             showText.text = [[str stringByAppendingString:@"+"] stringByAppendingString:tempStr];
+        }else if ([showText.text containsString:@" -"]) {
+            NSRange range = [showText.text rangeOfString:@"-"];
+            NSString *str = [showText.text substringToIndex:range.location];
+            showText.text = [[str stringByAppendingString:@"-"] stringByAppendingString:tempStr];
         }
         //        showText.text = [[showText.text stringByAppendingString:@" +"] stringByAppendingString:tempStr];
         expShowString = tempStr;
     }else {
         showText.text = tempStr;
-        [self resultBtnClicked:nil];
+        
     }
+    [self resultBtnClicked:nil];
 }
 
 
 - (IBAction)resultBtnClicked:(id)sender {
+    NSString *currTempStr = showText.text;
     if (isExp) {
-        showText.text = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+        if ([showText.text containsString:@" -"]) {
+            currTempStr = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, -[expShowString doubleValue])];
+        }else {
+            currTempStr = [NSString stringWithFormat:@"%.10g",[expString doubleValue] * pow(10, [expShowString doubleValue])];
+        }
+        
 //        isExp = NO;
-        expString = @"";
+//        expString = @"";
     }
     if (_isTemp) {
 //        showText.text = [self tempCalWithFirstIndex:_currentSelectedRowIndex secondIndex:_currentSelectedRowIndex2];
-        _fromValueLabel.text = showText.text;
+        _fromValueLabel.text = currTempStr;
         _toValueLabel.text = [self tempCalWithFirstIndex:_currentSelectedRowIndex secondIndex:_currentSelectedRowIndex2];
         //    [_toValueLabel sizeToFit];
         _toValueLabel.textAlignment = NSTextAlignmentCenter;
@@ -269,15 +287,15 @@
          */
         
     }
-    double result = [showText.text doubleValue] * [[_currentShowArray[_currentSelectedRowIndex2] allValues][0] doubleValue] / [[_currentShowArray[_currentSelectedRowIndex] allValues][0] doubleValue] ;
-    _fromValueLabel.text = showText.text;
+    double result = [currTempStr doubleValue] * [[_currentShowArray[_currentSelectedRowIndex2] allValues][0] doubleValue] / [[_currentShowArray[_currentSelectedRowIndex] allValues][0] doubleValue] ;
+    _fromValueLabel.text = currTempStr;
     _toValueLabel.text = [NSString stringWithFormat:@"%.10g",result];
 //    [_toValueLabel sizeToFit];
     _toValueLabel.textAlignment = NSTextAlignmentCenter;
-    if (isExp) {
-        tempStr = @"";
-        isExp = NO;
-    }
+//    if (isExp) {
+//        tempStr = @"";
+//        isExp = NO;
+//    }
 }
 
 - (void)taptap:(UITapGestureRecognizer *)gesture {
@@ -361,12 +379,27 @@
 - (IBAction)calculate:(UIButton *)sender {
     [MobileData checkSettings];
     if (isExp && expPressed) {
-        showText.text = @"";
-        tempStr = @"";
+        
+//        if ([sender tag] == 21 || [sender tag] == 22) {
+//            
+//        }else {
+//            showText.text = @"";
+//            tempStr = @"";
+//        }
     }
     switch (sender.tag) {
         case 21://+-
-            showText.text = [NSString stringWithFormat:@"%.10g",[showText.text doubleValue]*(-1)];
+            if (isExp) {
+                if ([showText.text containsString:@" +"]) {
+                    showText.text = [showText.text stringByReplacingOccurrencesOfString:@" +" withString:@" -"];
+                }else if ([showText.text containsString:@" -"]) {
+                    showText.text = [showText.text stringByReplacingOccurrencesOfString:@" -" withString:@" +"];
+                }
+            }else {
+                showText.text =[NSString stringWithFormat:@"%.10g",([showText.text doubleValue] *(-1))];
+            }
+            [self resultBtnClicked:nil];
+//            showText.text = [NSString stringWithFormat:@"%.10g",[showText.text doubleValue]*(-1)];
             break;
         case 22://EXP
             if (isExp) {
@@ -384,6 +417,7 @@
             tempStr = @"0";
             _fromValueLabel.text = @"0";
             _toValueLabel.text = @"0";
+            isExp = NO;
             break;
         case 24://Go
             [self resultBtnClicked:nil];
