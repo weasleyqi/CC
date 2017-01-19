@@ -106,7 +106,10 @@ typedef enum {
         if (range.length == 0) {
             
         }else {
-            tempStr = [showText.text substringFromIndex:range.location+1];
+            tempStr = [showText.text substringFromIndex:range.location+2];
+            if ([tempStr isEqualToString:@"0"]) {
+                tempStr = @"";
+            }
         }
     }
 
@@ -231,7 +234,10 @@ typedef enum {
         _cal = [NSNumber numberWithLong:[sender tag]];
         
     }
-    _count = 1;
+    if (!isExp) {
+        _count = 1;
+    }
+//    _count = 1;
     if ([sender tag] == 16 || [sender tag] == 17) {//单目运算正负和%
         switch ([sender tag]) {
             case 16://将乘负后的结果显示
