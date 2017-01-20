@@ -41,17 +41,24 @@ typedef enum {
 @property (nonatomic) int mOper;
 
 @property (nonatomic) BOOL isExp;
+@property (nonatomic) BOOL isBracketOn; // 开启左括号
+@property (nonatomic) BOOL isBracketEnd; //开启右括号
+@property (strong, nonatomic) NSMutableArray *numberArray; //数字数组
+@property (strong, nonatomic) NSMutableArray *operArray; //操作符号数组
 @end
 
 @implementation ScientificCalViewController
 @synthesize showText,expShowString;
 @synthesize tempStr;
-@synthesize isExp;
+@synthesize isExp,isBracketOn,isBracketEnd;
 @synthesize expString;
+@synthesize numberArray, operArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     tempStr = @"";
+    numberArray = [NSMutableArray new];
+    operArray = [NSMutableArray new];
     _DEG_View.userInteractionEnabled = YES;
     _RAD_View.userInteractionEnabled = YES;
     _DEG_View.tag = 9001;
@@ -492,6 +499,13 @@ typedef enum {
             break;
         case 225://MS
             _MSValue = showText.text.doubleValue;
+            break;
+            
+        case 301:// (
+            isBracketOn = YES;
+            break;
+        case 302:// )
+            isBracketEnd = YES;
             break;
         default:
             break;
