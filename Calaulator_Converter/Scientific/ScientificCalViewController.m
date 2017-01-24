@@ -43,22 +43,28 @@ typedef enum {
 @property (nonatomic) BOOL isExp;
 @property (nonatomic) BOOL isBracketOn; // 开启左括号
 @property (nonatomic) BOOL isBracketEnd; //开启右括号
+@property (strong, nonatomic) NSString *lastOper;//上一个操作符
 @property (strong, nonatomic) NSMutableArray *numberArray; //数字数组
 @property (strong, nonatomic) NSMutableArray *operArray; //操作符号数组
+@property (strong, nonatomic) NSMutableArray *bracketNumberArray;
+@property (strong, nonatomic) NSMutableArray *bracketOperArray;
+@property (nonatomic ) BOOL isExcuteBracket;
 @end
 
 @implementation ScientificCalViewController
 @synthesize showText,expShowString;
 @synthesize tempStr;
-@synthesize isExp,isBracketOn,isBracketEnd;
+@synthesize isExp,isBracketOn,isBracketEnd,lastOper;
 @synthesize expString;
-@synthesize numberArray, operArray;
+@synthesize numberArray, operArray,bracketOperArray,bracketNumberArray,isExcuteBracket;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     tempStr = @"";
     numberArray = [NSMutableArray new];
     operArray = [NSMutableArray new];
+    bracketNumberArray = [NSMutableArray new];
+    bracketOperArray = [NSMutableArray new];
     _DEG_View.userInteractionEnabled = YES;
     _RAD_View.userInteractionEnabled = YES;
     _DEG_View.tag = 9001;
@@ -77,6 +83,7 @@ typedef enum {
     _MSValue = 0.00;
     _mOper = 0;
     isExp = NO;
+    isExcuteBracket = NO;
 }
 
 - (void)changeRadAndDeg:(UITapGestureRecognizer *)sender {
@@ -157,11 +164,106 @@ typedef enum {
     }
 }
 
+- (NSString *)excuteBasicValue:(NSString *)n1 n2:(NSString *)n2 oper:(NSString *)oper{
+    NSString *resultString = @"0";
+    if ([oper isEqualToString:@"+"]) {
+        resultString =[NSString stringWithFormat:@"%.10g",[n1 doubleValue] + [n2 doubleValue]];
+    }else if ([oper isEqualToString:@"-"]) {
+        resultString =[NSString stringWithFormat:@"%.10g",[n1 doubleValue] - [n2 doubleValue]];
+    }else if ([oper isEqualToString:@"*"]) {
+        resultString =[NSString stringWithFormat:@"%.10g",[n1 doubleValue] * [n2 doubleValue]];
+    }else if ([oper isEqualToString:@"/"]) {
+        resultString =[NSString stringWithFormat:@"%.10g",[n1 doubleValue] / [n2 doubleValue]];
+    }
+    return resultString;
+}
+
 - (IBAction)basicCalculate:(id)sender {
     [MobileData checkSettings];
     //清空tempStr
     
     self.tempStr = [NSMutableString stringWithString:@""];
+    /**
+     *  +  -  *  /  =
+     * 12 13 14 15 19
+     *
+     */
+    if (([sender tag] == 12 ||
+        [sender tag] == 13 ||
+        [sender tag] == 14 ||
+        [sender tag] == 15 ||
+        [sender tag] == 19) && !isExp ) {
+        
+        if (self.num1.length > 0 && _count != 0 && ([sender tag] == 14 || [sender tag] == 15)) {
+            if (isBracketOn) {
+                [bracketNumberArray addObject:self.num1];
+                [bracketOperArray addObject:lastOper];
+            }else {
+                [numberArray addObject:self.num1] ;
+                [operArray addObject:lastOper];
+            }
+            self.num1 = nil;
+            _count = 0;
+            
+        }
+        
+        if (([sender tag] == 19 || [sender tag] == 12 || [sender tag] == 13) && self.num1 != nil ) {
+            NSString *calcuTempString = @"";
+            if (!isExcuteBracket) {
+                calcuTempString = [self excuteBasicValue:[NSString stringWithFormat:@"%@",self.num1] n2:showText.text oper:lastOper];
+            }else {
+                calcuTempString = showText.text;
+            }
+            if ([bracketNumberArray count] > 0) {
+                calcuTempString = [self excuteBasicValue:calcuTempString n2:bracketNumberArray.lastObject oper:bracketOperArray.lastObject];
+                [bracketNumberArray removeLastObject];
+                [bracketOperArray removeLastObject];
+                if ([bracketNumberArray count] == 0) {
+                    isBracketOn = NO;
+                }
+            }
+            if ([numberArray count] > 0) {
+                for (int i = 0 ; i < numberArray.count; i ++) {
+                    calcuTempString = [self excuteBasicValue:calcuTempString n2:numberArray.lastObject oper:operArray.lastObject];
+                    [numberArray removeLastObject];
+                    [operArray removeLastObject];
+                }
+            }
+            showText.text = calcuTempString;
+            if ([sender tag] == 19) {
+                self.num1 = nil;
+                _count = 0;
+                isExcuteBracket = NO;
+            }
+            //计算包含括号在内的结果
+            
+            return;
+        }
+        
+        
+        
+        
+    }
+    
+    switch ([sender tag]) {
+        case 12:
+            lastOper = @"+";
+            break;
+        case 13:
+            lastOper = @"-";
+            break;
+        case 14:
+            lastOper = @"*";
+            break;
+        case 15:
+            lastOper = @"/";
+            break;
+        case 19:
+            lastOper = @"";
+            break;
+        default:
+            break;
+    }
     
     if(0 == _count) {//如果是第一次输入
         NSLog(@"===== first input %@",self.num1);
@@ -188,7 +290,7 @@ typedef enum {
         else if(!isExp) {
             self.num1 = [NSMutableString stringWithFormat:@"%@",showText.text];
         }
-        
+        NSLog(@"count = 0 , num1 = %@",self.num1);
     } else{ //不是第一次输入，则计算
         NSLog(@"===== second input");
         if (isExp && [sender tag] != 16 && [sender tag] != 19) {
@@ -494,6 +596,8 @@ typedef enum {
             _mp2 = 0.00;
             _mm1 = 0.00;
             _mm2 = 0.00;
+            self.num1 = nil;
+            self.num2 = nil;
             _MSValue = 0.00;
             showText.text = @"0";
             break;
@@ -503,13 +607,38 @@ typedef enum {
             
         case 301:// (
             isBracketOn = YES;
+            [self saveData];
             break;
         case 302:// )
             isBracketEnd = YES;
+            [self calculateData];
             break;
         default:
             break;
     }
+}
+
+- (void)saveData {
+    [numberArray addObject:self.num1] ;
+    [operArray addObject:lastOper];
+    self.num1 = nil;
+    _count = 0;
+    
+}
+
+- (void)calculateData {
+    NSString *calcuTempString = @"";
+    calcuTempString = [self excuteBasicValue:[NSString stringWithFormat:@"%@",self.num1] n2:showText.text oper:lastOper];
+    if ([bracketNumberArray count] > 0) {
+        calcuTempString = [self excuteBasicValue:calcuTempString n2:bracketNumberArray.lastObject oper:bracketOperArray.lastObject];
+        [bracketNumberArray removeLastObject];
+        [bracketOperArray removeLastObject];
+        if ([bracketNumberArray count] == 0) {
+            isBracketOn = NO;
+        }
+    }
+    showText.text = calcuTempString;
+    isExcuteBracket = YES;
 }
 
 - (double)fac {
