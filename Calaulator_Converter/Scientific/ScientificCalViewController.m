@@ -230,12 +230,32 @@ typedef enum {
                 }
             }
             showText.text = calcuTempString;
+            self.num1 = [NSMutableString stringWithFormat:@"%@",calcuTempString];
             if ([sender tag] == 19) {
                 self.num1 = nil;
                 _count = 0;
                 isExcuteBracket = NO;
             }
             //计算包含括号在内的结果
+            switch ([sender tag]) {
+                case 12:
+                    lastOper = @"+";
+                    break;
+                case 13:
+                    lastOper = @"-";
+                    break;
+                case 14:
+                    lastOper = @"*";
+                    break;
+                case 15:
+                    lastOper = @"/";
+                    break;
+                case 19:
+                    lastOper = @"";
+                    break;
+                default:
+                    break;
+            }
             
             return;
         }
@@ -577,19 +597,25 @@ typedef enum {
             break;
         case 221://M+
             _mOper = 1;
+            double value = _MSValue + [showText.text doubleValue];
+            showText.text = [NSString stringWithFormat:@"%.10g",value];
+            _MSValue = value;
             break;
         case 222://M-
             _mOper = 2;
+            double value2 = _MSValue - [showText.text doubleValue];
+            showText.text = [NSString stringWithFormat:@"%.10g",value2];
+            _MSValue = value2;
             break;
         case 223://MR
-            if (_mOper == 1 || _mOper == 2) {
-                double value = [showText.text doubleValue] + _MSValue;
-                showText.text = [NSString stringWithFormat:@"%.10g",value];
-                _MSValue = value;
-                _mOper = 0;
-            }else {
+//            if (_mOper == 1 || _mOper == 2) {
+//                double value = [showText.text doubleValue] + _MSValue;
+//                showText.text = [NSString stringWithFormat:@"%.10g",value];
+//                _MSValue = value;
+//                _mOper = 0;
+//            }else {
                 showText.text = [NSString stringWithFormat:@"%.10g",_MSValue];
-            }
+//            }
             break;
         case 224://MC
             _mp1 = 0.00;
