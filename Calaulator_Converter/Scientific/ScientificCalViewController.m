@@ -174,6 +174,10 @@ typedef enum {
         resultString =[NSString stringWithFormat:@"%.10g",[n1 doubleValue] * [n2 doubleValue]];
     }else if ([oper isEqualToString:@"/"]) {
         resultString =[NSString stringWithFormat:@"%.10g",[n1 doubleValue] / [n2 doubleValue]];
+    }else if ([oper isEqualToString:@"x"]) {
+        resultString =[NSString stringWithFormat:@"%.10g",pow([n1 doubleValue], [n2 doubleValue])];
+    }else if ([oper isEqualToString:@"g"]) {
+        resultString =[NSString stringWithFormat:@"%.10g",pow([n1 doubleValue], 1.0 / [n2 doubleValue])];
     }
     return resultString;
 }
@@ -223,8 +227,13 @@ typedef enum {
                 }
             }
             if ([numberArray count] > 0) {
-                for (int i = 0 ; i < numberArray.count; i ++) {
-                    calcuTempString = [self excuteBasicValue:calcuTempString n2:numberArray.lastObject oper:operArray.lastObject];
+                NSUInteger numbercount = numberArray.count;
+                for (int i = 0 ; i < numbercount; i ++) {
+                    if ([operArray.lastObject isEqualToString:@"-"] || [operArray.lastObject isEqualToString:@"/"]) {
+                        calcuTempString = [self excuteBasicValue:numberArray.lastObject n2:calcuTempString oper:operArray.lastObject];
+                    }else {
+                        calcuTempString = [self excuteBasicValue:calcuTempString n2:numberArray.lastObject oper:operArray.lastObject];
+                    }
                     [numberArray removeLastObject];
                     [operArray removeLastObject];
                 }
@@ -253,16 +262,18 @@ typedef enum {
                 case 19:
                     lastOper = @"";
                     break;
+                case 110:
+                    lastOper = @"x";
+                    break;
+                case 213:
+                    lastOper = @"g";
+                    break;
                 default:
                     break;
             }
             
             return;
         }
-        
-        
-        
-        
     }
     
     switch ([sender tag]) {
@@ -280,6 +291,12 @@ typedef enum {
             break;
         case 19:
             lastOper = @"";
+            break;
+        case 110:
+            lastOper = @"x";
+            break;
+        case 213:
+            lastOper = @"g";
             break;
         default:
             break;
@@ -435,7 +452,7 @@ typedef enum {
     //RAD 弧度 DEG角度
     //1角度=（PI/180）弧度 sin计算的值是弧度，需要转换成角度 360°角=2π弧度
     
-    NSLog(@"first/sec %d num1 %@ num2 %@",_count,self.num1,self.num2);
+    NSLog(@"advanced first/sec count %d num1 %@ num2 %@",_count,self.num1,self.num2);
     if (_count == 0 && isExp) {
         if ([showText.text containsString:@" +"]) {
             showText.text = [NSString stringWithFormat:@"%.10g",[self.num1 doubleValue]* pow(10, [showText.text doubleValue])];
